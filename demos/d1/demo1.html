@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- tag määrittää html-version HTML5:ksi-->
+<!-- Tämä on kommentti -->
+<head>
+  <title>Demo 1</title>
+  <style>
+    html {
+      font-family: 'Open Sans', sans-serif;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+    #github_demo_imgs img {
+      max-width: 800px;
+      display: block;
+    }
+    #github_demo_imgs p{
+      background-color: rgb(201, 252, 235);
+
+    }
+  </style>
+</head>
+<body>
+<h1>Demo 1 - yhdessä</h1>
+<hr />
+<h2>Luo repository ja kansio</h2>
+<p>
+  Luo html_css_basics.github.io -repository omalle GitHub-alueellesi.
+</p>
+<p>
+  Kloonaa kansio K-levylle. Luo K-levylle kloonattuun repoon alikansiot demot ja
+  kuvat demoja ja kuvia varten.
+</p>
+<a href="#github_demo_imgs"
+  >Kuvakaappaukset GitHubista tämän dokumentin lopussa</a
+>
+
+<hr />
+<h2>Laadi seuraava www-sivu</h2>
+
+<p>Laadi html-koodia opettava sivu</p>
+
+<p>
+  Sivulle tulee
+  <ul style="list-style-type: none;">
+    <li><b>otsikoita</b> h1, h2, h3...</li>
+  <li><b>tekstikappaleita</b> p (b, i, u, span)</li>
+  <li><b>luetteloita</b> ul, ol (li)</li>
+  <li><b>linkkejä</b> a (href, target)</li>
+  <li><b>kuvia</b> img (src, alt, title)</li>
+  <li><b>poikkiviivoja</b> hr</li>
+  <li>sekä ohjeet elementtien käyttöön</li>
+</ul>
+</p>
+
+<p>
+  Sivulle tulee myös ohje siitä, miten sivun saa näkyville ja minkälaisia nimien
+  ja osoitteiden tulee olla.<br>Kopioi alla oleva kuva alikansioon kuvat nimellä
+  <i>virtual_reality.jpg</i><br><br>
+  <img src="img/virtual_reality.jpg" alt="Virtual reality guy" title="Virtual reality guy">
+  <figcaption>Kuvalähde: <i>pixabay.com</i> (Ilmaisia stock-kuvia kaikkiin projekteihin)</figcaption>
+</p>
+<hr>
+
+
+<div id="github_demo_imgs">
+  <hr />
+  <h3>GitHubin käyttö</h3>
+  <p>Tee uusi repository New napista</p>
+
+  <img src="img/github_tutorial/github1.jpg" alt="github" />
+      <p>
+    Anna repolle kuvaava nimi joka päättyy <i>.github.io</i><br />Huomioi ääkköset ja
+    välimerkit<br />
+    Description kohtaan lyhyt kuvaus repon sisällöstä<br />Private = Vain
+    sinulla ja valitsemillasi henkilöillä on oikeus nähdä repon sisältö<br />Add
+    a README file = Lisää dokumentaatiopohja repolle<br />Create repository
+  </p><img src="img/github_tutorial/github2.jpg" alt="github" />
+  <p>Palaa tarkista Settings välilehdeltä Pages kohdasta, että sivustosi on julkaistu.</p>
+
+<p>Osoite tulee muotoon</p> <p>(https://omanimi.github.io/html_css_basics.github.io/)</p>
+<p>Valitse <b>Source</b> > <b>Branch: main</b> -> <b>Save</b></p>
+<p>Pitäisi näkyä viesti <b>Your site is published at…</b></p>
+<img src="img/github_tutorial/github22.JPG" alt="github" />
+<p>Takaisin Code välilehdelle</p>
+  <p>
+    Code-napista saadaan esille repon HTTPS osoite<br />Kopioi osoite
+    leikepöydälle
+  </p>
+
+
+  <img src="img/github_tutorial/github3.JPG" alt="github" />
+  <p>
+    <i>(Esimerkkikuvissa käytössä git bash -terminaali, mutta muutkin toimii)</i><br>
+    Avaa komentoikkuna K-levyllä oikeaan kansioon.<br />Kaikki komennot
+    suoritetaan painamalla Enter<br />Kopioidaan repo GitHubista paikalliselle
+    levylle:<br /><code>git clone [repo url]</code>
+  </p>
+  <img src="img/github_tutorial/github4.jpg" alt="github" />
+
+  <p>
+    Siirrytään juuri luotuun kansioon:<br /><code>cd [kansion nimi]</code
+    ><br />Jos oletus-koodieditori on määritelty, niin avataan kansio
+    editorissa:<br /><code>code .</code>
+  </p>
+  <img src="img/github_tutorial/github5.jpg" alt="github" />
+  <p>
+    Avaa README.md Notepadissa/Notepad++ tai muussa editorissa ja lisää
+    nimesi<br />
+    Muista tallentaa muutokset
+  </p>
+  <img src="img/github_tutorial/github6.jpg" alt="github" />
+  <p>
+    Seuraavaksi commitoidaan muutokset GitHubiin<br /><p>(Paina kunkin rivin lopuksi Enter)</p><code>git add -A</code
+    ><br />
+    <code>git commit -am”initial commit”</code><br /><code>git push</code>
+  </p>
+  <img src="img/github_tutorial/github7.jpg" alt="github" />
+  <p>
+    Nyt muutokset on tallennettu GitHubiin ja voit tarkastella niitä GitHub
+    sivulla.
+    <br />Jos painat commitin nimeä, voit vertailla uutta tiedostoa vanhaan
+  </p>
+  <img src="img/github_tutorial/github8.jpg" alt="github" />
+  <p>Muutokset repoon, päivittyvät myös nettisivullesi:<br>https://omanimi.github.io/</p>
+</div>
+
+</body>

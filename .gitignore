@@ -1,0 +1,40 @@
+# CakePHP 3
+
+/vendor/*
+/config/app.php
+
+/tmp/cache/models/*
+!/tmp/cache/models/empty
+/tmp/cache/persistent/*
+!/tmp/cache/persistent/empty
+/tmp/cache/views/*
+!/tmp/cache/views/empty
+/tmp/sessions/*
+!/tmp/sessions/empty
+/tmp/tests/*
+!/tmp/tests/empty
+
+/logs/*
+!/logs/empty
+
+# CakePHP 2
+
+/app/tmp/*
+/app/Config/core.php
+/app/Config/database.php
+/vendors/*
+
+# Folders
+/demos/d2/*
+/demos/d3/*
+/demos/d4/*
+/demos/d5/*
+/demos/d6/*
+/demos/d7/*
+
+/exercises/e2/*
+/exercises/e3/*
+/exercises/e4/*
+/exercises/e5/*
+/exercises/e6/*
+/exercises/e7/*
