@@ -2,7 +2,7 @@
 <!-- tag määrittää html-version HTML5:ksi-->
 <!-- Tämä on kommentti -->
 <head>
-  <title>Erikoistilanteita</title>
+  <title>Tekstinkäsittelyä</title>
   <style>
 
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
@@ -23,7 +23,7 @@
   </style>
 </head>
 <body>
-    <h1>Erikoistilanteita</h1>
+<h1>Tekstinkäsittelyä</h1>
 <h2>Täytetekstillä voit testata asemointia:</h2>
 <a href="https://www.lipsum.com/feed/html" target="_blank">Lorem Ipsum</a>
 <p>
@@ -34,11 +34,15 @@
   eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
   in culpa qui officia deserunt mollit anim id est laborum.
 </p>
-<h2>Pitkien rivien luettavuus ole kovin hyvä.</h2>
+<h2>Pitkien rivien luettavuus ole kovin hyvä</h2>
 <p>
-  Tämä on korjattavissa CSS:llä (max-width),<br />josta lisää myöhemmin
-  kurssilla
+  Tämä on korjattavissa CSS:llä
 </p>
+<xmp>p{
+  max-width: 600px
+  }
+
+</xmp>
 <p style="max-width: 300px">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -47,17 +51,16 @@
   eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
   in culpa qui officia deserunt mollit anim id est laborum.
 </p>
-<h2>Liian pitkät sanat...</h2>
+<h2>Liian pitkät sanat</h2>
 <p style="max-width: 200px; border: solid thin black">
   Käyttäjäkokemussuunnitteluluonnostelutyökalut ovat hienoja. Lorem ipsum dolor
   sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
   labore et dolore magna aliqua.
 </p>
-<h2>...ovat korjattavissa erikoismerkillä</h2>
-<p>
+<p>Yksittäinen sana voidaan katkaista tarvittaessa merkillä:</p>
+
   <xmp>&shy;</xmp>
-  jolla yksittäinen sana voidaan katkaista tarvittaessa
-</p>
+
 <p style="max-width: 200px; border: solid thin black">
   Käyttäjäkokemus&shy;suunnittelu&shy;luonnostelutyökalut ovat hienoja. Lorem ipsum
   dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -68,21 +71,26 @@
   Keväällä 2022 valmistuu noin 24 700 uutta ylioppilasta.
 </p>
 <p>
-  Voidaan pitää samalla rivillä
+  Sanapari tai merkkijono voidaan pitää samalla rivillä<br>non-breaking space -merkillä:</p>
   <xmp>&nbsp;</xmp>
-  non-breaking space -merkillä
-</p>
+
 <p style="max-width: 240px">
   Keväällä 2022 valmistuu noin 24&nbsp;700 uutta ylioppilasta.
 </p>
 <h2 style="margin-top: 1.5em; margin-bottom: 0.5em">
-  Pilkunviilausta typografiasta
+Otsikoiden rivivälit
 </h2>
+
 <p style="max-width: 300px">
-  Jos asioitte B-talon painoviestinnässä, niin kuulette, että otsikon pitää olla
-  lähempänä alkavaa kuin päättyvää kappaletta, mutta jälleen lipsuttiin CSS:n
-  puolelle (margin&#8209;top,&nbsp;margin&#8209;bottom)...
+  Otsikon olisi hyvä olla lähempänä alkavaa kuin päättyvää kappaletta.
+  Tämän voi korjata CSS:llä
 </p>
+<xmp>h1{
+  margin-top: 2em;
+  margin-bottom: 1em;
+  }
+</xmp>
+
 
 <h2 style="margin-top: 1.5em; margin-bottom: 0.5em">Anfangi - Drop Cap</h2>
 <p style="max-width: 300px">
