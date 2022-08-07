@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Tredu - HTML & CSS Basics</title>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="flakes.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<body>
+
+
+  <div id="container">
+<main>
+
+  <div id="logo-container">
+    <img src="img/tredu_logos.png" class="rotate" alt="Jungle leaves">
+<h1 class="main_heading">HTML & CSS Perusteet</h1>
+<i id="motivation_quote">Koodaus on kivaa</i>
+  </div>
+
+
+<h2>Materiaalit</h2>
+
+
+</main>
+<!-- https://pajasevi.github.io/CSSnowflakes/-->
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+  #
+  </div>
+  <div class="snowflake">
+  .
+  </div>
+  <div class="snowflake">
+  { }
+  </div>
+  <div class="snowflake">
+  ( )
+  </div>
+  <div class="snowflake">
+  < >
+  </div>
+  <div class="snowflake">
+  #
+  </div>
+  <div class="snowflake">
+  .
+  </div>
+  <div class="snowflake">
+  { }
+  </div>
+  <div class="snowflake">
+  ( )
+  </div>
+  <div class="snowflake">
+  < >
+  </div>
+</div>
+
+</div>
+<div class="content">
+  <div class="left-content">
+    <ul><li><a href="demos/d1/demo1.html" target="_blank">Demo 1</a></li></ul>
+  </div>
+  <div class="right-content">
+    <ul><li><a href="exercises/e1/e1.html" target="_blank">Harjoitus 1</a></li></ul>
+
+  </div>
+</div>
+<footer>Tredu - 2022</footer>
+</div>
+<script>
+const quotes = [
+"Koodaus on kivaa",
+"Opiskele ohjelmointia",
+"Opiskelu on mukavaa"
+];
+
+const random = Math.floor(Math.random() * quotes.length);
+document.getElementById('motivation_quote').innerHTML = quotes[random];
+
+  </script>
+</body>
+</html>

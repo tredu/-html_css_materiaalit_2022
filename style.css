@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-size: 1.1em;
+    position: relative;
+    background-color: #0693e3;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+    box-sizing: border-box;
+    color: #ffffff;
+}
+h1{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+h2{
+    margin-top: 2em;
+}
+.content{
+    background-color: white;
+    color: #222;
+    max-width: 800px;
+      display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    margin: 0 auto;
+}
+.left-content{
+    border-right: #0693e3 solid thin;
+}
+.content ul{
+  list-style-type: none;
+  padding: 0;
+  margin-left: 2em;
+
+}
+.content a:link,  .content  a:visited, .content  a:hover , .content  a:active{
+  color: #222;
+}
+
+#container{
+    text-align: center;
+}
+main{
+    margin-top: 1em;
+    display: inline-block;
+    max-width: 800px;
+}
+
+footer{
+    text-align: center;
+    width: 100%;
+    padding: 1em 0em;
+    display: block;
+    margin-top: 5vh;
+    color: rgb(255, 255, 255);
+}
+
+#logo-container{
+    display: inline-block;
+    max-width: 400px;
+    height: auto;
+    position: relative;
+    margin-top: 2em;
+}
+.main_heading{
+    width: 70%;
+    height: auto;
+    position: absolute;
+    left: 15%;
+    top: 30%;
+    text-align: center;
+}
+#motivation_quote{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    top: 62%;
+    width: 100%;
+}
+.rotate {
+    width: 100%;
+    animation: rotation 30s infinite linear;
+}
+
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-359deg);
+    }
+}
