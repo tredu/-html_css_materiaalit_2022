@@ -29,15 +29,18 @@ h1{
 h2{
     margin-top: 2em;
 }
-.content, .extra-materials{
+.content, .extra-materials, .git-commands{
     background-color: white;
     color: #222;
     max-width: 800px;
-      display: grid;
-    grid-template-columns: auto auto;
+
     padding: 10px;
     margin: 0 auto;
 }
+ .content,.extra-materials{
+     display: grid;
+    grid-template-columns: auto auto;}
+
 .left-content{
     border-right: #0693e3 solid thin;
 }
@@ -45,6 +48,7 @@ h2{
   list-style-type: none;
   padding: 0;
   margin-left: 2em;
+  line-height: 1.5em;
 
 }
 .content a:link,  .content  a:visited, .content  a:hover , .content  a:active{
