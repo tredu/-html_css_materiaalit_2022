@@ -6,6 +6,7 @@ html {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
 }
+
 body{
     margin: 0;
     padding: 0;
@@ -37,22 +38,33 @@ h2{
     padding: 10px;
     margin: 0 auto;
 }
- .content,.extra-materials{
-     display: grid;
-    grid-template-columns: auto auto;}
+ .content, .extra-materials{
+    display: flex;
+    grid-template-columns: auto auto;
 
+}
+.extra-materials{
+    text-align: center;
+}
 .left-content{
     border-right: #0693e3 solid thin;
+     flex: 50%;
+}
+.right-content{
+    flex: 50%;
 }
 .content ul, .extra-materials ul{
   list-style-type: none;
   padding: 0;
-  margin-left: 2em;
+  margin-left: 0;
   line-height: 1.5em;
+  flex: 1;
 
 }
-.content a:link,  .content  a:visited, .content  a:hover , .content  a:active{
+.content a:link,  .content  a:visited, .content  a:active{
   color: #222;
+} .content  a:hover {
+    color: #444;
 }
 .extra-materials a:link,  .extra-materials  a:visited, .extra-materials  a:hover , .extra-materials  a:active{
   color: #222;
@@ -103,12 +115,65 @@ footer{
     animation: rotation 30s infinite linear;
 }
 
-
 @keyframes rotation {
     from {
       transform: rotate(0deg);
     }
     to {
       transform: rotate(-359deg);
+    }
+}
+
+.ifrm {
+    opacity: 0;
+    transition: opacity .25s linear;
+    border: none;
+    display: none;
+    background-color: white;
+    height: 500px;
+    width: 125%;
+
+    transform: scale(0.8);
+    transform-origin: 0 0;
+}
+.trig:hover + iframe {
+  opacity: 1;
+  transition: opacity .25s linear;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -14vw;
+  width: 50vw;
+  height: 130vh;
+
+}
+.trig:hover ~ .fade{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: -14vw;
+    width: 50vw;
+    height: 80vh;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%);
+    background: -webkit-linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+}
+
+@media only screen and (max-width: 900px) {
+    .trig:hover + iframe {
+        top: 0;
+        left: 0;
+        width: 130vw;
+        height: 60vh;
+    }
+    .trig:hover ~ .fade{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 50vh;
     }
 }

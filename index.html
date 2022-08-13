@@ -17,98 +17,106 @@
 
 
   <div id="container">
-<main>
+      <main>
 
-  <div id="logo-container">
-    <img src="img/tredu_logos.png" class="rotate" alt="Jungle leaves">
-<h1 class="main_heading">HTML & CSS Perusteet</h1>
-<i id="motivation_quote">Koodaus on kivaa</i>
-  </div>
+         <div id="logo-container">
+            <img src="img/tredu_logos.png" class="rotate" alt="Jungle leaves">
+            <h1 class="main_heading">HTML & CSS Perusteet</h1>
+            <i id="motivation_quote">Koodaus on kivaa</i>
+         </div>
 
 
-<!-- https://pajasevi.github.io/CSSnowflakes/-->
-<div class="snowflakes" aria-hidden="true">
-  <div class="snowflake">
-  #
-  </div>
-  <div class="snowflake">
-  .
-  </div>
-  <div class="snowflake">
-  { }
-  </div>
-  <div class="snowflake">
-  ( )
-  </div>
-  <div class="snowflake">
-  @
-  </div>
-  <div class="snowflake">
-  #
-  </div>
-  <div class="snowflake">
-  .
-  </div>
-  <div class="snowflake">
-  { }
-  </div>
-  <div class="snowflake">
-  ( )
-  </div>
-  <div class="snowflake">
-  @
-  </div>
+         <!-- https://pajasevi.github.io/CSSnowflakes/-->
+         <div class="snowflakes" aria-hidden="true">
+            <div class="snowflake">
+            #
+            </div>
+            <div class="snowflake">
+            .
+            </div>
+            <div class="snowflake">
+            { }
+            </div>
+            <div class="snowflake">
+            ( )
+            </div>
+            <div class="snowflake">
+            @
+            </div>
+            <div class="snowflake">
+            #
+            </div>
+            <div class="snowflake">
+            .
+            </div>
+            <div class="snowflake">
+            { }
+            </div>
+            <div class="snowflake">
+            ( )
+            </div>
+            <div class="snowflake">
+            @
+            </div>
+         </div>
+
+         <h2>Demot ja harjoitukset</h2>
+         <div class="content">
+            <div class="left-content">
+               <ul>
+               <li><a href="demos/d1/demo1.html" target="_blank">Demo 1</a></li>
+               <li><a href="demos/d2/demo2.html" target="_blank">Demo 2</a></li>
+               </ul>
+            </div>
+            <div class="right-content">
+               <ul>
+               <li><a href="exercises/e1/e1.html" target="_blank">Harjoitus 1</a></li>
+               <li><a href="exercises/e2/e2.html" target="_blank">Harjoitus 2</a></li>
+               </ul>
+
+            </div>
+         </div>
+         <h2>Lisämateriaalit</h2>
+         <div class="extra-materials"> <ul><li><a href="materials/special_cases.html" target="_blank">Tekstinkäsittelyä</a></li></ul></div>
+
+      </main>
+      <footer>Tredu - 2022</footer>
 </div>
 
-</div>
-<h2>Demot ja harjoitukset</h2>
-<div class="content">
-  <div class="left-content">
-    <ul>
-    <li><a href="demos/d1/demo1.html" target="_blank">Demo 1</a></li>
-    <li><a href="demos/d2/demo2.html" target="_blank">Demo 2</a></li>
-    </ul>
-  </div>
-  <div class="right-content">
-    <ul>
-    <li><a href="exercises/e1/e1.html" target="_blank">Harjoitus 1</a></li>
-    <li><a href="exercises/e2/e2.html" target="_blank">Harjoitus 2</a></li>
-    </ul>
-
-  </div>
-</div>
-<h2>Lisämateriaalit</h2>
-<div class="extra-materials"> <ul><li><a href="materials/special_cases.html" target="_blank">Tekstinkäsittelyä</a></li></ul></div>
-
-<h2>Git-komentoja</h2>
-<div class="git-commands">
- <b>Tallenna muutokset GitHubiin:</b>
-<ul>
-    <li>Avaa GitBash repo-kansiossa hiiren oikealla näppäimellä</li>
-    <li>commit details tilalle vaihdetaan esim. tehtävän nimi tai koodimuutosta kuvaava lause</li>
-    <li>Kirjoita komennot seuraavassa järjestyksessä</li>
-    <li>Paina kunkin rivin lopuksi Enter</li>
-</ul>
-
-
-    <xmp>
-    git add -A
-    git commit -am"commit details"
-    git push</xmp>
-</div>
-</main>
-<footer>Tredu - 2022</footer>
-</div>
 <script>
-const quotes = [
-"Koodaus on kivaa",
-"Opiskele ohjelmointia",
-"Opiskelu on mukavaa"
-];
+   const quotes = [
+   "Koodaus on kivaa",
+   "Opiskele ohjelmointia",
+   "Opiskelu on mukavaa",
+   "Refaktoroi. Tiedät kyllä miksi",
+   "Tee ohjelma, jolla on tarkoitus",
+   "Se nyt vaan on tyhjää,<br>kunnes jotain koodaa",
+   "Span:lla voi koittaa aina",
+   "Editoreissa on eroa",
+   "Olisit käynyt git-serverillä",
+   "Vaihda vanha avatarisi,<br>pyöreäkulmaiseen avatariin",
+   "Mistä näitä spaceja oikeen tulee?<br><xmp style='display:inline-block;'>&nbsp;</xmp> -merkillä tietenkin"
+   ];
 
-const random = Math.floor(Math.random() * quotes.length);
-document.getElementById('motivation_quote').innerHTML = quotes[random];
+   const random = Math.floor(Math.random() * quotes.length);
+   document.getElementById('motivation_quote').innerHTML = `"${quotes[random]}"`;
 
-  </script>
+</script>
+
+<script>
+   const a_elements = document.querySelectorAll('ul li a');
+   for(let x = 0; x < (a_elements.length); x++){
+      a_elements[x].setAttribute("id", `trig${x}`)
+      a_elements[x].setAttribute("class", `trig`)
+      let link = a_elements[x].getAttribute("href")
+
+      let iframe_elem = `
+      <iframe id='ifrm${x}' name='ifrm${x}' class="ifrm" src='${link}'></iframe>
+      <div class="fade"></div>
+      `
+      a_elements[x].insertAdjacentHTML('afterend', iframe_elem)
+   }
+</script>
+
 </body>
 </html>
