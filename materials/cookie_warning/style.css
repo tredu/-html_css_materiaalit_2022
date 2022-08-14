@@ -1,0 +1,44 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* cookie warning*/
+#cookie {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  box-sizing: border-box;
+}
+#cookie input {
+  display: none;
+
+}
+
+#cookie span {
+  float: left;
+}
+#cookie label{
+   float: right;
+   border: solid thin white;
+   padding: 1em;
+}
+#cookie label:hover{
+    cursor: pointer;
+    background-color: #222;
+}
+
+#cookie input:checked ~ * {
+  display: none;
+  pointer-events: none;
+}
+#cookie {
+  color: white;
+  background-color: black;
+}
+#cookie > * {
+  margin: 0.5em;
+}

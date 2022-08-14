@@ -44,7 +44,11 @@ h2{
 
 }
 .extra-materials{
-    text-align: center;
+    display:grid;
+    justify-content: center;
+}
+.extra-materials div {
+     text-align: left;
 }
 .left-content{
     border-right: #0693e3 solid thin;
@@ -144,10 +148,10 @@ footer{
   top: 0;
   right: -14vw;
   width: 50vw;
-  height: 130vh;
+  height: 125vh;
 
 }
-.trig:hover ~ .fade{
+.content .trig:hover ~ .fade{
     display: block;
     position: fixed;
     bottom: 0;
@@ -162,13 +166,13 @@ footer{
 }
 
 @media only screen and (max-width: 900px) {
-    .trig:hover + iframe {
+    .content  .trig:hover + iframe {
         top: 0;
         left: 0;
         width: 130vw;
         height: 60vh;
     }
-    .trig:hover ~ .fade{
+     .content .trig:hover ~ .fade{
         display: block;
         position: fixed;
         top: 0;

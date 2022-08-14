@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo 3</title>
+  <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+  <style>
+    html {
+      font-family: Arial, Helvetica, sans-serif
+    }
+    .flags img{
+      max-width: 100px;
+    }
+    .big_img{
+      max-width: 90vw;
+      margin-bottom: 1em;
+    }
+    .kbc-button{
+      font-size: 1em;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Demo 3 - Taulukko</h1>
+  <p>Tee demos kansion sisälle d3-kansio</p>
+  <p>Lisää luomaasi d3 kansioon index.html ja style.css -tiedostot sekä img kansio</p>
+  <p>Voit käyttää tiedostojen luomiseen Git Bash -komentoikkunaa:</p>
+
+<pre>
+touch index.html <kbd class="kbc-button">Enter</kbd>
+touch style.css <kbd class="kbc-button">Enter</kbd>
+code . <kbd class="kbc-button">Enter</kbd>
+</pre>
+
+<p>Tarkista että git-kansiosi rakenne on seuraavanlainen:</p>
+
+<xmp>
+html_css_basics
+|
+├── demos
+│   ├── d1
+│   ├── d2
+│   └── d3
+│       ├── index.html
+│       ├── style.css
+│       └── img
+│           ├── kuva_1.jpg
+│           └── kuva_2.jpg
+|
+├── exercises
+│   ├── e1
+│   ├── e2
+│   ├── e3
+│   └── ...
+|
+
+</xmp>
+<hr>
+<h2>Asian pihvi:</h2>
+<img src="img/taulukko.JPG" alt="taulukko">
+
+<ul>
+  <li>Tee 5 x 4 taulukko, jossa on yksi otsikkorivi ja 3 datariviä.</li>
+  <li>Lisää otsikkorivin soluihin otsikot: Nimi, Hinta, Muutos %, Maa, Toiminto</li>
+  <li>Tee datarivejä, joissa on Yhtiön nimi, osakkeen hinta, kurssin päivämuutos prosentteina, maan lippu ja painikkeet Osta/Myy</li>
+  <li>Käytä w3schoolssia apuna <a href="https://www.w3schools.com/html/html_tables.asp" target="_blank">w3schools HTML tables</a></li>
+</ul>
+<a href="https://www.w3schools.com/cssref/sel_nth-child.asp" target="_blank">CSS :nth-child() Selector</a>
+
+<ul>
+  <li>Käytä CSS:n nth-child() ominaisuutta:</li>
+  <li>Tasaa Hinta ja Muutos sarakkeet oikealle.</li>
+  <li>Keskitä Maa- ja Toiminto sarakkeiden sisällöt.</li>
+  <li>Nimi-solun sisältö on tasattu vasempaan.</li>
+
+</ul>
+
+<p>
+  <a href="flags.zip">Lataa maiden liput svg muodossa tästä</a><br>
+  tai käytä alla olevia:
+</p>
+<div class="flags">
+  <img src="img/flags/fi.svg" alt="fi">
+  <img src="img/flags/se.svg" alt="se">
+  <img src="img/flags/gb.svg" alt="gb">
+  <img src="img/flags/us.svg" alt="us">
+  <img src="img/flags/jp.svg" alt="jp">
+</div>
+<p> Nappi: <xmp><button type="button">Click Me!</button></xmp></p>
+<p>svg kuva:<xmp><img src="img/flags/fi.svg" alt="fi"></xmp></p>
+
+<hr>
+<h2>Muuta jos jää aikaa:</h2>
+
+
+
+<ul>
+  <li>Lisää sivulle nav tagi jossa on tumma taustaväri</li>
+  <li>Lisää naviin HerwStock svg logo ja tasaa se vasemmalle</li>
+  <li>Lisää naviin avatar-ikoni ja käyttäjänimi teksti, jotka tasataan oikealle</li>
+  <li>Alla kuvat svg:nä</li>
+</ul>
+<div style="background-color: #222; max-width: 400px;"><img src="img/herwstock_logo.svg" alt=""></div>
+<div style="background-color: #222; max-width: 400px;"><img src="img/avatar_icon.svg" alt=""></div>
+<h3>Reverse-engineering (takaperin insinööreily?)</h3>
+
+<p>Kokeile komponentteja:</p>
+<a href="../../materials/cookie_warning/" target="_blank">Cookie warning</a>
+
+<p>Lisää alalaitaan mahdollisimman ärsyttävä keksivaroitus</p>
+<a href="../../materials/marquee_banner/" target="_blank">Marquee banner</a>
+<p>Lisää ylälaitaan rullaavat pörssikurssit</p>
+<br>
+<img src="img/porssi.JPG" alt="porssi" class="big_img">
+
+</body>
+</html>

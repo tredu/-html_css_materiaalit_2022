@@ -1,0 +1,70 @@
+
+/* scrolling text */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#marquee{
+  background-color: black;
+  color: white;
+  /* These are absolutely necessary */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#div1, #div2{
+
+    width: 100vw;
+    justify-content: space-around;
+
+}
+#div1 table, #div2 table{
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+#div1 {
+
+  animation: marquee 30s linear infinite;
+  display: inline-block;
+
+}
+
+#div2 {
+  display: inline-block;
+   animation: marquee2 30s linear infinite;
+   right: 0;
+  animation-delay: -15s;
+
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+.positive{
+    color: greenyellow;
+}
+.negative{
+    color: hotpink;
+}
+@media only screen and (max-width: 1060px) {
+  .hide_narrow {
+    display: none;
+  }
+}
