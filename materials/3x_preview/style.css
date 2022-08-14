@@ -1,0 +1,85 @@
+body{
+    background-color: #222;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a, a:hover, a:visited{
+    color: aquamarine;
+}
+main{
+    display: flex;
+    gap: 1em;
+}
+.animated_thumb{
+    position: relative;
+    background-color: white;
+    z-index: 0;
+    height: 245px
+}
+
+.thumbnail{
+    display: inline-block;
+;
+}
+.thumbnail:hover {
+    opacity: 0;
+
+}
+.fadein {
+    position:absolute;
+    top:0px;
+    left:0;
+    margin:auto;
+
+}
+.fadein img{
+    display: none;
+    -webkit-animation-name: unset;
+    animation-name: unset;
+    animation-duration: 0;
+    -webkit-animation-duration: 0;
+}
+
+.thumbnail:hover ~.fadein img{
+    display: inline-block;
+    position: absolute;
+    z-index: -999;
+    left:0;
+    top:0;
+    -webkit-animation-name: fade;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 3s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+
+
+@-webkit-keyframes fade {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    33% {opacity: 1;}
+    53% {opacity: 0;}
+    100% {opacity: 0;}
+}
+@keyframes fade {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    33% {opacity: 1;}
+    53% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+#f1 {
+    background-color: lightblue;
+}
+#f2 {
+    animation-delay: 2s;
+    -webkit-animation-delay: -2s;
+    background-color: yellow;
+}
+#f3 {
+    animation-delay:2s;
+    -webkit-animation-delay: -1s;
+    background-color: lightgreen;
+}

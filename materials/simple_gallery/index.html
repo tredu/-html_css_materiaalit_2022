@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Galleries</title>
+
+    <style>
+        .gallery{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        .gallery img{
+            max-width: 300px;
+        }
+        .gallery figure{
+          margin:0;
+        }
+    </style>
+
+</head>
+<body style="margin: 0;">
+<div class="gallery">
+    <img src="img/drone.jpg" alt="drone">
+    <img src="img/laptop.jpg" alt="laptop">
+    <img src="img/scope.jpg" alt="scope">
+    <img src="img/solar.jpg" alt="solar">
+    <img src="img/hallway.jpg" alt="hallway">
+    <img src="img/processor.jpg" alt="processor">
+</div>
+<hr>
+<div class="gallery">
+    <figure><img src="img/drone.jpg" alt="drone"><figcaption>Drone</figcaption></figure>
+    <figure><img src="img/laptop.jpg" alt="laptop"><figcaption>Laptop</figcaption></figure>
+    <figure><img src="img/scope.jpg" alt="scope"><figcaption>Scope</figcaption></figure>
+    <figure><img src="img/solar.jpg" alt="solar"><figcaption>Solar</figcaption></figure>
+    <figure><img src="img/hallway.jpg" alt="solar"><figcaption>Hallway</figcaption></figure>
+    <figure><img src="img/processor.jpg" alt="solar"><figcaption>Processor</figcaption></figure>
+</div>
+<hr>
+<h2 style="margin-left: 1em;">Käyttöönotto</h2>
+<div style="display: grid; grid-template-columns: auto auto; background-color: #333; color: antiquewhite; font-family: Arial, Helvetica, sans-serif; padding: 1em;">
+<div style="border-right: solid thin antiquewhite;padding-right: 1em;">
+<h3>Ilman kuvatekstejä</h3>
+<xmp style="white-space:pre-wrap; word-wrap:break-word;">
+/* style.css */
+.gallery{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.gallery img{
+    max-width: 300px;
+}
+</xmp>
+<xmp style="white-space:pre-wrap; word-wrap:break-word;">
+<!-- HTML -->
+<div class="gallery">
+    <img src="img/drone.jpg" alt="drone">
+    <img src="img/laptop.jpg" alt="laptop">
+    <img src="img/scope.jpg" alt="scope">
+</div>
+</xmp>
+</div>
+
+<div style="padding-left: 1em;">
+    <h3>Kuvateksteillä</h3>
+<xmp style="white-space:pre-wrap; word-wrap:break-word;">
+/* style.css */
+.gallery{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.gallery img{
+    max-width: 300px;
+}
+.gallery figure{
+    margin:0;
+}
+</xmp>
+<xmp style="white-space:pre-wrap; word-wrap:break-word;">
+<!-- HTML -->
+<div class="gallery">
+    <figure><img src="img/drone.jpg" alt="drone"><figcaption>drone</figcaption></figure>
+    <figure><img src="img/laptop.jpg" alt="laptop"><figcaption>laptop</figcaption></figure>
+    <figure><img src="img/scope.jpg" alt="scope"><figcaption>scope</figcaption></figure>
+</div>
+</div>
+</xmp>
+</div>
+</div>
+
+
+
+</body>
+</html>
