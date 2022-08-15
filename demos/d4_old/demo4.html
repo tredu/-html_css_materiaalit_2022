@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<head>
+  <title>Demo 4</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+    html {
+      font-family: 'Open Sans', sans-serif;
+    }
+    img {
+      max-width: 600px;
+      display: block;
+    }
+	table{border-collapse: collapse;}
+	table tr td,table tr  th{
+		border: solid thin #222;
+		padding: 0.1em 2em;
+
+	}
+
+  </style>
+</head>
+<body>
+
+<h1>Demo 4, css-perusteita</h1>
+
+<p>Laadi CSS Kalatori-sivulle</p>
+<p>Kopio Kalatori-sivuston materiaalit nykyiseen kansioon</p>
+<p>Tavoitteena tässä on harjoitella tekniikkaa - itse ulkoasu ei ole olennainen.<br>
+	Käytä hyväksesi <a href="https://www.w3schools.com/css/default.asp" target="top">www.w3schoolsin</a> css-opasta ja
+<a href=https://www.w3schools.com/css/css_howto.asp target="top">How To Add CSS</a>
+</p>
+<h2>Asioita</h2>
+<ul>
+	<li>selector
+		<ul>
+			<li>koko elementti</li>
+			<li>id:n mukaan</li>
+			<li>luokan mukaan</li>
+			<li>yleinen *</li>
+			<li>ryhmä</li>
+		</ul>
+	</li>
+	<li>mihin css sijoitetaan</li>
+</ul>
+<h2>Selectorit</h2>
+<table>
+	<tr><th>HTML</th><th>CSS</th></tr>
+	<tr><td><xmp><div id="demo"></xmp></td><td>#demo{...}</td></tr>
+	<tr><td><xmp><div class="demo"></xmp></td><td>.demo{...}</td></tr>
+	<tr><td><xmp><body></xmp></body></td><td>body{...}</td></tr>
+	<tr><td><xmp><h1></xmp></td><td>h1{...}</td></tr>
+</table>
+<h2>Hierarkia / Määräävyys</h2>
+Tarkempi vs. Epätarkempi selectori
+<ol>
+	<li>in-line styles</li>
+	<li>!important</li>
+	<li>ID</li>
+	<li>class</li>
+	<li>element</li>
+	<li>järjestys CSS-tiedostossa</li>
+
+</ol>
+<h2>Fontit</h2>
+
+<p>Käytä esim <a href="https://fonts.google.com/" target="_blank">Google fonts</a> palvelua</p>
+
+<p>Voit poimia latauskoriisi useita fontteja.</p>
+<p>Valitse otsikolle Light, Bold tai Black tyyli</p>
+<p>Valitse leipätekstille Regular, Bold ja Italic tyylit</p>
+<p>Latauskorissasi pitäisi nyt olla 3 tai 4 tyyliä (leikkausta).</p>
+<p>Kopio latauskorista löytyvä @import -sääntö esim:</p>
+<xmp>@import url('https://fonts.googleapis.com/css2?family=Poppins:
+wght@700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+</xmp>
+
+<p>Ja erillinen käyttöönotto sääntö (CSS rules to specify families) esim:<br>
+<xmp>
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+</xmp>
+
+</p>
+
+<h2>Tehtäviä</h2>
+<ol>
+	<li>Luo style.css tiedosto ja linkitä se html-dokumenttiin <a href=https://www.w3schools.com/css/css_howto.asp target="top">W3: How To Add CSS</a></li>
+	<li>Valitse otsikolle ja leipätekstille fontit ja fonttityylit <a href="https://fonts.google.com/" target="_blank">Google fonts</a></li>
+	<li>Lisää CSS 1. riville kopioimasi @import url… sääntö</li>
+	<li>Käytä leipätekstifonttia koko nettisivulla <i>body</i> lisäämällä CSS:ään
+<xmp>body{
+	font-family: 'Roboto', sans-serif;
+}
+</xmp></li>
+<li>Vaihdoitko Roboton tilalle valitsemasi fontin nimen?</li>
+<li>Käytä samalla periaatteella toista fonttia otsikossa <i>h1</i></li>
+<li>Vaihda myös otsikon väri esim.<xmp>color: #008b8b;</xmp>Jollei koodieditori tarjoa apua, voit selata <a href=" https://www.w3schools.com/cssref/css_colors.asp" target="_blank"> HEX värikoodeja W3 sivulla </a></li>
+<li>Lisää paikkakartan alapuolelle kuvateksti <xmp> <figcaption>Myyntipöydät on aseteltu kahteen riviin.</figcaption></xmp>
+
+ja anna kuvatekstille kursivoitu <i>italic</i> fonttityyli:
+<xmp>font-style: italic;</xmp>
+Lisää elementille myös valkoinen taustaväri keskitä teksti ja anna padding 1em.
+</li>
+<li>Tee hintataulukosta raidallinen <a href="https://stackoverflow.com/questions/15448679/using-nth-child-in-tables-tr-td" target="_blank">stackoverflow</a></li>
+<li>Määritä koko sivun taustaksi täyttökuvio (pattern). Lataa pattern-kuva esim sivulta <a href="https://www.toptal.com/designers/subtlepatterns/" target="_blank">Subtlepatterns</a></li>
+<li>Paketoi aukioloajat divin sisälle ja anna diville id <i>calendar</i>
+<xmp>
+    <div id="calendar">
+      <h3>Vuoden 2022 markkinat</h3>
+      <ul>
+        <li><del>Kevätmarkkinat lauantai 11.4. klo 7–16</del></li>
+        <li>Juhannusmarkkinat tiistai 16.6. klo 7–15</li>
+        <li>Elomarkkinat tiistai 17.8. klo 7–15</li>
+        <li>Syysmarkkinat tiistai 13.10. klo 7–15</li>
+        <li>Joulumarkkinat tiistai 15.12. klo 7–15</li>
+      </ul>
+    </div>
+</xmp></li>
+<li>Nyt voit käyttää CSS:ssä #calendar{…} ja antaa osiolle eri taustavärin ym tyylejä</li>
+<li><b>Feature request:</b></li>
+<li>Lisää myyntipöytätaulukkoon yksi sarake otsikolla ”Varaus”. Sarakkeen soluun tulee arvo Vapaa / Varattu.<br>
+<p>Anna varattujen myyntipöytien taulukkoriveille luokka <i>reserved</i></p>
+<xmp><tr class="reserved"></xmp>
+ja muuta CSS:llä näiden rivien taustaväri. Saatat joutua käyttämään CSS-lisämäärettä <i>!important</i><br>
+Täten todettiin, että saman classin elementtejä voi olla useita, mutta id:tä voi käyttää vain kerran sivulla.
+</li>
+<li>Lisää taulukon soluille täytettä (padding)</li>
+
+<li>Sitten vielä taikatemppu:<br>
+	Paketoi kaikki bodyn sisällä olevat elementit uuden divin sisään
+<xmp><body>
+	<div id="container">
+		...
+	</div>
+</body>
+</xmp>
+Rajoita sivun maksimileveys ja keskitä sisältö lisäämällä juuri luodulle container-elementille CSS:
+<xmp>
+  max-width: 600px;
+  margin: 0 auto;
+</xmp>
+</li>
+<li>Margin ja padding toimii CSS:ssä seuraavasti:<br><br>
+<b>marginaali: 20px (joka puolelle);</b><br>
+<xmp>margin: 20px;</xmp>
+
+<b>marginaali: ylä&ala oikea&vasen;</b>
+<xmp>margin: 10px 20px;</xmp>
+
+<b>marginaali: ylä oikea ala vasen;</b><br>
+<xmp>margin: 10px 20px 30px 40px;</xmp>
+
+
+
+<b>marginaali-ylä: 20px</b>
+<xmp>margin-top: 20px;</xmp>
+
+<b>marginaali-oikea: 20px</b>
+<xmp>margin-right: 20px;</xmp>
+
+<b>marginaali-ala: 20px</b>
+<xmp>margin-bottom: 20px;</xmp>
+
+<b>marginaali-vasen: 20px</b>
+<xmp>margin-left: 20px;</xmp>
+</li>
+<li>Jos teksti ei erotu taustakuviosta, laita containerille taustaväri</li>
+<li>Kommentoi css ja html</li>
+<li>Työnnä muutokset GitHubiin</li>
+
+
+</body>
+</html>

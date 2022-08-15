@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+  <title>Harjoitus 4</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+    html,
+    xmp {
+      font-family: 'Open Sans', sans-serif;
+    }
+    img {
+      max-width: 600px;
+      display: block;
+    }
+    xmp {
+      line-height: 1.5em;
+      color: rgb(0, 87, 87);
+      margin-left: 1em;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Harjoitus 4 (Co-Op)</h1>
+    <h2>CSS3:n ominaisuuksia ja GitHubin yhteiskäyttö</h2>
+    <p>
+      CSS3 tarjoaa ominaisuuksia, joita ei ole aikaisemmissa versioissa.<br>Kaikki
+      ominaisuudet eivät toimi edes kaikissa uusissa selaimissa.
+    </p>
+    <p>
+      Laadi parityönä seuraavan listan jostain kohdasta yksi demo, jonka voit
+      esittää ensi viikon tunneilla (mikäli aikaa riittää). Apua löydät ainakin
+      w3schoolsista. Sivussa tulee olla otsikoituna ja esiteltynä (kerrottuna
+      kuinka se näkyy sivulla) valittu ominaisuus, ominaisuuteen sopiva
+      esimerkki ja luettelo selaimista, joissa ominaisuus on käytettävissä.
+    </p>
+    <ol>
+      <li>
+        2d-liike(translate, rotate, scale, skew, matrix) - huom. jos haluat
+        kokeilla liikettä, nämä toimivat kohdan animate kanssa, toinen
+        vaihtoehto on JavaScript
+      </li>
+      <li>
+        3d-liike(rotate) - huom. jos haluat kokeilla liikettä, toimii kohdan
+        animate kanssa, toinen vaihtoehto on JavaScript
+      </li>
+      <li>animointi</li>
+      <li>ominaisuuden muuttuminen (transition)</li>
+      <li>canvas, sen käyttömahdollisuudet</li>
+    </ol>
+
+<ul>
+  <li>Tallenna sivu kansioon e4 nimellä index.html</li>
+  <li>Lisätkää työ kummankin tekijän GitHubiin.</li>
+  <li>Kokeilkaa myös GitHubin yhteiskäyttöä</li>
+  <li>Sisällyttäkää työhön linkki yhteiskäyttörepoon, jos teitte sellaisen.</li>
+</ul>
+
+<hr>
+
+<h2>GitHubin käyttö yhdessä</h2>
+<b>Case 1: Molemmat muokkaavat Main/Master haaraa</b><br><br>
+Jompikumpi perustaa uuden repositoryn (esim. co-op-demo.github.io)<br>
+ja jakaa repositoryn toiselle käyttäjälle: <b>Settings > Collaborators > Add people</b><br><br>
+Kloonatkaa repo tietokoneelle:<br>
+<xmp>git clone {repo URL}
+</xmp>Tee muokkauksia projektiin...<br>
+Avaa komentorivi/CMD projektikansiossa:
+<xmp>git add -A
+git commit -am"kuvaus muokkauksista"
+git push
+</xmp>
+jos saat viestin "error: failed to push some refs to…"
+se tarkoittaa,<br>että toinen käyttäjä on tehnyt muutoksia repoon tällä välin.<br><br>
+
+Anna komento:
+<xmp>git pull
+</xmp>
+Nyt paikallinen kansiosi on ajan tasalla.<br>
+Katselmoi mitä koodissa oli ristiriidassa ja poista turhat huomautukset.<br><br>
+
+Kokeile uudestaan:
+<xmp>git add -A
+git commit -am"kuvaus muokkauksista"
+git push
+</xmp>
+Jos Auto-merging herjaa jotain, niin sulje sen avaama tiedosto.<br><br>
+<hr>
+<b>Case 2: Molemmilla on oma kehityshaara (branch)</b><br><br>
+Voitte myös kumpikin tehdä repositoryyn oman kehityshaaran (branch),<br>
+jolloin toisen henkilön tekemät muutokset eivät vaikuta toisen tekemisiin.
+<xmp>git checkout -b {branch-name}
+git add -A
+git commit -am"kuvaus muokkauksista"
+git push -u origin {branch-name}
+</xmp>
+Nyt näet kehityshaarat GitHub repon sivulla 'branches' -nappia painamalla.<br><br>
+
+Kun jatkat koodin muokkaamista ja haluat ladata taas muutokset branchiin,<br>
+et enää tarvitse uuden branchin luontikomentoa (git checkout -b {branch-name})<br><br>
+
+Lähetä tekemäsi muutokset Gittiin:<br>
+<xmp>git add -A
+git commit -am"kuvaus muokkauksista"
+git push -u origin {branch-name}
+</xmp>
+<i>Onnistuitteko?</i><br>
+<i>-Ei mekään TAMKilla ainakaan ekalla kertaa!</i>
+<br><br>
+<hr>
+Jos kotikoneella palaat muokkaamaan branchia niin<br>
+lataa master/main -haaran sijaan branch komennolla:<br>
+<xmp>git clone --branch {branch-name} {remote-repo-url} {target-dir}</xmp>
+
+
+esim.:
+<xmp>git clone --branch mun-oksa https://github.com/OmaNimi/co-op-demo.github.io kansion-nimi</xmp>
+
+
+  </main>
+</body>
+

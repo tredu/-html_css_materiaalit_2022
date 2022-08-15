@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('img/triangles_pattern.webp');
+}
+h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #008b8b;
+}
+figcaption {
+  font-style: italic;
+  background-color: white;
+  text-align: center;
+  padding: 1em;
+}
+table {
+  border-collapse: collapse;
+}
+table tr td {
+  border: solid thin #333;
+  padding: 0.1em 2em;
+}
+table tr:nth-child(2n) {
+  background-color: rgb(169, 255, 222);
+}
+#calendar {
+  background-color: wheat;
+}
+.reserved {
+  background-color: rgb(255, 121, 121) !important;
+}
+#container {
+  max-width: 600px;
+  margin: 0 auto;
+}
