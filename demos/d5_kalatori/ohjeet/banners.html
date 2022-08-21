@@ -9,6 +9,10 @@
         body div{
             width: 100%;
             min-height: 100vh;
+
+        }
+        body div:nth-child(-n+7) {
+            background-size: cover;
         }
         .market{
             background-image: url('img/fish_market.jpg');
@@ -22,27 +26,28 @@
         .sea{
             background-image: url('img/reflection.jpg');
         }
-        .colortile{
-             background-image: url('img/fish_tile.png');
-             background-color: rgb(2, 111, 145);
+        .transparent_tile{
+            background-image: url('img/fish_tile.png');
+            background-color: rgb(2, 111, 145);
         }
-        .bwtile{
-             background-image: url('img/fishes_bg.jpg');
+        .black_and_white{
+            background-image: url('img/fishes_bg.jpg');
+            background-blend-mode: normal; /* try out different blend modes */
+            background-color: rgb(2, 111, 145); /* change background color also */
         }
     </style>
 </head>
 <body>
-<div class="market"></div>
-<hr>
-<div class="grill"></div>
-<hr>
-<div class="ropes"></div>
-<hr>
-<div class="sea"></div>
-<hr>
-<div class="colortile"></div>
-<hr>
-<div class="bwtile"></div>
-
+    <div class="market"></div>
+    <hr>
+    <div class="grill"></div>
+    <hr>
+    <div class="ropes"></div>
+    <hr>
+    <div class="sea"></div>
+    <hr>
+    <div class="transparent_tile"></div>
+    <hr>
+    <div class="black_and_white"></div>
 </body>
 </html>
