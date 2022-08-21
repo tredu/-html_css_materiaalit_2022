@@ -6,7 +6,9 @@ html {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
 }
-
+*{
+    box-sizing:border-box;
+}
 body{
     margin: 0;
     padding: 0;
@@ -59,7 +61,8 @@ h2{
 }
 .content ul, .extra-materials ul{
   list-style-type: none;
-  padding: 0;
+  text-align:left;
+  padding: 0 1em;
   margin-left: 0;
   line-height: 1.5em;
   flex: 1;
@@ -94,7 +97,7 @@ footer{
 
 #logo-container{
     display: inline-block;
-    max-width: 400px;
+    max-width: 500px;
     height: auto;
     position: relative;
     margin-top: 2em;
