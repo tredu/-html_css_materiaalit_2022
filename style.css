@@ -83,7 +83,8 @@ h2{
 main{
     margin-top: 1em;
     display: inline-block;
-    max-width: 800px;
+    max-width: 600px;
+        width: 100%;
 }
 
 footer{
@@ -97,7 +98,7 @@ footer{
 
 #logo-container{
     display: inline-block;
-    max-width: 500px;
+    max-width: 400px;
     height: auto;
     position: relative;
     margin-top: 2em;
@@ -169,7 +170,12 @@ footer{
 }
 
 @media only screen and (max-width: 900px) {
-    .content  .trig:hover + iframe {
+    h1{
+    margin-top:0;}
+    .rotate{
+    width: 80%;
+    }
+    .content .trig:hover + iframe,.extra-materials .trig:hover + iframe {
         top: 0;
         left: 0;
         width: 130vw;
