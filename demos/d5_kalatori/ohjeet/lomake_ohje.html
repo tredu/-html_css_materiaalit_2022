@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo 5</title>
+  <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+<link rel="stylesheet" href="style.css">
+<style>
+    xmp{
+        background-color: #222;
+        color: antiquewhite;
+        padding-left: 1em;
+        white-space:pre-wrap;
+        word-wrap:break-word;
+    }
+</style>
+</head>
+<body>
+    <h1>Demo 5 - Kalatori: yhteys (lomake)</h1>
+<ul>
+    <li>Kalatori-sivuston toisena osana toteutetaan "yhteys"-osio</li>
+    <li>Lisää kalatori-sivuston kansioon yhteys.html ja yhteys.css</li>
+    <li>Linkitä yhteys.css ja common.css</li>
+</ul>
+<xmp>
+    html_css_basics
+    |
+    ├── demos
+    |   |
+    │   └── d5_kalatori
+    |       |
+    │       ├── yhteys.html
+    │       ├── yhteys.css
+    │       ├── hinnasto.html
+    │       ├── hinnasto.css
+    │       ├── markkinat.html
+    │       ├── markkinat.css
+    │       ├── header.html
+    │       ├── header.css
+    │       ├── common.css
+    |       |
+    │       └─── img
+    │       │     ├── kuva_1.jpg
+    │       │     └── kuva_2.jpg
+    |
+
+</xmp>
+<h2>Tehtävä</h2>
+<ul>
+    <li>Tee HTML <b>section</b>-elementti, jonka id on <b>yhteys</b></li>
+    <li>Lisää otsikko <i>Ota yhteyttä</i></li>
+    <li>Toteuta mallin mukainen yhteydenottolomake (form)</li>
+    <li>Katso mallia erilaisten syötekenttien (input) tekoon <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_contact_form" target="_blank">w3schools</a></li>
+    <li>Lisää lomakkeen action-kenttään lähetysosoite<br><a href="https://tredu-form-app.herokuapp.com/lomakedemo.php" target="_blank">https://tredu-form-app.herokuapp.com/lomakedemo.php</a></li>
+    <li>Jos klikkaat lähetysosoitetta, sen pitäisi sanoa "No Message"</li>
+    <li>Muista käyttää lomakkeen lähettämiseen POST-metodia</li>
+</ul>
+<p>Esimerkki lomakkeesta (form), jonka sisällä on yksi syötekenttä (input) ja lähetysnappi (submit):</p>
+<xmp>
+<form action="https..." method="POST">
+    <label for="name">First Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name..">
+
+    <input type="submit" value="Lähetä">
+</form>
+
+</xmp>
+<hr>
+<p>Lomakkeen input-kenttien name- kenttien tulee olla samat,<br>kuin lomakkeen vastaanottavassa nettisivussa on määritelty</p>
+<ul>
+
+    <li><b>Nimimerkki</b>&emsp;name="name"</li>
+    <li><b>Sähköposti</b>&emsp;name="email"</li>
+    <li><b>Päiväys</b>&emsp;&emsp;name="date"</li>
+    <li><b>Viesti</b>&emsp;&emsp;&emsp;name="message"</li>
+
+</ul>
+<hr>
+<b>Kokeile lomakkeen toimintaa:</b>
+<p>Täytä ja lähetä lomake</p>
+<img src="img/lomake_filled.JPG" alt="">
+<p>Firefoxilla päädyt sivulle, joka näyttää vastaanotetun sisällön:</p>
+
+<img src="img/lomake_read.JPG" alt="">
+<p><b>Tarkista, että kaikki lähetetty tieto tuli perille.</b></p>
+<p><i>Data on esitetty nettisivulla JSON-muodossa, jota tulette käyttämään myöhemmillä kursseilla</i></p>
+<p>Chromen näkymä on hieman erilainen, mutta sisältää saman datan:</p>
+
+<img src="img/lomake_read_chrome.JPG" alt="">
+<hr>
+<p>Valmis sivu:</p>
+<img src="img/lomake.JPG" alt="">
+<hr>
+<p>Ja jos kiinnostaa, niin tässä vielä php-koodi joka vastaanottaa ja käsittelee lomakkeen tiedot:</p>
+<xmp>
+<?php
+header('Content-Type: application/json; charset=utf-8');
+
+$myObj = new stdClass();
+$myObj->message = 'No Message';
+
+if (isset($_POST['name'])){
+    $myObj->name = strval($_POST['name']);
+}
+if (isset($_POST['email'])){
+    $myObj->email =  strval($_POST['email']);
+}
+if (isset($_POST['date'])){
+    $myObj->date =  strval($_POST['date']);
+}
+if (isset($_POST['message'])){
+    $myObj->message =  strval($_POST['message']);
+}
+
+echo json_encode($myObj);
+
+</xmp>
+
+</body>
+</html>
