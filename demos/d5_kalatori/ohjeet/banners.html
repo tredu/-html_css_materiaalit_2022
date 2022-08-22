@@ -35,6 +35,16 @@
             background-blend-mode: normal; /* try out different blend modes */
             background-color: rgb(2, 111, 145); /* change background color also */
         }
+		@keyframes mymove {
+		  100% {background-position-x: 399px;}
+		}
+		.animate_fishes{
+			background-image: url('img/fishes_bg.jpg');
+            background-blend-mode: screen; /* try out different blend modes */
+            background-color: rgb(2, 111, 145); /* change background color also */
+			animation: mymove 10s infinite;
+			animation-timing-function: linear;
+		}
     </style>
 </head>
 <body>
@@ -49,5 +59,7 @@
     <div class="transparent_tile"></div>
     <hr>
     <div class="black_and_white"></div>
+	 <hr>
+    <div class="animate_fishes"></div>
 </body>
 </html>
