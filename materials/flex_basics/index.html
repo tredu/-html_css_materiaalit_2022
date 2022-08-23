@@ -1,0 +1,127 @@
+<h1>CSS Flex</h1>
+<p>section (parent), div (child)</p>
+<h2>50 / 50</h2>
+<style>
+    .case1{
+        display: flex;
+    }
+    .case1 div:nth-child(1){
+        flex: 1;
+        background-color: cadetblue;
+    }
+    .case1 div:nth-child(2){
+        flex: 1;
+        background-color: plum;
+    }
+
+</style>
+
+<section class="case1">
+    <div>Left Content</div>
+    <div>Right Content</div>
+</section>
+
+<xmp>
+<style>
+    .case1{
+        display: flex;
+    }
+    .case1 div:nth-child(1){
+        flex: 1;
+        background-color: cadetblue;
+    }
+    .case1 div:nth-child(2){
+        flex: 1;
+        background-color: plum;
+    }
+
+</style>
+
+<section class="case1">
+    <div>Left Content</div>
+    <div>Right Content</div>
+</section>
+
+</xmp>
+<hr>
+<h2>66 / 33</h2>
+<style>
+    .case2{
+        display: flex;
+    }
+    .case2 div:nth-child(1){
+        flex: 2;
+        background-color: cadetblue;
+    }
+    .case2 div:nth-child(2){
+        flex: 1;
+        background-color: plum;
+    }
+</style>
+
+<section class="case2">
+    <div>Left Content</div>
+    <div>Right Content</div>
+</section>
+<xmp>
+<style>
+    .case2{
+        display: flex;
+    }
+    .case2 div:nth-child(1){
+        flex: 2;
+        background-color: cadetblue;
+    }
+    .case2 div:nth-child(2){
+        flex: 1;
+        background-color: plum;
+    }
+</style>
+
+<section class="case2">
+    <div>Left Content</div>
+    <div>Right Content</div>
+</section>
+</xmp>
+<hr>
+<h2>25 / 75</h2>
+<style>
+    .case3{
+        display: flex;
+    }
+    .case3 img{
+        max-width: 100%;
+    }
+    .case3 div:nth-child(1){
+        flex: 1;
+    }
+    .case3 div:nth-child(2){
+        flex: 3;
+    }
+</style>
+
+<section class="case3">
+    <div><img src="sunflowers.jpg" alt="sunflowers"></div>
+    <div><img src="mountains.jpg" alt="mountains"></div>
+</section>
+<xmp>
+<style>
+    .case3{
+        display: flex;
+    }
+    .case3 img{
+        max-width: 100%;
+    }
+    .case3 div:nth-child(1){
+        flex: 1;
+    }
+    .case3 div:nth-child(2){
+        flex: 3;
+    }
+</style>
+
+<section class="case3">
+    <div><img src="sunflowers.jpg" alt="sunflowers"></div>
+    <div><img src="mountains.jpg" alt="mountains"></div>
+</section>
+</xmp>
