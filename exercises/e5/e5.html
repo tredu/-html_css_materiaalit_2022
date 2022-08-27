@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+  <title>Harjoitus 5</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+    html {
+      font-family: 'Open Sans', sans-serif;
+    }
+    img {
+      max-width: 600px;
+      border: solid thin blue;
+    }
+    xmp {
+      line-height: 1.5em;
+      background-color: rgb(0, 87, 87);
+      color: white;
+      padding: 1em;
+    }
+    .sides{
+      display: flex;
+      align-items: flex-start;
+      gap: 1em;
+
+    }
+    .sides img{
+      object-fit: contain;
+
+    }
+
+  </style>
+</head>
+<body>
+<h1>Harjoitus 5 - Kertaa lomakkeen teko</h1>
+<h2>Toteuta pöytävarauslomake ravintolalle</h2>
+<b>Hyödynnä HTML:n erityyppisiä lomake-elementtejä (suluissa)</b>
+<p>Lomakkeessa on kentät:</p>
+<ul>
+  <li>Nimi (text)</li>
+  <li>Puhelinnumero (tel)</li>
+  <li>Sähköposti (email)</li>
+  <li>Päivä (date)</li>
+  <li>Kellonaika (time)</li>
+  <li>Erikoistoivomukset ja allergiat (textarea)</li>
+  <li>Lähetä-nappi (submit)</li>
+</ul>
+<p>Lomakkeen vastaanottavalla sivulla on määritelty seuraavat kentät:</p>
+<b>name, phone, email, date, time, details</b>
+<p>Käytä niitä lomakkeen <b>name=”…”</b> -kentissä</p>
+<ul>
+  <li>Lisää myös kenttien vihjetekstit</li>
+  <li>Tarkista, että lomakkeen lähetys tapahtuu <b>POST</b>-metodilla</li>
+  <li>Lisää lomakkeen <b>action</b>-kohtaan URL: <a href="https://tredu-form-app.herokuapp.com/varaus.php" target="_blank">https://tredu-form-app.herokuapp.com/varaus.php</a></li>
+  <li>Testaa lomaketta täyttämällä ja lähettämällä se.</li>
+</ul>
+
+<xmp>
+<form action="https://tredu-form-app.herokuapp.com/varaus.php" method="post">
+  <input type="text" ... />
+</form>
+
+</xmp>
+<h3>Tyhjä- ja täydennetty lomake:</h3>
+
+
+<div class="sides">  <img src="empty.JPG" alt="varaus">
+  <img src="table_res.JPG" alt="table_res"></div>
+
+<h3>Palvelimen vastausviesti, kun lomakkeen kentät ovat oikein:</h3>
+
+<img src="table_print.JPG" alt="table_print">
+
+</body>
+</html>
