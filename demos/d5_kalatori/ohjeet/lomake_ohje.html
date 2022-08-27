@@ -17,7 +17,9 @@
         font-size: 1.2em;
         box-sizing: border-box;
     }
-
+    table td{
+        padding: 0 1em;
+    }
 </style>
 </head>
 <body>
@@ -72,14 +74,29 @@
 </xmp>
 <hr>
 <p>Lomakkeen input-kenttien name-parametrit tulee olla samat,<br>kuin lomakkeen vastaanottavassa nettisivussa on määritelty</p>
-<ul>
 
-    <li><b>Nimimerkki</b>&emsp;name="name"</li>
-    <li><b>Sähköposti</b>&emsp;name="email"</li>
-    <li><b>Päiväys</b>&emsp;&emsp;name="date"</li>
-    <li><b>Viesti</b>&emsp;&emsp;&emsp;name="message"</li>
-
-</ul>
+<table>
+    <tr>
+        <td>Päiväys</td>
+        <td>name="date"</td>
+    </tr>
+    <tr>
+        <td>Pöytä</td>
+        <td>name="tableid"</td>
+    </tr>
+    <tr>
+        <td>Nimi</td>
+        <td>name="fullname"</td>
+    </tr>
+    <tr>
+        <td>Sähköposti</td>
+        <td>name="email"</td>
+    </tr>
+    <tr>
+        <td>Viesti</td>
+        <td>name="message"</td>
+    </tr>
+</table>
 <hr>
 <b>Kokeile lomakkeen toimintaa:</b>
 <p>Täytä ja lähetä lomake</p>
@@ -104,20 +121,23 @@ header('Content-Type: application/json; charset=utf-8');
 $myObj = new stdClass();
 $myObj->message = 'No Message';
 
-if (isset($_POST['name'])){
-    $myObj->name = strval($_POST['name']);
+if (isset($_POST['date'])){
+    $myObj->date = $_POST['date'];
+}
+if (isset($_POST['tableid'])){
+    $myObj->tableid = $_POST['tableid'];
+}
+if (isset($_POST['fullname'])){
+    $myObj->fullname = $_POST['fullname'];
 }
 if (isset($_POST['email'])){
-    $myObj->email = strval($_POST['email']);
-}
-if (isset($_POST['date'])){
-    $myObj->date = strval($_POST['date']);
+    $myObj->email = $_POST['email'];
 }
 if (isset($_POST['message'])){
-    $myObj->message = strval($_POST['message']);
+    $myObj->message = $_POST['message'];
 }
 
-echo json_encode($myObj);
+echo json_encode($myObj, JSON_UNESCAPED_UNICODE);
 
 </xmp>
 
