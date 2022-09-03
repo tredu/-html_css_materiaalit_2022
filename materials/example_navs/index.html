@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* nav */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+/* not so good nav */
+div div {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+div div div {
+  float: left;
+  padding: 14px 16px;
+}
+
+div div div a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+div div div:hover {
+  background-color: #111;
+}
+
+</style>
+</head>
+<body>
+  <h2>Navigation (good usability)</h2>
+<nav>
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</nav>
+<hr>
+  <h2>Navigation (bad usability)</h2>
+    <div>
+        <div>
+            <div><a class="active" href="#home">Home</a></div>
+            <div><a href="#news">News</a></div>
+            <div><a href="#contact">Contact</a></div>
+            <div><a href="#about">About</a></div>
+        </div>
+    </div>
+</body>
+</html>
