@@ -102,6 +102,7 @@ footer{
     height: auto;
     position: relative;
     margin-top: 2em;
+    overflow: hidden;
 }
 .main_heading{
     width: 70%;

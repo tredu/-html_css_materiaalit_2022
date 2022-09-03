@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo 5</title>
+  <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+  <style>
+    html {
+      font-family: Arial, Helvetica, sans-serif
+    }
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        margin: 1em;
+        line-height: 1.2em;
+    }
+    .flags img{
+      max-width: 100px;
+    }
+    .big_img{
+      max-width: 90vw;
+      margin-bottom: 1em;
+    }
+    .kbc-button{
+      font-size: 1em;
+    }
+    ul{
+        font-size: 1.1em;
+        line-height: 1.5em;
+    }
+    xmp{display: inline-block;
+        margin: 0;
+        font-size: 1.3em;
+    }
+
+    img{
+        max-width: 90%;
+    }
+    .shopimg{
+        border: solid thin #222;
+    }
+    .borders{
+        border: solid thin black;
+    }
+    @media only screen and (max-width: 1000px) {
+   xmp:not(li xmp) {
+    max-width: unset;
+    width: 90%;
+    margin: 0.5em;
+  }
+}
+
+  </style>
+</head>
+<body>
+        <h1 id="demo">Demo 5 - Kalatori: navigaatio</h1>
+    <ul>
+        <li>Kalatori-sivuston seuraavana osana toteutetaan "nav"-osio</li>
+        <li>Lisää kalatori-sivuston kansioon nav.html ja nav.css</li>
+        <li>Linkitä nav.css luotuun html tiedostoon</li>
+    </ul>
+    <br>
+    <xmp>
+    html_css_basics
+    |
+    ├── demos
+    |   |
+    │   └── d6-kalatori
+    |       |
+    │       ├── nav.html
+    │       ├── nav.css
+    |       |
+    │       ├─── img
+    │       │     ├── kuva_1.jpg
+    │       │     └── kuva_2.jpg
+    |       |
+    │       └─── js
+    │             ├── script_1.js
+    |             └── script_2.js
+    |
+
+</xmp>
+<p>Navigaatio on tämän projektin tärkein osa.<br>
+    Hyvin toteutettuna siitä saattaa olla apua myös tulevissa harrastus/kouluprojekteissa.
+    </p>
+
+<h2>Teoria</h2>
+<ul>
+    <li>HTML navigaatio toteutetaan usein <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_basic_html" target="_blank">linkkilistana</a></li>
+    <li><xmp>ul</xmp> > <xmp>li</xmp> >  <xmp>a</xmp></li>
+   <li> [unordered list] > [list item] > [anchor]</li>
+</ul>
+<h3>Case 1: Suhteellinen linkki </h3>
+<p>Navigaation linkki (<b>a href=</b>) voi viitata suhteellisella linkillä samassa hakemistossa olevaan kansioon tai tiedostoon</p>
+<ul>
+    <li>a href=”img/kuva.jpg” (avaa kuvan kuva.jpg)</li>
+    <li>a href=”sivut/sivu.html” (avaa tiedoston sivu.html)</li>
+    <li>a href= ”sivut/” (toimii vain, jos sivut-kansiossa on index.html niminen tiedosto, joka näytetään oletuksena)</li>
+    <li>index.html tiedostoja voi siis olla useita samassa projektissa, kunhan jokainen on omassa kansiossaan</li>
+</ul>
+
+<b>Pohdi</b>: Minkä nimisen tiedoston selain näyttää, kun menet osoitteeseen <a href="https://www.tredu.fi/" target="_blank">https://www.tredu.fi/</a><br>
+Entä jos menet osoitteeseen <a href="https://www.tredu.fi/koulutukset/" target="_blank">https://www.tredu.fi/koulutukset/</a>
+
+
+
+<h3>Case 2: Absoluuttinen linkki</h3><p>Linkki voi viitata ulkoiseen sivuun</p>
+<ul>
+    <li>a href=”https://www.w3schools.com/” (avaa w3schools etusivun)</li>
+    <li>Ulkoiselle sivulle viitatessa on hyvä käyttää target=”_blank” lisämäärettä, jotta linkki aukeaa uuteen välilehteen</li>
+</ul>
+
+<h3>Case 3: Ankkurilinkki</h3>
+<ul>
+<li>Linkin kohde on samassa tiedostossa/samalla sivulla</li>
+<li>Linkkiä kilkkamalla scrollataan haluttuun kohtaan avoinna olevaa sivua</li>
+<li>Esim.:</li>
+<li><a href="#demo">Scrollaa kohtaan pääotsikko</a></li>
+<li><a href="#usability">Scrollaa kohtaan "Käytettävyysasiaa"</a></li>
+</ul>
+<xmp>
+    <a href="#kohde">Ankkurilinkki</a>
+    <section id="kohde">Lorem ipsum...</section>
+</xmp>
+
+<hr>  <img src="img/nav1.JPG" alt="" class="borders">
+<h2>Tehtävä</h2>
+    <ul>
+        <li>Toteuta navigaatio, jossa linkit (ankkurilinkkejä) ovat vierekkäin</li>
+        <li>Käytä <b>nav</b> -tagia (Semanttinen)
+    <small>vertaa: div (Ei-semanttinen)</small>
+    </li>
+        <li>Lisää kalatorin logo (svg kuva alla)</li>
+        <img src="img/kalatori_blue.svg" alt="logo" width="100">
+        <li>Tee logosta myös klikattava linkki</li>
+
+        <li>Asemoi logo vasemmalle ja linkit oikealle</li>
+        <li><small>Saat navigaation logon ja muut linkit helpommin tasattua eri päätyihin,<br>kun logo ei ole listaelementin <xmp><ul></ul></xmp> sisällä.</small></li>
+        <li>Kokeile lisätä linkeille CSS <a href="https://www.w3schools.com/css/css_pseudo_classes.asp" target="_blank">:hover</a> pseudo,<br>joka vaihtaa linkin taustavärin kun käyttäjä vie hiiren linkin päälle</li>
+    </ul>
+    <img src="img/kalatori.svg" alt=""><br>
+
+<xmp>Kalatori (#kalatori)
+Markkinat (#markkinat)
+Hinnasto (#hinnasto)
+Ota yhteyttä (#yhteys)
+Sijainti (#sijainti)
+
+</xmp>
+
+
+<hr>
+
+<h2 id="usability">Käytettävyysasiaa</h2>
+    <ul>
+    <li>Navin tulee pysyä aina näkyvissä sivun ylälaidassa, vaikka käyttäjä rullaa sivua alaspäin.<br>
+    <small>Voit testata rullausta lisäämässä Lorem ipsum täytetekstiä sivulle ja rajoittaa p tagin leveyden <i>max-width</i></small>
+    </li>
+    </ul>
+
+    <img src="img/nav-top.JPG" alt="" class="borders">
+    <ul>
+        <li>Huomioi ettei nav saa peittää sivuston tekstiä, kun scrolli on täysin yläpäässä</li>
+        <li>Vasta alemmas rullatessa nav peittää osan tesktistä alleen</li>
+        <li>Tekstin piiloutumisen navin alle voi estää lisäämällä tekstille tai tekstiä sisältävälle elementille CSS:llä<br><b>margin-top</b>: 50px; tai jokin muu mittayksikkö.</li>
+    </ul>
+
+
+<hr>
+<h2>Responsiivisuus</h2>
+<ul>
+    <li>Kapealla näytöllä esim. puhelimella, kaikki linkit eivät mahdu vierekkäin</li>
+    <li>Tarkkailemalla ikkunan leveyttä, voidaan käyttäjälle tarjota vaihtoehtoinen näkymä tietyn leveyden alittuessa</li>
+    <li>Tämän voi toteuttaa <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp" target="_blank">CSS Media Query</a>:llä</li>
+    <li>Hampurilaisvalikon saa tehtyä <a href="https://css-tricks.com/the-checkbox-hack/" target="_blank">Checkbox Hack</a>:lla, joka perustuu näkymättömään checkbox-valintalaatikkoelementtiin.<br>
+Valintalaatikolla on CSS <b>:checked</b> -pseudo sekä sen prusteella muuttuva <b>::before</b> selektori, joka vaihtaa kuvakkeen x / ≡ riippuen onko laatikko valittu vai ei</li>
+
+</ul>
+
+<img src="img/resp1.png" alt="" class="borders">
+<img src="img/resp2.png" alt="" class="borders">
+
+</body>
+</html>

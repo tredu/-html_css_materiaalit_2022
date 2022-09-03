@@ -63,8 +63,8 @@
 </head>
 <body>
   <main>
-        <h1>Demo 5 - Kalatori: Kasaus</h1>
-<xmp>
+        <h1 id="top">Demo 5 - Kalatori: Kasaus</h1>
+    <xmp>
     html_css_basics
     |
     ├── demos
@@ -72,19 +72,19 @@
     │   └── d5_kalatori
     |       |
     │       ├── index.html
-    │       ├── footer.html
-    │       ├── footer.css
-    │       ├── sijainti.html
-    │       ├── sijainti.css
-    │       ├── yhteys.html
-    │       ├── yhteys.css
-    │       ├── hinnasto.html
-    │       ├── hinnasto.css
-    │       ├── markkinat.html
-    │       ├── markkinat.css
+    │       ├── common.css
     │       ├── header.html
     │       ├── header.css
-    │       ├── common.css
+    │       ├── markkinat.html
+    │       ├── markkinat.css
+    │       ├── hinnasto.html
+    │       ├── hinnasto.css
+    │       ├── yhteys.html
+    │       ├── yhteys.css
+    │       ├── sijainti.html
+    │       ├── sijainti.css
+    │       ├── footer.html
+    │       ├── footer.css
     |       |
     │       └─── img
     │       │     ├── kuva_1.jpg
@@ -101,8 +101,43 @@
         <li>Tarkista, että kokonaisuus toimii ja näyttää suunnitteen layout-suunnitelmakuvan mukaiselta</li>
         <li>Toteuta puuttuvat osiot tai lisää toistaiseksi niiden tilalle dummy-osio esim:</li>
          <xmp><section id="markkinat">Markkinat</section></xmp>
+        <li>Lisää sivulle fav.icon (kuva alla head-osioon)</li>
+        <img src="img/kalatori_ico.png" alt="">
+        <li>Testaa, että klikattaessa navigaation ankkurilinkit scrollaavat sivun oikeaan kohtaan</li>
+
     </ul>
+
+    <ul>
+        <li>Voit tehdä vierityksestä pehmeän lisäämällä seuraava script-tagin (JavaScript) ennen body-tagin sulkeutumista.</li>
+        <li>Vertaa: <a href="#top" class="smooth">pehmeä</a> / <a href="#top">kova</a> siirtymä</li>
+    </ul>
+
+<xmp>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        });
+    });
+});
+</script>
+
+</xmp>
     <img src="img/layout_kalatori.jpg" alt="layout_kalatori">
   </main>
+  <script>
+document.querySelectorAll('.smooth').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        });
+    });
+});
+</script>
 </body>
 </html>
