@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<head>
+  <title>Etusivu palautuksille</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+    html {
+      font-family: 'Open Sans', sans-serif;
+    }
+    img {
+      max-width: 800px;
+      display: block;
+    }
+    xmp{
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #222;
+      color: antiquewhite;
+      white-space: pre-wrap;
+    }
+
+  </style>
+</head>
+<body>
+  <xmp>
+html_css_basics
+|
+├── index.html
+├── style.css
+|
+├── demos
+│   ├── d1
+│   └── d2
+│   └── ...
+|
+├── exercises
+│   ├── e1
+│   ├── e2
+│   └── ...
+|
+
+
+</xmp>
+
+
+<h1>Etusivu palautuksille</h1>
+<ul>
+  <li>Laadi etusivu palautettaville demoille ja harjoituksille.</li>
+  <li>Tee git-kansion juureen index.html ja style.css</li>
+  <li>Sivulla on linkki jokaiseen demoon ja harjoitukseen.</li>
+  <li>Työnnä GitHubiin</li>
+</ul>
+<i>Etusivulla saa käyttää luovuutta ja tehdä siitä oman näköisensä.</i><br>
+<i>Tunnilla tehtävä esimerkki:</i><br><br>
+
+<img src="img/etusivu_esim.jpg" alt="Esim">
+<br>
+<h2>Jos on aikaa ja kiinnostusta</h2>
+<p>Lisää sivulle avatar-kuva ja muotoile se <a href="https://bennettfeely.com/clippy/" target="_blank" rel="noopener noreferrer">CSS clip-path makerilla</a></p>
+<p>Voit lisätä kuvakkeita esim. <a href="https://fontawesome.com/v4/icons/" target="_blank" rel="noopener noreferrer">Fontawesome</a>
+ -kirjastosta</p>
+
+<xmp>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <i class="fa fa-folder" aria-hidden="true"></i>
+</body>
+
+</xmp>
+<p>Tai lisätä sade-efektin (rain.js & rain.css + jQuery)</p>
+<p><a href="https://codepen.io/arickle/pen/XKjMZY" target="_blank">CodePen | CSS Rain Effect by Aaron Rickle </a></p>
+<xmp>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="rain.js"></script>
+  <link rel="stylesheet" href="rain.css">
+</head>
+<body>
+  <!-- insert after other content in body -->
+  <div class="rain"></div>
+  <script>rain();</script>
+</body>
+
+</xmp>
+<xmp>
+// rain.js
+  var rain = function() {
+    $('.rain').empty();
+
+    var increment = 0;
+    var drops = "";
+
+    while (increment < 95) {
+      var randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
+      var randoFiver = (Math.floor(Math.random() * (4 - 2 + 1) + 2));
+      increment += randoFiver;
+      drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+    }
+
+    $('.rain').append(drops);
+  }
+
+</xmp>
+<xmp>
+/* rain.css */
+
+:root{
+    --rain-color: rgba(255, 255, 255, 0.25)
+}.drop {
+    position: absolute;
+    bottom: 100%;
+    width: 10px;
+    height: 120px;
+    pointer-events: none;
+    animation: drop 0.5s linear infinite;
+    z-index: -1;
+  }
+
+  @keyframes drop {
+    0% {
+      transform: translateY(0vh);
+    }
+    75% {
+      transform: translateY(100vh);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  .stem {
+    width: 2px;
+    height: 100%;
+    margin-left: 7px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--rain-color));
+    animation: stem 0.5s linear infinite;
+  }
+
+  @keyframes stem {
+    0% {
+      opacity: 1;
+    }
+    65% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .splat {
+    width: 15px;
+    height: 10px;
+    border-top: 3px dotted var(--rain-color);
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(0);
+    animation: splat 0.5s linear infinite;
+    display: none;
+  }
+
+  .splat {
+    display: block;
+  }
+
+  @keyframes splat {
+    0% {
+      opacity: 1;
+      transform: scale(0);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(0);
+    }
+    90% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+  }
+
+</xmp>
+</body>
+</html>

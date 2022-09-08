@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    background-color: #111;
+    color: wheat;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+  max-width: 400px;
+  margin-top: 50px;
+}
+
+/* nav styles */
+:root {
+    --nav_bg_color: white;
+    --nav_hover_color: #ccc;
+    --nav_height: 50px;
+    --nav_item_width: auto;
+}
+
+.logo {
+    padding: 0 1em;
+    float: left;
+}
+.logo img{
+    height: 48px;
+}
+.logo:hover{
+    opacity: 0.9;
+}
+nav {
+    height: var(--nav_height);
+    position: fixed;
+    background-color:var(--nav_bg_color);
+    width: 100%;
+    top: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav ul {
+    width: fit-content;
+    width: -moz-fit-content;
+    list-style-type: none;
+    margin: 0 0 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+    width: var(--nav_item_width);
+}
+
+nav ul li a, .burger {
+    box-sizing: border-box;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 16px 25px;
+    text-decoration: none;
+    height: var(--nav_height);
+}
+
+nav ul li a:hover, .burger:hover {
+    background-color: var(--nav_hover_color);
+}
+#menu_box{
+    display: none;
+}
+.burger{
+    cursor: pointer;
+    float: right;
+    font-size: 2em;
+    line-height:0.6em;
+    display: none;
+    margin-left:auto;
+    text-align: right;
+}
+@media screen and (max-width: 800px) {
+    .burger{
+        display: block;
+    }
+    .burger::before{
+        content: '\2261'; /* ≡-icon*/
+    }
+    /* add */
+    #menu_box:checked ~ .burger::before{
+    content: '\00D7'; /* ×-icon*/
+    }
+
+    nav ul{
+        display: none;
+        clear: both;
+        margin-right: 0;
+        background-color: inherit;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    nav ul li{
+        float: none;
+        display: block; /* change to block */
+
+    }
+    nav ul li a{
+        text-align: left;
+        width:var(--nav_item_width);
+    }
+    .logo{
+        margin-left: 0;
+    }
+    #menu_box:checked ~ ul {
+        display: block;
+        }
+}
