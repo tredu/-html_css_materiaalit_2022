@@ -177,13 +177,14 @@ footer{
     width: 80%;
     }
     .content .trig:hover + iframe,.extra-materials .trig:hover + iframe {
+        display: none;
         top: 0;
         left: 0;
         width: 130vw;
         height: 60vh;
     }
      .content .trig:hover ~ .fade{
-        display: block;
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
