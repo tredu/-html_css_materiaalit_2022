@@ -68,9 +68,9 @@
                <li><a href="demos/d3/demo3.html" target="_blank">Demo 3 - Taulukko</a></li>
                <li><a href="demos/d4/demo4.html" target="_blank">Demo 4 - Kuvagalleria</a></li>
                <li><a href="demos/d5_kalatori/ohjeet/" target="_blank">Demo 5 - Kalatori (10/10)</a></li>
-               
                <li><a href="demos/etusivu_palautuksille/index.html" target="_blank">Etusivu palautuksille</a></li>
                <li><a href="demos/d6/demo6.html" target="_blank">Demo 6 - CSS Layouts</a></li>
+               <li><a href="demos/d7_lomake/demo7.html" target="_blank">Demo 7 - Lomake</a></li>
                </ul>
             </div>
             <div class="right-content">
@@ -84,6 +84,7 @@
 
             </div>
          </div>
+         <div id="timeline"><img src="img/leaf.png" alt=""></div>
          <h2>Lisämateriaalit</h2>
          <div class="extra-materials">
            <div>
@@ -138,6 +139,23 @@
    }
 </script>
 
+<script>
+
+
+
+var date1 = new Date('10/14/2022');
+var date2 = new Date();
+var difference = date1.getTime() - date2.getTime();
+var days = Math.ceil(difference / (1000 * 3600 * 24));
+let percent = Math.round((74-days)/74*100)
+
+if (percent > 100){
+   percent = 100;
+}
+
+let elem = document.getElementById('timeline')
+elem.setAttribute('style', `width:${percent}%;`)
+</script>
 </body>
 </html>
 

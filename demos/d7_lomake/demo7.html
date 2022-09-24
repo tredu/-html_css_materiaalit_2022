@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Demo 7</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+    html {
+      font-family: 'Open Sans', sans-serif;
+    }
+    img {
+      max-width: 600px;
+      display: block;
+    }
+    main{
+      display: flex;
+      flex-wrap: wrap;
+
+    }
+    ul{line-height: 1.6em;}
+    xmp{
+      background-color: #111;
+      color: antiquewhite;
+    }
+  </style>
+</head>
+<body>
+  <h1>Demo 7 - Tiedustelulomake</h1>
+  <hr />
+  <h2>Laadi seuraava lomake:</h2>
+  <ul>
+
+    <li>Lomake lähetetään osoitteeseen https://tredu-form-app.herokuapp.com/luelomake.php</li>
+    <li>Tekstikentillä kysytään vastaajan etunimi name="fname" ja sukunimi name="lname"</li>
+    <li>Valintaluettelolla kysytään vastaajan syntymävuosi (<i>select</i> name="year" id="year")</li>
+    <ul>
+      <li>Vaihtoehdot ovat esim. vuodet 1996 - 2004 (<i>option</i> value="1996")</li>
+      <li>Voit myös kokeilla listan teossa tämän sivun lopussa olevaa JavaScriptiä</li>
+    </ul>
+    <li>Lempiväriä kysytään input type="color" kentällä (name="color")</li>
+    <li>Radionapeilla kysytään vastaajan äidinkieltä</li>
+    <li>Vaihtoehdot:<ul>
+      <li>name="lang" value="suomi"</li>
+      <li>name="lang" value="ruotsi"</li>
+      <li>name="lang" value="muu"</li>
+    </ul></li>
+    <li>Checkboxeilla kysytään ta kielitaitoa</li>
+    <li>Vaihtoehdot:
+      <ul>
+    <li>suomi name="suomi" value="suomi"</li>
+    <li>ruotsi name="ruotsi" value="ruotsi"</li>
+    <li>englanti name="englanti" value="englanti"</li>
+    <li>saksa name="saksa" value="saksa"</li>
+    <li>venäjä name="venaja" value="venäjä"</li>
+    <li>ranska name="ranska" value="ranska"</li>
+      </ul>
+    </li>
+    <li>Lisää myös päivämääräkenttä (name="date")</li>
+    <li>Tekstialueella pyydetään kertomaan itsestään vapaasti (name="message")</li>
+    <li>Harjoitellaan lisäksi kirjautumislomakkeen tekoa:
+      <ul>
+            <li>Lisää sähköposti-kenttä (type="email" name="email")</li>
+            <li>Lisää Salasana-kenttä (type="password" name="password")</li>
+      </ul>
+    </li>
+
+    <li>Lomakkeen voi lähettää vastaamisen jälkeen "Lähetä tiedot" -painikkeesta (type="submit")</li>
+    <li>Muotoile lomake CSS:llä</li>
+  </ul>
+<hr>
+<main>
+<div>
+  <h2>Tyhjä lomake</h2>
+  <img src="img/lomake1.JPG" alt="lomake1">
+</div>
+<div>
+  <h2>Täytetty lomake</h2>
+  <img src="img/lomake2.JPG" alt="lomake2">
+</div>
+<div>
+  <h2>Lähetetty lomake</h2>
+  <img src="img/lomake3.JPG" alt="lomake3">
+</div>
+
+<hr>
+
+      <xmp><script>
+      const ageinput = document.getElementById('year')
+      let options = ''
+      for(let year = 1996; year < 2005; year++){
+        options+= `<option value="${year}">${year}</option>`
+      }
+      ageinput.innerHTML = options;
+</script></xmp>
+</main>
+</body>
+</html>
