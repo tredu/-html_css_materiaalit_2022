@@ -141,7 +141,6 @@ footer{
     background-color: white;
     height: 500px;
     width: 125%;
-
     transform: scale(0.8);
     transform-origin: 0 0;
 }
@@ -173,11 +172,13 @@ footer{
     background-color: rgb(253, 186, 0);
     height: 15px;
     position: relative;
+    z-index: -1;
 }
 #timeline img{
     height: 20px;
     position: absolute;
     right: -20px;
+    z-index: -1;
 }
 @media only screen and (max-width: 900px) {
     h1{
