@@ -1,0 +1,29 @@
+/*
+CodePen by Caleb Misclevitz
+iframe object-fit: contain
+https://codepen.io/calebmisclevitz/pen/xMXZXd
+*/
+
+.player-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+iframe {
+  width: calc(177.78vh);
+  height: calc(100vh);
+  box-sizing: border-box;
+  padding: 2.5rem 4.4444444444rem;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  iframe {
+    width: calc(100vw);
+    height: calc(56.25vw);
+    padding: 1.40625rem 2.5rem;
+  }
+}

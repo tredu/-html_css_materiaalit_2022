@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Embed</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img:not(.logo){
+            border: solid thin black;
+            max-width: 100%;
+        }
+        ul{
+            line-height: 1.5em;
+        }
+        .mallit{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        .mallit figure{
+            flex-basis: 600px;
+            width: 100%;
+            margin: 0;
+        }
+        .mallit figure img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>YouTube videon upotus</h1>
+    <h2>Teoria</h2>
+    <ul>
+        <li><a href="https://www.w3schools.com/html/html_iframe.asp" target="_blank">Iframella</a> voidaan upottaa sisältöä nettisivulle toisesta palvelusta</li>
+        <li>Upotettu elementti voi olla esim. video, kartta tai vaikka musiikkisoitin</li>
+        <li>Iframe voi sisältää myös kokonaisen nettivisun, jolloin se on kuin ikkuna toiselle sivulle</li>
+    </ul>
+
+    <hr>
+    <h2>Tehtävä 1 - Testaa upotusta</h2>
+        <ul>
+            <li>Tee kansioon <b>demos/d8</b> tiedosto <b>test.html</b></li>
+            <li>Lisää test.html tiedostoon sivupohja (<a href="https://www.freecodecamp.org/news/basic-html5-template-boilerplate-code-example/" target="_blanks">Boilerplate</a>) tuttuun tapaan <i>! + Tab</i></li>
+            <li>Seuraa case-esimerkkejä alla</li>
+        </ul>
+    <hr>
+    <h2>Case 1: Yksi iframe upotus</h2>
+    <ul>
+        <li>Jos sivulle ei tule montaa upotettua videota, niin voit käyttää tavallista YouTuben tarjoamaa iframe-upotuskoodia</li>
+        <li>Lisää sivulle haluamasi video upotuskoodilla</li>
+        <li>Klikkaa videon alta <b>Jaa</b>, sitten <b>Upota</b> ja kopioi <b>iframe-koodi</b> nettisivullesi</li>
+        <li>Linkki esimerkin videoon: <a href="https://www.youtube.com/watch?v=qz0aGYrrlhU" target="_blank">https://www.youtube.com/watch?v=qz0aGYrrlhU</a></li>
+    </ul>
+
+    <img src="img/ytembed1.jpg" alt="ytembed1"><br>
+    <img src="img/ytembed2.jpg" alt="ytembed2">
+    <hr>
+    <h2>Case 2: Useita iframe upotuksia</h2>
+    <ul>
+        <li>Kokeile lisätä sivulle peräkkäin useita iframe-upotuksia (esim. 10-30)</li>
+        <li>Hidastuuko sivun lataus?</li>
+    </ul>
+    <ul>
+        <li>Voit tarkastella sivuston latautumista selaimen kehittäjä-työkalujen Network-välilehdellä</li>
+        <li>Paina tyhjässä kohtaa sivua <b>oikealla</b> hiiren näppäimellä ja valitse <b>Tarkista/Inspect</b></li>
+        <li>Valitse <b>Netwotk</b>-välilehti</li>
+        <li>Päivitä sivu tai paina <b>Ctrl + R</b></li>
+        <li>Selaa kohtaan, jossa on YouTube-videon toistotunnuksella tehtyjä GET-requesteja</li>
+        <li>Montako millisekuntia video-upotteen lataus kestää?</li>
+    </ul>
+    <img src="img/network.jpg" alt="network">
+    <ul>
+        <li>Usean videon tapauksessa voidaan käyttää kikkaa, jossa ladataan iframen sijaan pelkästään videon thumbnail-kuvat:</li>
+        <li><a href="https://www.labnol.org/internet/light-youtube-embeds/27941/" target="_blank">Lite YouTube Embeds by @labnol</a></li>
+    </ul>
+<hr>
+
+<h2>Tehtävä 2 - Usean sivun kokonaisuus</h2>
+<i>Screenshotit ja kansiorakenne tehtävän lopussa</i>
+<ul>
+<li>Jätetään test.html rauhaan</li>
+<li>Lisää uusi tiedosto index.html ja lisää HTML-Boilerplate (! + Tab)</li>
+<li>Lisää style.css ja linkitä se headiin</li>
+</ul>
+<ul>
+    <img src="img/logo.svg" alt="logo" class="logo">
+<li>Lisää index.html sivulle navigaatio (nav), jonka sisällä on svg-logo (yllä) ja 3 tekstilinkkiä</li>
+<li>Jos teit koodausaiheisen sivuston, niin linkit voivat olla (HTML, Python, JavaScript)</li>
+<li>Tee navigaatioon linkit muihin tiedostoihin (jotka luot kohta)
+<xmp><ul>
+    <li><a href="index.html">HTML</a></li>
+    <li><a href="py-tutorial.html">Python</a></li>
+    <li><a href="js-tutorial.html">JavaScript</a></li>
+</ul></xmp>
+    </li>
+
+</ul>
+<ul>
+<li>Tee kopio index.html tiedostosta ja nimeä se aiheeseen sopivasti (esim. py-tutorial.html)</li>
+<li>Tee toinen kopio ja nimeä sekin aiheeseen sopivasti (esim. js-tutorial.html)</li>
+<li>Vaihdan kunkin sivun iframeen aiheeseen sopiva video</li>
+
+</ul>
+<ul><li>Tee sivun taustasta tumma ja laita linkeille näkyvä väri</li>
+<li>Poista linkkien alleviivaus CSS:llä<xmp>nav a, nav a:visited{
+  text-decoration: none;
+}</xmp></li>
+
+<li>Tee CSS-class nimeltä "active", joka palauttaa linkin alleviivauksen (text-decoration: underline;)</li>
+<li>Lisää "active"-class, index.html-sivulle navigaation linkkiin, jossa lukee HTML</li>
+
+<xmp><li><a href="index.html" class="active">HTML</a></li></xmp>
+<li>Lisää "active"-class, py-tutorial.html-sivulle navigaation linkkiin, jossa lukee Python</li>
+<li>Lisää "active"-class, js-tutorial.html-sivulle navigaation linkkiin, jossa lukee JavaScript</li>
+<li>Activen tarkoitus on kertoa käyttäjälle, millä sivulla hän on parhaillaan</li>
+</ul>
+<hr>
+<h2>Kansiorakenne</h2>
+ <xmp
+>
+html_css_basics
+|
+├── demos
+|   |
+│   └── d8
+|       |
+│       ├── test.html
+│       ├── style.css
+│       ├── index.html
+│       ├── py-tutorial.html
+│       ├── js-tutorial.html
+|
+
+</xmp>
+<hr>
+<h2>Layout</h2>
+<img src="img/layout_embeds.jpg" alt="layout_embeds">
+<hr>
+<h2>Mallit</h2><section class="mallit">
+<figure>
+    <b>index.html</b>
+    <figcaption>"HTML"-linkki on alleviivattu active-classilla,<br>koska käyttäjä on sivulla index.html</figcaption>
+    <img src="img/htmltutorial.png" alt="htmltutorial">
+</figure>
+<figure>
+        <b>py-tutorial.html</b>
+    <figcaption>"Python"-linkki on alleviivattu active-classilla,<br>syystä, että käyttäjä on sivulla py-tutorial.html</figcaption>
+    <img src="img/pythontutorial.png" alt="pythontutorial">
+
+</figure>
+<figure>
+        <b>js-tutorial.html</b>
+    <figcaption>"JavaScript"-linkki on alleviivattu active-classilla,<br>sen takia, että käyttäjä on sivulla js-tutorial.html</figcaption>
+        <img src="img/javascripttutorial.png" alt="javascripttutorial">
+
+</figure>
+
+
+
+</section>
+
+
+
+
+<h2>Responsiivinen videon upottaminen</h2>
+
+<p>Onneksi joku on löytänyt ratkaisun YouTube videon upottamiseen siten, että videon koko skaalautuu automaattisesti ruudun leveyden ja korkeuden mukaan.</p>
+<xmp style="background-color: #111; color: antiquewhite; padding: 1em;">
+/*
+CodePen by Caleb Misclevitz
+iframe object-fit: contain
+https://codepen.io/calebmisclevitz/pen/xMXZXd
+*/
+
+.player-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+iframe {
+  width: calc(177.78vh);
+  height: calc(100vh);
+  box-sizing: border-box;
+  padding: 2.5rem 4.4444444444rem;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  iframe {
+    width: calc(100vw);
+    height: calc(56.25vw);
+    padding: 1.40625rem 2.5rem;
+  }
+}
+
+</xmp>
+</body>
+</html>

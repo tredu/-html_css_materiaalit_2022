@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hedelmätori</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul{line-height: 1.5em;}
+        img{
+            max-width: 100%;
+        }
+        section img{
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <h1>Hedelmätori</h1>
+<xmp>
+html_css_basics
+|
+├── demos
+|   |
+│   └── d9
+|       |
+│       ├── index.html
+│       ├── style.css
+|       |
+│       ├─── img
+│       │     ├── banana.png
+│       │     ├── carambola.png
+│       │     ├── pear.png
+│       │     ├── watermelon.png
+│       │     └── wood.jpg
+|
+</xmp>
+<hr>
+<img src="img/valmis_hedelmatori.JPG" alt="valmis_hedelmatori">
+<hr>
+<h2>Demossa käytetyt kuvat (voit myös käyttää omia)</h2>
+<i>Raahaa kuvat projektikansioon tai paina 'Tallenna kuva nimellä' niin saat täysikokoisen kuvan</i>
+
+<section>
+    <img src="img/banana.png" alt="">
+    <img src="img/carambola.png" alt="">
+    <img src="img/pear.png" alt="">
+    <img src="img/watermelon.jpg" alt="">
+    <img src="img/wood.jpg" alt="">
+</section>
+<hr>
+    <h2>HTML</h2>
+    <ul>
+        <li>Tee demos-kansioon d9 kansio, mihin lisäät index.html ja style.css tiedostot</li>
+        <li>Linkitä style.css html-tiedoton headiin</li>
+        <li>Tee bodyn sisälle main-tagi (tarkoittaa pääsisältöaluetta)</li>
+        <li>Lisää elementit mainin sisälle:</li>
+        <ul>
+            <li>Pääotsikko Hedelmätori</li>
+            <li>section-tagin, jonka sisälle tulee 4 diviä</li>
+            <li>kullakin divillä on oma luokka esim. (melons, bananas, carambolas, pears) mutta luokkien nimet voit päättää itse</li>
+        </ul>
+
+        <li>Nyt sivulla on 4 kpl ns. hedelmälaatikoita, mihin lisätään vaihteleva määrä kunkin hedelmän kuvaa</li>
+        <ul>
+            <li>Lisää ensimmäiseen laatikkoon 1 vesimelonin kuva (olipa se sitten marja tai hedelmä)</li>
+            <li>Lisää toiseen laatikkoon 3 banaania</li>
+            <li>Lisää kolmanteen laatikkoon 3 tähtihedelmää</li>
+            <li>Lisää neljänteen laatikkoon 5 päärynää</li>
+            <li>Muista laittaa myös alt-tekstit</li>
+        </ul>
+    </ul>
+    <img src="img/hedelmatori_layout.jpg" alt="hedelmatori_layout">
+    <hr>
+    <h2>CSS</h2>
+
+    <ul>
+<li>Vaihda bodyn fontiksi Arial tai valitse Google-fonteista</li>
+<li>Keskitä pääotsikon teksti</li>
+<li>Keskitä main-tagi ( margin: 0 auto; width: fit-content; )</li>
+</ul>
+<ul>
+<li>Tee section-tagista grid-elmentti:</li>
+<li>Tee template, jossa on 2 riviä (400px) ja 2 saraketta (400px)</li>
+<li>Lisää elementtien väliin tyhjää tilaa (gap)</li>
+<xmp>display: grid;
+grid-template: 400px 400px / 400px 400px;
+gap: 1em;
+</xmp>
+</ul>
+<ul>
+    <li>Aseta sectionin sisällä oleville diveille taustakuva wood.jpg</li>
+    <li>Aseta taustakuva täyttämään koko divi</li>
+    <li>Tee sectionin sisällä olevista diveistä flex-elementtejä</li>
+    <li>Keskitä flex-elementin sisältö vaaka- ja pystysuunnassa</li>
+    <li>Aseta position: relative; (tarvitaan hintojen lisäyksessä)</li>
+</ul>
+<ul>
+<li>Rajoita kaikkien kuvien max korkeus ja max leveys 150px</li>
+<li>Lisää object-fit: contain; jolloin mittasuhteet säilyvät</li>
+
+</ul>
+
+<ul>
+    <li>Nimi/hintatekstit lisätään CSS:before selektioilla</li>
+    <li>Asetellaan ensin kaikki before-elementit parent-elementtinsä yläreunaan</li>
+
+    <xmp>section div::before{
+    position: absolute;
+    top: 0;
+}</xmp>
+<li>Kirjoita kunkin hedelmän tiedot before-elementeillä:</li>
+
+    <xmp>.melons::before{
+    content: 'Vesimeloni 2 € / kg';
+}</xmp>
+
+<li><b>position: absolute</b> viittaa elementtiin, jolla on <b>position: relative</b></li>
+<li>Siten <b>section div::before</b> asettuu suhteessa <b>section div</b> elementtiin</li>
+<li><b>top: 0</b> tarkoittaa elementin yläreunaa (<b>bottom: 0</b> olisi elementin alareuna)</li>
+</ul>
+<img src="img/abs_rel.jpg" alt="abs_rel" style="max-width: 500px;">
+<hr>
+<h2>Sivuston tulisi tässä vaiheessa näyttää suunnilleen tältä</h2>
+<img src="img/tilanne1.JPG" alt="tilanne1">
+<hr>
+<ul>
+    <b>Vesimeloni</b>
+    <li>Suurenna melonia asettamalla sen max leveys ja max korkeus 300px</li>
+    <li>Käytä ympyrän mallista <a href="https://bennettfeely.com/clippy/" target="_blank">clippy css</a> poistamaan kuvan valkoiset reunat</li>
+    <li>Voit myös lisätä melonille loputtoman <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader2" target="_blank">pyörimisanimaation (w3)</a></li>
+</ul>
+<ul>
+    <b>Banaanit</b>
+    <li>Käännä .bananas flexin suunta pystysuuntaan (flex-direction: column;)</li>
+    <li>Käytä <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_nth-child" target="_blank">nth-child</a> ja <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scaleX" target="_blank">scaleX</a> funktioita peilaamaan keskimmäinen banaani</li>
+</ul>
+<ul>
+    <b>Karambolat</b>
+    <li>Käytä nth-child ja <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate" target="_blank">rotate</a> funktiota kääntämään keskimmäinen karambola ylösalaisin</li>
+</ul>
+<ul><b>Päärynät</b>
+<li>Ota flexin automaattinen rivitys (<a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_flex-wrap">flex-wrap</a>) käyttöön  flex-wrap: wrap;</li>
+<li>Aseta kaikki päärynät -45 asteen kulmaan</li>
+
+</ul>
+<img src="img/valmis_hedelmatori.JPG" alt="valmis hedelmätori">
+</main>
+</body>
+</html>

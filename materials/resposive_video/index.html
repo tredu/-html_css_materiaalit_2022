@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit embedded video</title>
+    <link rel="stylesheet" href="fit_video.css">
+    <style>
+      h1{
+        margin: 0.5em 0;
+      }
+      main{
+        background-color: #111;
+        display: flex;
+        justify-content: center;
+      }
+      xmp{
+         padding: 1em;
+         background-color: #111;
+         color: antiquewhite;
+         font-family: monospace;
+      }
+    </style>
+</head>
+<body>
+
+  <main>
+    <div class="player-container">
+      <iframe width="160" height="90" class="iframe" id="player"
+      src="http://www.youtube.com/embed/M7lc1UVf-VE"
+      frameborder="0"></iframe>
+  </div>
+</main>
+<header><h1>Fit embedded YouTube video into div</h1>
+    <p><i>by Caleb Misclevitz</i></p>
+    <p>Resize window to see scaling effect</p>
+  </header>
+  <hr>
+<h2>HTML</h2>
+<xmp><head>
+   <link rel="stylesheet" href="fit_video.css">
+</head>
+<body>
+   <div class="container">
+      <iframe width="160" height="90"
+      src="http://www.youtube.com/embed/M7lc1UVf-VE"
+      frameborder="0"></iframe>
+   </div>
+</body>
+</xmp>
+<h2>CSS (fit_video.css)</h2>
+<xmp>/*
+CodePen by Caleb Misclevitz
+iframe object-fit: contain
+https://codepen.io/calebmisclevitz/pen/xMXZXd
+*/
+
+.player-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+iframe {
+  width: calc(177.78vh);
+  height: calc(100vh);
+  box-sizing: border-box;
+  padding: 2.5rem 4.4444444444rem;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  iframe {
+    width: calc(100vw);
+    height: calc(56.25vw);
+    padding: 1.40625rem 2.5rem;
+  }
+}
+</xmp>
+</body>
+</html>
