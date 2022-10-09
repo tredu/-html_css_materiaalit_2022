@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+  <title>Harjoitus 5</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+    html {
+      font-family: 'Open Sans', sans-serif;
+    }
+    img {
+      max-width: 800px;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+<h1>Harjoitus 6, asemointi</h1>
+<p>Toteuta seuraavan kuvasarjan mukainen käyttöliittymä hyödyntäen gridiä tai flexboxia.</p>
+<p>
+<img src="img/grid1.JPG" alt="iso ruutu" class="keskikoko"><br>
+<img src="img/grid2.JPG" alt="keskiruutu" class="keskikoko"><br>
+<img src="img/grid3.JPG" alt="tabletti" class="keskikoko"><br>
+
+
+<p>Article on 3:n,  aside 1:n ja figure 1:n sarakkeen (fraction) levyinen,<br>voit antaa niille myös tarkemman (toki suhteellisen) mitan.</p>
+
+<p>Voit myös tehdä muutoksia suunnitelmaan. Piirrä siinä tapauksessa ensin suunnitelma kuvankäsittelyohjelmalla.</p>
+
+
+<h3>Etene seuraavasti</h3>
+<ol>
+<li>Tee ensin div class="container"</li>
+<li>Tee header-elementti</li>
+<li>Tee nav-elementti</li>
+<li>Tee article-lementti</li>
+<li>Tee aside-elementti</li>
+<li>Tee figure (tai div id="kuva")-elementti</li>
+<li>Tee footer-elementti</li>
+</ol>
+
+<p>Voit kokeilla etsiä tietoa seuraavista CSS avainsanoista ja hyödyntää niitä työssä:</p>
+<xmp>display: grid;
+grid-template-columns
+grid-template-areas
+
+@media screen and (max-width: 1000px) {
+
+}
+</xmp>
+
+<p>Figure tagin sisään voi laittaa 2 img tagia (vaaka ja pystymalliselle kuvalle/mainokselle).</p>
+<p>Tällöin CSS:llä voi vuoroin piilottaa toisen ja näyttää toisen ruudun leveydestä riippuen.</p>
+<xmp>display: inline-block;
+display: none;</xmp>
+
+<i>Saman voi tehdä myös CSS taustakuvana tai kikkailla JavaScriptillä.</i>
+
+
+<h3>Apua löytyy W3Schools sivulta</h3>
+
+<p>Hyödynnä gridin teossa esim. W3Schoolsin tutoriaalia:</p>
+<a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named" target="_blank">https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_layout_named</a>
+
+<p>Responsiivisen menun toteutukseen on myös oma tutoriaali:</p>
+<a href="https://www.w3schools.com/howto/howto_js_topnav_responsive.asp" target="_blank">https://www.w3schools.com/howto/howto_js_topnav_responsive.asp</a>
+<br><br>
+<b>Tässä vielä placeholder-kuvat,<br>jollet jo piirtänyt omaa mainosta:</b><br><br>
+<img src="img/ad_v.jpg" class="ad_vert" alt="ad"  style="float: left;"/>
+<img src="img/placeholder_v.jpg" class="ad_hor" alt="ad" style="float: left;"/>
+<img src="img/ad_h.jpg" class="ad_hor" alt="ad" style="float: left;"/>
+<img src="img/placeholder_h.jpg" class="ad_vert" alt="ad" style="float: left;" />
+
+</body></html>

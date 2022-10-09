@@ -23,8 +23,3 @@
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
-
-# Folders
-
-/exercises/e6/*
-/exercises/e7/*

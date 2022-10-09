@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+      <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+    html {
+      font-family: 'Open Sans', sans-serif;
+    }
+    img {
+      max-width: 600px;
+    }
+    xmp {
+      line-height: 1.5em;
+      background-color: rgb(26, 26, 26);
+      color: white;
+      padding: 1em;
+    }
+    p{
+        max-width: 600px;
+    }
+    .fleximages{
+      display: flex;
+      gap: 2px;
+    }
+    .fleximages img{
+      max-width: 50%;
+    }
+
+  </style>
+</head>
+<body>
+<h1>Harjoitus 6 - Kirjautumislomake</h1>
+<xmp>html_css_basics
+|
+├── demos
+│   └── ...
+|
+├── exercises
+│   ├── ...
+│   └── e6
+│       ├── style.css
+│       ├── index.html
+│       └── signup.html
+|
+</xmp>
+<hr>
+<h2>Tehtävä</h2>
+
+<ul>
+    <li>Toteuta index.html, jossa on kirjautumislomake ja linkki signup.html sivulle</li>
+    <li>Toteuta signup.html sivu, jossa on tilin luontilomake ja linkki index.html sivulle</li>
+    <li>Molempien lomakkeiden lähetysosoite on <b>https://tredu-form-app.herokuapp.com/palvelu.php</b></li>
+    <li>Tyylittele lomakkeet CSS:llä</li>
+</ul>
+<div class="fleximages">
+  <img src="img/login_layout.jpg" alt="login_layout">
+<img src="img/signup_layout.jpg" alt="signup_layout">
+</div>
+
+<h3>index.html</h3>
+<p>Lisää lomakkeeseen form-tagien sisälle piilotettu kenttä, joka kertoo vastaanottavalle sivulle, että kyseessä on kirjautuminen:</p>
+<xmp><input type="hidden" name="mode" value="login"></xmp>
+<img src="img/login.png" alt="login">
+
+<h3>signup.html</h3>
+<p>Lisää lomakkeeseen form-tagien sisälle piilotettu kenttä, joka kertoo vastaanottavalle sivulle, että kyseessä on uuden tilin luonti:</p>
+<xmp><input type="hidden" name="mode" value="signup"></xmp>
+<img src="img/signup.png" alt="signup">
+<hr>
+<h2>CSS</h2>
+<ul>
+  <li>Laita bodylle tumma taustaväri</li>
+  <li>Vaihda fontiksi Arial</li>
+</ul>
+<ul>
+<li>Keskitä main (margin: 0 auto;)</li>
+<li>Aseta mainin taustaväriksi valkoinen</li>
+<li>Rajoita mainin maksimileveys 500px</li>
+<li>Pyöristä kulmat (border-radius: 1em;)</li>
+<li>Keskitä teksti (text-align: center;)</li></ul>
+<ul>
+  <li>Keskitä h1 teksti</li>
+</ul>  <ul>
+  <li>Tasaa form sisällä oleva teksti vasemmalle </li>
+  <li>Aseta form leveys 100%</li>
+</ul>
+<ul>
+<li>Aseta input leveys 100%</li>
+<li>Aseta (box-sizing: border-box;), jotta kentät eivät tule yli lomakkeesta</li>
+<li>Lisää inputeille paddingia</li>
+<li>Muokkaa inputtien reunaviivaa</li>
+<li>Aseta inputeille alamarginaali 1em</li>
+</ul>
+<ul>
+<li>Lisää napeille (button) paddingia</li>
+<li>Vaihda nappien taustaväri</li>
+<li>Poista nappien ääriviivat (border: none;)</li>
+<li>Vaihda nappien testi valkoiseksi</li>
+<li>Aseta (display: block;)</li>
+<li>Kasvata fontin kokoa</li>
+<li>Keskitä nappi (margin: 0 auto;)</li>
+<li>Vaihda napin väriä vaaleammaksi kun hiirin on napin päällä (button:hover{...})</li>
+<li>Tee kursorista sormi, kun se on napin päällä (cursor: pointer;)</li>
+</ul>
+<ul>
+<li>Kumoa vieraillun linkin värin vaihtuminen antamalla linkkityylit<br>sekä normaalille että visited pseudon linkeille a, a:visited{…}</li>
+<li>Lisää 'Luo uusi tili' linkille ylämarginaalia 2em</li>
+<li>Aseta (display:block;)</li>
+<li>Vaihda linkin väri</li>
+</ul>
+
+<hr>
+<h2>Testaa lomaketta</h2>
+<b>https://tredu-form-app.herokuapp.com/palvelu.php</b>
+<p>Jos vierailet sivulla selaimen kautta, sen pitäisi näyttää otsikko <b>Kirjautumislomakkeen testauspalvelu</b>
+ja kertoa, ettei kirjautumis-modea, käyttäjänimeä tai salasanaa ole asetettu.
+</p>
+<img src="img/normal.JPG" alt="normal">
+<p>Kun lähetät lomakkeella onnistuneesti <b>username</b>, <b>password</b> ja <b>mode=login</b> (hidden filed) kenttien tiedot, sivuston tulisi näyttää käyttäjänimi, salasanatähdet ja kertoa oliko salasana oikein.</p>
+<img src="img/login_ok.JPG" alt="">
+<p>Kun lähetät lomakkeella onnistuneesti <b>username</b>, <b>password</b>, <b>repeatpassword</b> ja <b>mode=signup</b> (hidden filed) kenttien tiedot, sivuston tulisi näyttää käyttäjänimi ja molempien salasanojen tähdet.</p>
+<img src="img/signup_ok.JPG" alt="">
+
+</body>
+</html>
