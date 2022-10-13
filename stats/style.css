@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+:root{
+    --orange: rgb(231, 123, 0);
+    --purple: rgb(117, 0, 172);
+    ---green: rgb(0, 167, 69);
+    --blue: rgb(0, 104, 189);
+    ---grey: rgb(122, 122, 122);
+}
+h1{
+    font-family: 'Bungee', cursive;
+    text-align: center;
+    line-height: 1em;
+    margin-bottom: 0;
+}
+#date{
+    text-align: center;
+}
+body{
+    background-color: #111;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+*{
+    box-sizing: border-box;
+}
+#crew{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    max-width: 1200px;
+    margin: 1em auto;
+}
+figure{
+    margin: 0;
+    height: 300px;
+    width: 200px;
+    border: solid 1em white;
+    background-color: rgb(0, 62, 90);
+    border-radius: 1em;
+    position: relative;
+}
+figure p{
+    padding: 0.25em;
+}
+figure img{
+    max-width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.total{
+    background-color: rgb(219, 36, 23);
+}
+.demos{
+    background-color: rgb(0, 180, 54);
+}
+.excercises{
+    background-color: rgb(0, 171, 201);
+}
+span{
+    text-align: center;
+    width: 100%;
+    display: block;
+    position:absolute;
+    bottom: 1em;
+}
