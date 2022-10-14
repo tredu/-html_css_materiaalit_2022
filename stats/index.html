@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/bars.png">
     <title>Stats</title>
     <link rel="stylesheet" href="style.css">
     <script src="stats.js"></script>
@@ -20,18 +21,23 @@
 
     const crew_display = document.getElementById('crew')
 
+    const lvl1 = 25
+    const lvl2 = 50
+    const lvl3 = 75
+    const lvl4 = 80
+
     function get_color(amount, total){
             let value = Math.round(amount/total*100)
-            if(value>90){
+            if(value>lvl4){
                 return 'rgb(231, 123, 0);' //orange
             }
-            if(value>80){
+            if(value>lvl3){
                 return 'rgb(117, 0, 172);' //purple
             }
-            if(value>65){
+            if(value>lvl2){
                 return 'rgb(0, 167, 69);' //green
             }
-            if(value>50){
+            if(value>lvl1){
                 return 'rgb(0, 104, 189);' //blue
             }
             else{
@@ -40,16 +46,16 @@
     }
     function get_avatar(amount, total){
             let value = Math.round(amount/total*100)
-            if(value>90){
+            if(value>lvl4){
                 return 'orange'
             }
-            if(value>80){
+            if(value>lvl3){
                 return 'purple'
             }
-            if(value>65){
+            if(value>lvl2){
                 return 'green'
             }
-            if(value>50){
+            if(value>lvl1){
                 return 'blue'
             }
             else{
@@ -58,22 +64,21 @@
     }
     function get_rank(amount, total){
             let value = Math.round(amount/total*100)
-            if(value>90){
+            if(value>lvl3){
                 return 'White Hat Hacker'
             }
-            if(value>80){
+            if(value>lvl3){
                 return 'Script Walker'
             }
-            if(value>65){
+            if(value>lvl2){
                 return 'Matrix Explorer'
             }
-            if(value>50){
+            if(value>lvl1){
                 return 'Agile Developer'
             }
             else{
                 return 'Apprentice Developer'
             }
-
     }
 
     document.getElementById('date').innerHTML = repo_date_time
@@ -90,24 +95,23 @@
         if(value == 0){
             return
         }
-        html_content += `<figure style="border: solid 10px ${get_color(value, demos_done+ex_done)};">
-            <img src="img/${get_avatar(value, demos_done+ex_done)}.jpg" alt="img">
+        html_content += `<figure style="border: solid 10px ${get_color(value, 40)};">
+            <img src="img/${get_avatar(value, 40)}.jpg" alt="img">
             <figcaption>`
         let i = 0
 
-        value != 0 ? html_content += `<p class="total" style="width:${Math.round(value/(demos_done+ex_done)*100)}%">${value}</p>` : html_content  += ''
+        value != 0 ? html_content += `<p class="total" style="width:${Math.round(value/(20)*100)}%" title="Total">${value}&nbsp;pts</p>` : html_content  += ''
         element = element.reverse()
         element.forEach((e) =>{
 
             if(i == 0){
 
-                // demos - excercises
                 let value = Math.round(100*((e)/demos_done))
                 if (value == 0){
-                   html_content += `<p class="demos" style="background-color:inherit;"></p>`
+                   html_content += `<p class="demos" style="background-color:inherit;" title="Demos Done"></p>`
                 }
                 else{
-                    html_content += `<p class="demos" style="width:${value}%">${Math.round(e/(demos_done)*100)}%</p>`
+                    html_content += `<p class="demos" style="width:${value}%" title="Demos Done">${Math.round(e/(demos_done)*100)}&nbsp;%</p>`
                 }
 
                 i++;
@@ -115,16 +119,15 @@
             else{
                 let value = Math.round(100*((e)/ex_done))
                 if (value == 0){
-                   html_content += `<p class="excercises" style="background-color:inherit;"></p>`
+                   html_content += `<p class="excercises" style="background-color:inherit;" title="Excercises Done"></p>`
                 }
                 else{
-                    html_content += `<p class="excercises" style="width:${value}%">${Math.round(e/(ex_done)*100)}%</p>`
+                    html_content += `<p class="excercises" style="width:${value}%" title="Excercises Done">${Math.round(e/(ex_done)*100)}&nbsp;%</p>`
                 }
             }
-
         })
         html_content += `</figcaption>
-        <span>${get_rank(value, demos_done+ex_done)}</span>
+        <span>${get_rank(value, 40)}</span>
         </figure>`
     });
 
