@@ -20,42 +20,40 @@
 
          <div id="logo-container">
             <img src="img/tredu_logos.png" class="rotate" alt="Jungle leaves">
-            <h1 class="main_heading">HTML & CSS "Perusteet"</h1>
-            <i id="motivation_quote">Koodaus on kivaa</i>
+            <h1 class="main_heading">HTML & CSS --Perusteet--</h1>
          </div>
-
 
          <!-- https://pajasevi.github.io/CSSnowflakes/-->
          <div class="snowflakes" aria-hidden="true">
             <div class="snowflake">
-            🍁
+            ❄️
             </div>
             <div class="snowflake">
-            🍂
+            ❄️
             </div>
             <div class="snowflake">
-            🍂
+            ❄️
             </div>
             <div class="snowflake">
-            🍃
+            ❄️
             </div>
             <div class="snowflake">
-            🍃
+            ❄️
             </div>
             <div class="snowflake">
-            🍁
+            ❄️
             </div>
             <div class="snowflake">
-            🍂
+            ❄️
             </div>
             <div class="snowflake">
-            🍂
+            ❄️
             </div>
             <div class="snowflake">
-            🍃
+            ❄️
             </div>
             <div class="snowflake">
-            🍁
+            ❄️
             </div>
          </div>
 
@@ -86,8 +84,21 @@
                </ul>
 
             </div>
+
          </div>
-         <div id="timeline"><img src="img/leaf.png" alt=""></div>
+         <div class="content season2">
+            <div class="left-content">
+               <ul>
+                  <li><a href="demos/d9_media_queries/ohje.html" target="_blank">Demo 9 - CSS Media Queries</a></li>
+               </ul>
+            </div>
+            <div class="right-content">
+               <ul>
+
+               </ul>
+            </div></div>
+
+         <!-- <div id="timeline"><img src="img/leaf.png" alt=""></div>-->
          <h2>Lisämateriaalit</h2>
          <div class="extra-materials">
            <div>
@@ -103,6 +114,7 @@
                </ul>
            </div>
          </div>
+
          <h2>Kurssin arviointi</h2>
          <div class="extra-materials">
            <div>
@@ -113,30 +125,25 @@
                </ul>
            </div>
          </div>
+         <h2>Git-komentoja</h2>
+         <div class="extra-materials">
+           <div>
+
+               <ul><b>Tallenna muutokset GitHub repon master/main-haaraan:</b>
+                  <li>git add -A</li>
+                  <li>git commit -m"message goes here"</li>
+                  <li>git push</li>
+               </ul>
+               <ul><b>Lataa ja yhdistä muutokset GitHubista paikalliseen kansioosi:</b>
+                  <li>git pull</li>
+               </ul>
+
+           </div>
+         </div>
 
       </main>
       <footer>Tredu - 2022</footer>
 </div>
-
-<script>
-   const quotes = [
-   "Koodaus on kivaa",
-   "Opiskele ohjelmointia",
-   "Opiskelu on mukavaa",
-   "Refaktoroi. Tiedät kyllä miksi",
-   "Tee ohjelma, jolla on tarkoitus",
-   "Se nyt vaan on tyhjää,<br>kunnes jotain koodaa",
-   "Span:lla voi koittaa aina",
-   "Editoreissa on eroa",
-   "Olisit käynyt git-serverillä",
-   "Vaihda vanha avatarisi,<br>pyöreäkulmaiseen avatariin",
-   "Mistä näitä spaceja oikeen tulee?<br><xmp style='display:inline-block;'>&nbsp;</xmp> -merkillä tietenkin"
-   ];
-
-   const random = Math.floor(Math.random() * quotes.length);
-   document.getElementById('motivation_quote').innerHTML = `"${quotes[random]}"`;
-
-</script>
 
 <script>
    const a_elements = document.querySelectorAll('ul li a');
@@ -154,9 +161,7 @@
 </script>
 
 <script>
-
-
-
+/*
 var date1 = new Date('10/14/2022');
 var date2 = new Date();
 var difference = date1.getTime() - date2.getTime();
@@ -169,6 +174,7 @@ if (percent > 100){
 
 let elem = document.getElementById('timeline')
 elem.setAttribute('style', `width:${percent}%;`)
+ */
 </script>
 </body>
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries</title>
+    <style>
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+          /* Tyylit, jotka eivät ole media queryn sisällä,
+    ovat voimassa oletuksena. */
+
+    body{
+        background-color: green;
+    }
+       @media only screen and (max-width: 900px) {
+        /* Nämä tyylit astuvat voimaan,
+        vasta kun käyttäjän ikkunan leveys
+        alittaa 900 pikseliä */
+
+        body{
+            background-color: yellow;
+        }
+
+    }
+      @media only screen and (max-width: 600px) {
+        /* Nämä tyylit astuvat voimaan,
+        vasta kun käyttäjän ikkunan leveys
+        alittaa 600 pikseliä */
+
+        body{
+            background-color: red;
+        }
+
+    }
+    </style>
+</head>
+<body>
+    <main>
+<h1>CSS Media Queries</h1>
+<a href="https://heroicons.com/" target="_blank">svg-icons: heroicons</a>
+
+
+<h2>Teoria</h2>
+<ul>
+    <li>Tutustu CSS Media Queryihin w3schools-sivulla <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp" target="_blank">Media Query: w3schools</a></li>
+    <li>CSS media queryllä voidaan merkitä CSS-koodiin käyttäjän ruudun/ikkunan leveydestä riippuvaiset tyylit</li>
+    <li>Voit havainnoida seuraavien CSS-esimerkkien toimintalogiikan muuttamalla tämän selainikkunan leveyttä</li>
+
+</ul>
+
+<xmp>
+   /* Tyylit, jotka eivät ole media queryn sisällä,
+    ovat voimassa oletuksena. */
+
+    body{
+        background-color: green;
+    }
+</xmp>
+<xmp>
+    @media only screen and (max-width: 900px) {
+        /* Nämä tyylit astuvat voimaan,
+        vasta kun käyttäjän ikkunan leveys
+        alittaa 900 pikseliä */
+
+        body{
+            background-color: yellow;
+        }
+
+    }</xmp>
+<xmp>
+    @media only screen and (max-width: 600px) {
+        /* Nämä tyylit astuvat voimaan,
+        vasta kun käyttäjän ikkunan leveys
+        alittaa 600 pikseliä */
+
+        body{
+            background-color: red;
+        }
+
+    }</xmp>
+<hr>
+    <h2>Tehtävä</h2>
+
+    <img src="img/laptop_ad.jpg" alt="laptop_ad">
+    <img src="img/tablet_ad.jpg" alt="tablet_ad">
+    <img src="img/mobile_ad.jpg" alt="mobile_ad">
+
+<h3>Työpöytä-näkymä</h3>
+<img src="ohje/desktop.png" alt="desktop">
+<h3>Tabletti-näkymä</h3>
+<img src="ohje/tablet.png" alt="tablet">
+<h3>Puhelin-näkymä</h3>
+<img src="ohje/mobile.png" alt="desmobilektop">
+</main>
+</body>
+</html>
