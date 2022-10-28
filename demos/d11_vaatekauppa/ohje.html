@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vaatekauppa</title>
+  <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
+  <style>
+    html {
+      font-family: Arial, Helvetica, sans-serif
+    }
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        margin: 0;
+    }
+    .flags img{
+      max-width: 100px;
+    }
+    .big_img{
+      max-width: 90vw;
+      margin-bottom: 1em;
+    }
+    .kbc-button{
+      font-size: 1em;
+    }
+    ul{
+        font-size: 1.1em;
+        line-height: 1.5em;
+    }
+    xmp{display: inline-block;
+        margin: 0;
+    }
+    xmp:not(li xmp){
+
+        vertical-align: top;
+        background-color: #222;
+        color: antiquewhite;
+        padding: 1em;
+        white-space: pre-wrap;
+        max-width: 49%;
+    }
+    img{
+        max-width: 90%;
+    }
+    .shopimg{
+        border: solid thin #222;
+    }
+    .images img{
+        max-height: 200px;
+    }
+    @media only screen and (max-width: 1000px) {
+   xmp:not(li xmp) {
+    max-width: unset;
+    width: 90%;
+    margin: 0.5em;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <h1>Demo 11 - Vaatekauppa</h1>
+  <ul>
+
+
+  <li>Tee demos kansion sisälle d11-kansio</li>
+  <li>Lisää luomaasi d11 kansioon <b>index.html</b> ja <b>style.css</b> -tiedostot sekä img kansio</li>
+<li>Lataa alla olevat vaatekuvat img-kansioon tai käytä netistä löytyviä ilmaisia tuotekuvia</li>
+<li>Huomioi, että kuvissa tulee olla valkoinen tausta (.jpg) tai niiden tulee olla syvättyjä (.png) läpinäkyvyys säilyttäen</li>
+<li>Kaupan nimi ja tuotteet eivät ole oleellisia, vaan se että käytät laajasti eri html-elementtejä</li>
+
+<li>Tarkista että git-kansiosi rakenne on seuraavanlainen:</li>
+  </ul>
+<xmp>
+html_css_basics
+|
+├── demos
+│   ├── ...
+│   └── d11
+│       ├── index.html
+│       ├── style.css
+│       └── img
+│           ├── kuva_1.jpg
+│           └── kuva_2.jpg
+|
+├── exercises
+│   ├── e1
+│   └── ...
+|
+
+</xmp>
+<hr>
+<div class="images">
+    <img src="img/gloves.jpg" alt="gloves">
+    <img src="img/trousers.jpg" alt="trousers">
+    <img src="img/suit.jpg" alt="suit">
+    <img src="img/t-shirt.jpg" alt="shirt-s">
+    <img src="img/t-shirt-large.jpg" alt="shirt-l">
+</div>
+<h2>Teoria</h2>
+<ul>
+    <li>Kuvagalleria-demossa useita kuvia <xmp><img></xmp> paketoitiin yhden <xmp><div></xmp> elementein sisälle</li>
+    <li>Ulommaisen divin tyyli CSS <i>flex</i> sai sen sisällä olevat kuvat asettumaan vierekkäin</li>
+    <li>Kuvien tilalla voi myös olla monimutkaisempi elementtikokonaisuus:</li>
+
+</ul>
+<img src="img/shop_layout.jpg" alt="shop_layout">
+<ul>
+    <li>CSS <i>grid</i> toimii samaan tapaan, mutta pakottaa sekä vaaka, että pystyrivit pysymään linjassa</li>
+    <li>Täten se sopii hyvin elementeille, jotka ovat keskenään samankokoisia</li>
+</ul>
+<img src="img/grid_layout.jpg" alt="grid_layout">
+<h2>Tehtävä:</h2>
+<ul>
+
+<li>Tee diviin kääritty elementti, joka sisältää tuotekuvan, kuvatekstin, hinnan ja ostonapin.</li>
+<li>Kopioi elementti useaan kertaan ja kokeile asemoida ne vierekkäin CSS <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_grid" target="_blank">grid</a>,
+    <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_flex-wrap" target="_blank">flex</a>
+    tai <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_inline-block_nav" target="_blank">inline-block</a> tyyleillä</li>
+
+</ul>
+<hr>
+<h2>Jos jää aikaa ja kiinnostaa</h2>
+<ul>
+    <li>Tee sivusta oikean verkkokaupan näköinen</li>
+    <li>Lisää header, jossa on kaupan nimi ja slogan</li>
+    <li>Etsi sopivat <a href="https://fonts.google.com/" target="_blank">Google fontit</a> ja importtaa ne css-tiedoston ensimmäisellä rivillä</li>
+
+
+
+    <li>Täytä body pattern-tyylisellä css-taustakuvalla, joita voit selata esim <a href="https://www.toptal.com/designers/subtlepatterns/" target="_blank">toptal.com </a>sivulla</li>
+    <li>Kokeile CSS <a href="https://html-css-js.com/css/generator/box-shadow/" target="_blank">box-shadow</a> tyyliä lisäämään heittovarjot tuotekorttien alle</li>
+    <li>Käytä leivänmuru-valikossa css:before -selektoria, jolla lisäät > merkin muiden paitsi ensimmäisen linkin eteen</li>
+</ul>
+
+<img src="img/shop1.jpg" alt="shop1" class="shopimg">
+<hr>
+<h2>Eikä siinä vielä kaikki</h2>
+
+<ul>
+    <li>Lisää jokaisen tuotekortin alle <xmp><dialog></xmp> tagi, johon lisäät nk. lightboxissa näkyvän sisällön</li>
+
+</ul>
+<xmp>
+<div class="shop-item">
+    <img src="" alt="">
+    <p>Item</p>
+    <span>€€€</span>
+    <button>Osta</button>
+</div>
+
+<dialog>
+    <figure>
+        <img src="" alt="">
+        <figcaption>Item</figcaption>
+        <button class="close add">Lisää ostoskoriin</button>
+        <button class="close cancel">Peruuta</button>
+    </figure>
+</dialog>
+
+</xmp>
+<ul>
+    <li>Ota lightbox käyttöön lisäämällä popup.js ja popup.css<br>jolloin saat kuvan ponnautettua auki Osta-napista tai kuvaa kilkkamalla.</li>
+    <li>Lightbox voi avata myös eri kuvatiedoston kuin esikatsekuva.</li>
+</ul>
+
+<img src="img/shop2.jpg" alt="shop1" class="shopimg">
+
+
+<xmp>
+// JavaScript
+// Source: Dialog Element | Loughlin McSweeney | CodePen
+
+const setup_popup = () => {
+
+    // show spesific dialog on button click
+    const modals = document.querySelectorAll("dialog")
+    const buttons = document.querySelectorAll(".shop-item button");
+    const images = document.querySelectorAll(".shop-item img");
+
+       buttons.forEach( (btn, index) => {
+            btn.addEventListener("click", () => {
+                modals[index].showModal();
+                document.querySelector('body').classList.add("blur")
+            });
+            images[index].addEventListener("click", () => {
+                modals[index].showModal();
+                document.querySelector('body').classList.add("blur")
+            });
+       })
+
+    // close dialogs (button click)
+    const closeBtns = document.querySelectorAll(".close");
+
+    closeBtns.forEach( (btn) => {
+    btn.addEventListener("click", () => {
+        document.querySelector('body').classList.remove("blur");
+        modals.forEach( (modal) => {modal.close();})
+
+    })
+    });
+
+    // close dialogs (background click)
+    const dialogs = document.querySelectorAll("dialog");
+    dialogs.forEach( (dia) => {
+        dia.addEventListener("click", ( event ) => {
+        if (event.target === dia) {
+            modals.forEach( (modal) => {modal.close();})
+            document.querySelector('body').classList.remove("blur");
+        }
+
+        });
+    })
+
+}
+
+</xmp>
+
+<xmp>
+/* CSS: popup dialog styles */
+/* Source: Dialog Element | Loughlin McSweeney | CodePen */
+
+dialog .cancel:hover{
+    cursor: pointer;
+    background-color: rgb(207, 207, 207);
+}
+dialog figure{
+    text-align: center;
+}
+dialog figure img{
+    max-height: 80vh;
+}
+dialog::backdrop {
+  background: black;
+  opacity: 0.5;
+}
+dialog {
+  max-width: 90vw;
+  border: 1px solid black;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.blur{
+  filter: blur(2px);
+}
+dialog div{
+    display: block;
+    padding: 1em;
+}
+
+
+</xmp>

@@ -16,7 +16,7 @@
     <main id="crew"></main>
 
     <script>
-    const demos_done = 14
+    const demos_done = 16
     const ex_done = 6
 
     const crew_display = document.getElementById('crew')
@@ -64,7 +64,7 @@
     }
     function get_rank(amount, total){
             let value = Math.round(amount/total*100)
-            if(value>lvl3){
+            if(value>lvl4){
                 return 'White Hat Hacker'
             }
             if(value>lvl3){
@@ -89,6 +89,13 @@
     ));
     return array.sort((a, b) => sums.get(a) - sums.get(b));
     }
+    function total_score_percent(value){
+        let val = Math.round(value/(20)*100)
+        if (value> 20){
+            return 100
+        }
+        return val
+    }
     //sortByRowSum(members).reverse().forEach(element => {
     members.forEach(element => {
         let value = element[0] + element[1]
@@ -100,7 +107,7 @@
             <figcaption>`
         let i = 0
 
-        value != 0 ? html_content += `<p class="total" style="width:${Math.round(value/(20)*100)}%" title="Total">${value}&nbsp;pts</p>` : html_content  += ''
+        value != 0 ? html_content += `<p class="total" style="width:${total_score_percent(value)}%" title="Total">${value}&nbsp;pts</p>` : html_content  += ''
         element = element.reverse()
         element.forEach((e) =>{
 
