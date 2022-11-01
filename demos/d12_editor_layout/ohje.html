@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D12 Editor UI</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+   
+<h1>Käyttöliittymä online-editorille</h1>
+  <ul>
+<li>Web-kehitys ei ole pelkästään tyypillisten verkkosivujen ja -kauppojen suunnittelua.</li>
+<li>Netissä on paljon online-työkaluja, joilla voi vaikka muokata kuvia tai suunnitella ulkoasuja</li>
+<li>mm. <a href="https://www.canva.com" target="_blank">Canva</a>, <a href="https://www.figma.com/" target="_blank">Figma</a> ja 
+<a href="https://app.diagrams.net" target="_blank">diagrams.net</a></li>
+<li>Tässä harjoituksessa suunnitellaan käyttöliittymä yksinkertaiselle editorille.</li>
+<li>Ohjelman toimintoja ei tarvitse toteuttaa vaan tarkoitus on asetella valikot ja kuvakkeet paikalleen.</li>
+
+ </ul><img src="editor_ui.png" alt="editor_ui"><br>
+
+<hr>
+ <h2>Tehtävä</h2>
+  <p>Kuvakkeet on haettu <a href="https://fontawesome.com/v4/icons/" target="_blank">Fontawesome</a> kirjastosta</p>
+ <p>Lisää se headiin</p>
+ <xmp>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ </xmp>
+ <p>Myös jQueryä saattaa tarvita (myös headiin)</p>
+ <xmp>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ </xmp>
+<a href="https://fontawesome.com/v4/icon/home" target="_blank"></a>
+<p>Kun Fontawesome on linkitetty headiin, voit <a href="https://fontawesome.com/v4/icons/" target="_blank">selata</a> ja käyttää sen kuvakkeita i-tagilla seuraavaan tapaan:</p>
+<xmp><i class="fa fa-home" aria-hidden="true"></i></xmp>
+<img src="valikko.JPG" alt="valikko">
+<p>Vasemman laidan valikolla (nav) on id 'tools' ja ylävalikolla (nav) id 'topnav' jotta niihin voidaan kohdistaa eri CSS-säännöt</p>
+<h3>Työkaluvalikko (Vasemman laidan)</h3>
+<ul>
+    <li>Työkaluvalikko on toteutettu ul-listalla jossa on li-elementtejä</li>
+    <li>li-elementin sisällä on radio-inputteja, joiden label-tagissa on Fontawesomesta haettu kuvake</li>
+    <li>Radio-pallukat on piilotettu mutta kuvakkeen väri vaihtuu kun radio-button on valittu</li>
+</ul>
+<xmp>
+/* toolbar pseudos */
+[id^="tool"]:checked ~ label i{
+   color: var(--focus)
+}
+[id^="tool"]{
+    display: none;
+}
+</xmp>
+<ul>
+<li>Poista ul -listan bulletit ja rajoita #tools leveys 50px</li>
+<li>Tee #tools valikon elementeistä blokkeja (display: block;)</li>
+<li>Voit muuttaa kuvakkeen kokoa CSS:llä #tools ul li label i { … </li>
+
+</ul>
+
+<h3>Ylävalikko</h3>
+<ul>
+<li>Valikossa on sisäkkäisiä listoja ul li ul li …</li>
+<li>Voit katsoa mallia pudotusvalikoista esim. <a href="https://codepen.io/AliKh01/pen/ZEoJJNz" target="_blank">https://codepen.io/AliKh01/pen/ZEoJJNz</a></li>
+<li>Tee nav jolla on id topnav ja laita ul-rakenne sen sisälle</li>
+</ul>
+<ul>
+    <b>A</b>
+    <li>Pudotusvalikot voi laittaa näkymään CSS:llä <b>:hover</b> -tilassa, kuten mallissa.</li>
+    <li>Silloin pudotusvalikko on näkyvissä vain kun hiiri on päätason valikon napin päällä tai pudotusvalikon nappien päällä.</li>
+</ul>
+<ul><b>B</b>
+    <li>Toinen vaihtoehto on tehdä ylävalikko esim. radio-buttoneilla ja käyttää CSS:n <b>:checked</b> -tilaa.</li>
+    <li>Siten pudotusvalikko pysyy näkyvissä kun käyttäjä on kerran klikannut ylävalikon nappia.</li>
+</ul>
+<p>Katso Lisämateriaalit-kohdasta <a href="../../materials/submenus/hover.html" target="_blank">Hover</a> / <a href="../../materials/submenus/toggle.html">Toggle</a> menut</p>
+
+<hr>
+
+<h2>Jos aikaa jää</h2>
+<ul>
+<li>Tallenna koodi editor.js tiedostoon ja linkitä se headiin </li>
+<li>Polkaise koodi käytiin script-tagissa ennen bodyn sulkeutumista</li>
+
+<xmp><script>setup()</script></xmp>
+<li>Kokeile avata puolipiste-eroteltu .csv tiedosto editorissa.</li>
+<li>Löydät datasettejä esim. Tilastokeskuksen sivulta</li>
+</ul>
+<h2>editor.js</h2>
+    <xmp>
+/* editor.js */
+const radios = document.querySelectorAll("#topnav input[type='radio']");
+function close_menus(){
+        for (let checkbox of radios) {
+            checkbox.checked = false;
+        }
+        let $radios = $('#topnav input[type="radio"]');
+        $radios.prop('checked', false).data('checked', false);
+    }
+
+function setup(){
+
+    const main = document.getElementById("main");
+    const toolbox = document.getElementById("tools")
+    const topnav_sub_items = document.querySelectorAll("#topnav ul li ul li *")
+
+    main.addEventListener('click', () => {close_menus()});
+    toolbox.addEventListener('click', () => {close_menus()});
+
+    topnav_sub_items.forEach((element) => {
+        element.addEventListener('click', () => {close_menus()});
+    })
+
+    let $radios = $('#topnav input[type="radio"]');
+    $radios.click(function () {
+        let $this = $(this);
+        if ($this.data('checked')) {
+            this.checked = false;
+        }
+        let $otherRadios = $radios.not($this).filter('[name="'+ $this.attr('name') + '"]');
+        $otherRadios.prop('checked', false).data('checked', false);
+        $this.data('checked', this.checked);
+    });
+
+    let fileupload = document.getElementById('open_file')
+    fileupload.onchange = function(e) {
+        open_file()
+    };
+}
+
+function open_file(){
+
+    let file = document.querySelector('#open_file').files[0];
+    let reader = new FileReader();
+    reader.readAsText(file, 'ISO-8859-1');
+    reader.onload = function(event) {
+
+    let csv = event.target.result;
+    let rows = csv.split('\n');
+    let html = '<table>';
+
+    for (let i = 0; i < rows.length; i++) {
+
+        cols = rows[i].split(';');
+        html+=`<tr>`;
+
+        for (let j = 0; j < cols.length; j++) {
+            let value = cols[j];
+            html+= `<td>${value}</td>`;
+        }
+        html += `</tr>`;
+    }
+     html += `</table>`;
+
+    document.getElementById("main").innerHTML = html;
+    }
+}
+
+function close_file(){
+    document.getElementById("main").innerHTML = '<span>[no csv file]</span><br>File > Open';
+}
+
+    </xmp>
+</body></html>

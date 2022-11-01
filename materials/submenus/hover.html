@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Sub Navs</title>
+    <link rel="stylesheet" href="hover.css">
+        <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+        .link{
+            position: absolute;
+            right: 1em;
+            top: 1em;
+        }
+    </style>
+</head>
+<body>
+        <a href="toggle.html" class="link" >Näytä Toggle menu >></a>
+
+    <h1>Hover Sub Navs</h1>
+    <i>Alavalikko avautuu kun hiirin on linkin päällä</i>
+<nav id="nav">
+    <ul>
+        <li>
+            <a href="#">Link 1 ▼</a>
+            <ul>
+                <li><a href="##">Sub 1.1</a></li>
+                <li><a href="##">Sub 1.2</a></li>
+                <li><a href="##">Sub 1.3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Link 2 ▼</a>
+            <ul>
+                <li><a href="##">Sub 2.1</a></li>
+                <li><a href="##">Sub 2.2</a></li>
+                <li><a href="##">Sub 2.3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+    </ul>
+</nav>
+<hr>
+<h3>HTML</h3>
+<xmp>
+<nav id="nav">
+    <ul>
+        <li>
+            <a href="#">Link 1 ▼</a>
+            <ul>
+                <li><a href="##">Sub 1.1</a></li>
+                <li><a href="##">Sub 1.2</a></li>
+                <li><a href="##">Sub 1.3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Link 2 ▼</a>
+            <ul>
+                <li><a href="##">Sub 2.1</a></li>
+                <li><a href="##">Sub 2.2</a></li>
+                <li><a href="##">Sub 2.3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+    </ul>
+</nav>
+
+</xmp>
+<h3>CSS</h3>
+<xmp>
+#nav ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+#nav ul li a{
+    display: block;
+    background-color: rgb(48, 48, 48);
+    padding: 1em 2em;
+    position: relative;
+}
+#nav ul li ul{
+    display: none;
+    position: absolute;
+}
+#nav ul li:hover > ul{
+    display: block;
+}
+#nav a, #nav a:visited{
+    color: white;
+}
+#nav a:hover{
+    color: orange;
+}
+
+</xmp>
+
+</body>
+</html>

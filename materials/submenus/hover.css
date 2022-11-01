@@ -1,0 +1,24 @@
+#nav ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+#nav ul li a{
+    display: block;
+    background-color: rgb(48, 48, 48);
+    padding: 1em 2em;
+    position: relative;
+}
+#nav ul li ul{
+    display: none;
+    position: absolute;
+}
+#nav ul li:hover > ul{
+    display: block;
+}
+#nav a, #nav a:visited{
+    color: white;
+}
+#nav a:hover{
+    color: orange;
+}

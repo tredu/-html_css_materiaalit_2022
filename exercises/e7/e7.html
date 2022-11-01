@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verkkokauppa</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img{
+            max-width: 100%;
+        }
+        ul{
+            line-height: 1.4em;
+        }
+        section img{
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>Verkkokauppa</h1>
+<xmp>
+html_css_basics
+|
+├── exercises
+│   ├── ...
+│   └── e7
+│       ├── style.css
+│       ├── index.html
+│       ├── (kopio etusivusta)
+│       ├── (kopio etusivusta)
+│       ├── (kopio etusivusta)
+|       └── img
+│           ├── covers-01.jpg
+│           ├── covers-02.jpg
+│           ├── ...
+|
+</xmp>
+<hr>
+<h2>Layout</h2>
+<img src="img/verkkokauppa_layout.jpg" alt="verkkokauppa_layout">
+
+<hr>
+<h2>Tehtävä</h2>&#9432; Toteuta alla olevien ohjeiden mukaisesti ensin pelkästään index.html style.css ja testaa sivun toimivuus ennen kuin teet alisivuja tuotekategorioille
+<ul>
+<li>Malli valmiista sivusta dokumentin lopussa.</li>
+<li>Voit käyttää harjoituksessa mitä tahansa ilmaisia 400 x 300px tuotekuvia ja keksiä tuotteita itse lisää.</li>
+<li>Alla mallin kuvat. Vedä työpöydälle tai paina oikealla 'Tallenna kuva nimellä', niin saat täysikokoisen kuvan.</li>
+
+</ul>
+<section>
+    <img src="img/covers-01.jpg" alt="">
+    <img src="img/covers-02.jpg" alt="">
+    <img src="img/covers-03.jpg" alt="">
+    <img src="img/covers-04.jpg" alt="">
+    <img src="img/covers-05.jpg" alt="">
+    <img src="img/covers-06.jpg" alt="">
+    <img src="img/covers-07.jpg" alt="">
+    <img src="img/covers-08.jpg" alt="">
+    <img src="img/covers-09.jpg" alt="">
+</section>
+<hr>
+<h3>1. HTML</h3>
+<ul>
+    <li>Toteuta verkkokaupalle html-sivupohja </li>
+    <li>Tee index.html ja style.css tiedostot ja linkitä style.css headiin</li>
+    <li>Vaihda kaupan nimi titleen</li>
+    <li>Lisää kaikki tuotekuvat, tuotteiden nimet ja hinnat sivulle layout-suunnitelman mukaisella rakenteella
+    <ul>
+        <li><a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_figure" target="_blank">figure</a>, jonka sisällä on img ja figcaption</li>
+        <li>figcaptionin sisällä on b ja span</li>
+        <li>b tagin sisälle tulee tuotteen nimi</li>
+        <li>span tagin sisälle tuotteen hinta</li>
+    </ul>
+    </li>
+    <li>Toteuta navigaatio layout-suunnitelma mukaisella rakenteella
+    <ul>
+        <li>nav jonka sisällä on ul-tagin lisäksi yksittäinen a tagi, johon tulee kaupan nimi</li>
+        <li>ul listaelementin sisällä on useita li (list item) elementtejä, joissa kaikissa on a (anchor) linkkitagi</li>
+    </ul>
+    <li>Linkitä navigaation a-tagit html-tiedostoihin, jotka teet kohta kopioimalla index.html-sivua</li>
+    <ul>
+        <li>index.html on pääsivu, joka näyttää kaikki kaupan tuotteet</li>
+        <li>Tee kategorioita kuvaavat linkit, riippuen mitä kaupassasi myydään</li>
+        <li>esim. index.html, action.html, adventure.html, multiplayer.html</li>
+<xmp><a href="index.html" class="active">Kaikki</a>
+<a href="action.html">Toiminta</a>
+...</xmp>
+    </ul>
+    </li>
+</ul>
+<hr>
+<h3>2. CSS</h3>
+   <b>body</b>
+<ul>
+    <li>Muotoile sivuston ulkoasu vastaamaan designia</li>
+    <li>Valitse <a href="https://fonts.google.com/" target="_blank">Google-fonts </a> -palvelusta sopiva fontti ja käytä @import url(...) css:n ensimmäisellä rivillä</li>
+    <li>Vaihda taustaväri (voit tehdä tumman tai vaalean teeman kaupalle)</li>
+    <li>Poista oletusmarginaalit</li>
+</ul>
+<b>main</b>
+<ul>
+    <li>Tee mainista flex-elementti (display: flex;)</li>
+    <li>Ota flexin automaattinen uudelleenrivitys käyttöön (flex-wrap: wrap;)</li>
+    <li>Keskitä flex-elementin sisältö (justify-content: center;)</li>
+    <li>Lisää ylämarginaalia 50px, jotta sisältö ei piiloudu navigaation alle myöhemmin</li>
+
+</ul>
+<b>figcaption</b>
+<ul>
+    <li>Aseta sopiva väri figcaptionin sisällä oleville teksteille</li>
+    <li>Jos käytit b-tagia niin teksti on lihavoitu</li>
+</ul>
+<b>figcaption span</b>
+<ul>
+   <li>Kelluta span elementti oikealle (float: right;)</li>
+    <li>Aseta spanille taustaväri ja siitä erottuva tekstin väri</li>
+    <li>Lisää paddingia joka puolelle</li>
+</ul>
+
+<b>nav</b>
+
+<ul>
+    <li>Tee navigaatiosta flex-elementti</li>
+    <li>Aseta sen leveydeksi 100%</li>
+    <li>Lisää (position: fixed; top: 0;) jotta navigaatio pysyy aina sivun yläreunassa</li>
+    <li>Vaihda navigaation taustaväri erottuvaksi bodyn taustaväristä</li>
+    <li>Asettele ul ja yksittäinen a tagi navigaation vastakkaisiin päätyihin (justify-content: space-between;)</li>
+</ul>
+<b>nav ul</b>
+<ul>
+    <li>Poista listan bulletit</li>
+    <li>Tee listasta flex-elementti</li>
+    <li>Poista marginaalit ja paddingit</li>
+</ul>
+
+<b>nav a</b>
+<ul>
+    <li>Lisää padding linkkielementeille (a)</li>
+    <li>Vaihda linkkien väri</li>
+    <li>Poista linkkien alleviivaus</li>
+    <li>Lisää <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_pseudo-class_links" target="_blank">css-pseudo</a> <b>hover</b>, jolla vaihdat linkin värin, kun hiiri on linkin päällä</li>
+    <li>Lisää css-pseudo <b>visited</b>, jolla vaihdat jo vieraillun linkin värin</li>
+</ul>
+<b>.active</b>
+<ul>
+    <li>Tee ylimääräinen css luokka, joka palauttaa alleviivauksen linkeille, joille on erikseen annettu class="active"</li>
+    <li>Voit myös vaihtaa linkin väriä, jollet halua alleviivausta</li>'
+    <li>Poista aktiivisen linkin klikattavuus ja hover-efekti lisäämällä (pointer-events: none;) </li>
+</ul>
+<hr>
+<h3>3. Kasaus</h3>
+<ul>
+    <li>Kun olet saanut index.html toimimaan tyyleineen...</li>
+    <li>Tee 3 kopiota index.html sivusta ja vaihda niiden nimet vastaamaan navigaatiossa linkitettyjä tiedostoja</li>
+    <li>Jos käyttäjä on sivulla action.html, niin silloin 'Toiminta'-linkillä tulee olla luokka 'active'</li>
+    <li>Vaihda siis navigaation a-tagin class="active" vastaamaan avoinna olevaa sivua</li>
+    <li>Säilytä kaikki tuotteet index.html sivulla, mutta poista kategoriaan kuulumattomat tuotteet muilta alisivuilta</li>
+    <li>Tallenna muutokset GitHubiin ja päivitä etusivuasi, jossa tehdyt demot ja harjoitukset on listattu</li>
+
+</ul>
+<xmp>
+html_css_basics
+|
+├── exercises
+│   ├── ...
+│   └── e7
+│       ├── style.css
+│       ├── index.html
+│       ├── action.html
+│       ├── adventure.html
+│       ├── multiplayer.html
+|       └── img
+│           ├── covers-01.jpg
+│           ├── covers-02.jpg
+│           ├── ...
+|
+</xmp>
+
+<hr>
+<h2>Malli (index.html)</h2>
+<img src="img/done_1.png" alt="done_1">
+<h2>Malli (adventure.html)</h2>
+<img src="img/done_2.png" alt="done_2">
+
+</body>
+</html>

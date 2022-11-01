@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Sub Navs</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="toggle.css">
+        <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+          .link{
+            position: absolute;
+            right: 1em;
+            top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <a href="hover.html" class="link" >Näytä Hover menu >></a>
+    <h1>Toggle Sub Navs</h1>
+    <i>Alavalikko avautuu kun linkkiä on painettu</i>
+<nav id="nav">
+    <ul>
+        <li>
+            <label for="drop-1">Link 1 ▼</label>
+            <input type="radio" id="drop-1"  name="menu"/>
+            <ul>
+                <li><a href="##">Sub 1.1</a></li>
+                <li><a href="##">Sub 1.2</a></li>
+                <li><a href="##">Sub 1.3</a></li>
+            </ul>
+        </li>
+        <li>
+            <label for="drop-2">Link 2 ▼</label>
+            <input type="radio" id="drop-2" name="menu"/>
+            <ul>
+                <li><a href="##">Sub 2.1</a></li>
+                <li><a href="##">Sub 2.2</a></li>
+                <li><a href="##">Sub 2.3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+    </ul>
+</nav>
+<hr>
+<h3>HTML</h3>
+<xmp>
+<nav id="nav">
+    <ul>
+        <li>
+            <label for="drop-1">Link 1 ▼</label>
+            <input type="radio" id="drop-1"  name="menu"/>
+            <ul>
+                <li><a href="##">Sub 1.1</a></li>
+                <li><a href="##">Sub 1.2</a></li>
+                <li><a href="##">Sub 1.3</a></li>
+            </ul>
+        </li>
+        <li>
+            <label for="drop-2">Link 2 ▼</label>
+            <input type="radio" id="drop-2" name="menu"/>
+            <ul>
+                <li><a href="##">Sub 2.1</a></li>
+                <li><a href="##">Sub 2.2</a></li>
+                <li><a href="##">Sub 2.3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+    </ul>
+</nav>
+
+</xmp>
+<h3>CSS</h3>
+<xmp>
+#nav ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+#nav ul li a, #nav ul li label{
+    display: block;
+    background-color: rgb(48, 48, 48);
+    padding: 1em 2em;
+    position: relative;
+}
+#nav ul li ul{
+    display: none;
+    position: absolute;
+}
+#nav input[type="radio"]{
+    display: none;
+}
+#nav input[type="radio"]:checked ~ ul{
+     display: block;
+}
+#nav a, #nav a:visited, #nav label{
+    color: white;
+    text-decoration: underline;
+}
+#nav a:hover,  #nav label:hover{
+    color: orange;
+    cursor: pointer;
+}
+
+</xmp>
+<h3>JS</h3>
+<xmp>
+const radios = document.querySelectorAll("#nav input[type='radio']");
+const close_menus = () => {
+    for (let checkbox of radios) {
+        checkbox.checked = false;
+    }
+    let $radios = $('#nav input[type="radio"]');
+    $radios.prop('checked', false).data('checked', false);
+    }
+
+const setup = () => {
+    const nav_sub_items = document.querySelectorAll("#nav ul li ul li *")
+    nav_sub_items.forEach((element) => {
+        element.addEventListener('click', () => {close_menus()});
+    })
+    
+    const nav_items = document.querySelectorAll("#nav ul li a")
+    nav_items.forEach((element) => {
+        element.addEventListener('click', () => {close_menus()});
+    })
+
+    let $radios = $('#nav input[type="radio"]');
+    $radios.click(function () {
+        let $this = $(this);
+        if ($this.data('checked')) {
+            this.checked = false;
+        }
+        let $otherRadios = $radios.not($this).filter('[name="'+ $this.attr('name') + '"]');
+        $otherRadios.prop('checked', false).data('checked', false);
+        $this.data('checked', this.checked);
+    });
+}
+
+setup()
+
+</xmp>
+<script>
+const radios = document.querySelectorAll("#nav input[type='radio']");
+const close_menus = () => {
+    for (let checkbox of radios) {
+        checkbox.checked = false;
+    }
+    let $radios = $('#nav input[type="radio"]');
+    $radios.prop('checked', false).data('checked', false);
+    }
+
+const setup = () => {
+    const nav_sub_items = document.querySelectorAll("#nav ul li ul li *")
+    nav_sub_items.forEach((element) => {
+        element.addEventListener('click', () => {close_menus()});
+    })
+    
+    const nav_items = document.querySelectorAll("#nav ul li a")
+    nav_items.forEach((element) => {
+        element.addEventListener('click', () => {close_menus()});
+    })
+
+    let $radios = $('#nav input[type="radio"]');
+    $radios.click(function () {
+        let $this = $(this);
+        if ($this.data('checked')) {
+            this.checked = false;
+        }
+        let $otherRadios = $radios.not($this).filter('[name="'+ $this.attr('name') + '"]');
+        $otherRadios.prop('checked', false).data('checked', false);
+        $this.data('checked', this.checked);
+    });
+}
+
+setup()
+</script>
+</body>
+</html>

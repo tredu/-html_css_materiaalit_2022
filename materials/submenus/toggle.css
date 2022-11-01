@@ -1,0 +1,30 @@
+#nav ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+#nav ul li a, #nav ul li label{
+    display: block;
+    background-color: rgb(48, 48, 48);
+    padding: 1em 2em;
+    position: relative;
+}
+#nav ul li ul{
+    display: none;
+    position: absolute;
+}
+#nav input[type="radio"]{
+    display: none;
+}
+#nav input[type="radio"]:checked ~ ul{
+     display: block;
+}
+
+#nav a, #nav a:visited, #nav label{
+    color: white;
+    text-decoration: underline;
+}
+#nav a:hover,  #nav label:hover{
+    color: orange;
+    cursor: pointer;
+}
