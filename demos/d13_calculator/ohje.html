@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D13 Laskin</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+        main ul{
+            line-height: 1.3em;
+        }
+        .cols{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <div class="cols">
+        <div>    <h1>Laskin</h1>
+    <h2>HTML</h2>
+    
+    <ul>
+        <li>Toteuta käyttöliittymä laskimelle</li>
+        <li>Alusta HTML dokumentti ja lisää seuraavat elementit bodyyn</li>
+        <li>Lisää halutessasi pääotsikko <b>Laskin</b></li>
+        <li>Lisää tyhjä <b>header</b>-elementti, jolla on id <b>screen</b></li>
+        <li>Lisää headerin alle section jolla on id <b>buttons</b></li>
+        <li>Lisää sectionin sisään taulukko, jossa on painikkeet</li>
+        <li>Voit käyttää erikoismerkeissä <a href="https://www.freeformatter.com/html-entities.html" target="_blank">HTML Entityjä</a></li>
+        <li>Lisää <b>style.css</b> ja linkitä se headiin</li>
+    </ul>
+    <h2>CSS</h2>
+    <ul>
+        <li>Määrittele teemavärit halutessasi muuttujina CSS:n root osioon </li>
+        <li>Etsi Google Fontsista sopiva fontti esim. monospace tyylinen,<br>jossa jokainen merkki vie saman verran tilaa</li>
+        <li>Käytä fonttia bodyssä</li>
+        <li>Määrittele teemavärit halutessasi muuttujina CSS:n root osioon </li>
+        <li>Keskitä laskin asettamalla esim. bodylle display: flex; ja justify-content: center;</li>
+        <li>Rajoita manin maksimileveys 260px </li>
+        <li>Aseta taustavärit ja tesktien värit</li>
+        <li>Aseta *{...} kaikille elementeille box-sizing: border-box;</li>
+        <li>Aseta taulukon soluille (table td) reunaviiva (border)</li>
+        <li>Säädä nappien taustaväriä (background-color) ja reunanväriä (border-color)</li>
+        <li>Muuta nappien väriä tai kirkkautta (backdrop-filter: brightness) hover-tilassa</li>
+        <li>Tallenna muutokset GitHubiin ja päivitä etusivun harjoituslista</li>
+    </ul></div>
+        <div><img src="laskin_kuva.png" alt="laskimen kuva"></div>
+    </div>
+<hr>
+<h2>Muuta hifistelyä jos ehtii ja kiinnostaa</h2>
+    <ul>
+
+        <li>Tee animaatio, joka vaihtaa napin taustaväriä sekä reunuksen väriä</li>
+        <li><a href="https://codepen.io/himais/pen/XYVXEG">Codepen.io ssa on hyviä malleja</a></li>
+        <li>Viivästytä kunkin rivin animaatiota esim. 100ms enemmän kuin edellisen,<br>jolloin saat aikaan gradienttina vaihtuvan värin</li>
+    </ul>
+
+    <xmp>table tr:nth-child(1) td{
+    animation-delay: 0ms;
+}
+table tr:nth-child(2) td{
+    animation-delay: 100ms;
+}
+...
+</xmp>
+<h2>Laskimen ei tarvitse toimia oikeasti, mutta jos kuitenkin haluat niin</h2>
+    <ul>
+        <li>Koodaa laskimen toiminnot JavaScriptillä ja linkitä JS tiedosto headiin</li>
+        <li>tai lataa <a href="calc.js" target="_blank">calc.js</a> ja linkitä se headiin</li>
+        <li>Käynnistä funktio init() script tagissa ennen bodyn sulkeutumista</li>
+        <li>Laskin tarvitsee myös mathjs-kirjaston, joten lataa se kohdasta<br><a href="https://mathjs.org/download.html" target="_blank">math.js</a> (version 11.3.2, 191 kB, minified and gzipped)  ja linkitä headiin</li>
+        <li>Tallenna muutokset GitHubiin</li>
+    </ul>
+</main>
+
+</body>
+</html>
