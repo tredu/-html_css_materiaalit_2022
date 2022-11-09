@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D14 Asetukset</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+        main ul{
+            line-height: 1.3em;
+        }
+        .cols{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+<main>
+
+    <h1>HTML/CSS Välilehtivalikko</h1>
+    <xmp>
+    html_css_basics
+    |
+    ├── demos
+    │   ├── ...
+    │   └── d14
+    │       ├── index.html
+    │       ├── style.css
+    │       └── img
+    │            └── *.jpg
+    |
+
+    </xmp>
+    <img src="img/gameplay.png" alt="gameplay">
+
+    <p>Lähde: Radio tabs on pure css by Mishko Vladimir <a href="https://codepen.io/bobanko/pen/zYpOMQ" target="_blank">codepen</a></p>
+
+<h2>Rakenne</h2>
+        
+<ul>
+    <li>Aloita tekemällä d14 kansion index.html ja style.css</li>
+    <li>Alusta index.html-tiedosto VS-Coden tarjoamalla HTML-pohjalla ja linkitä srtyle.css headiin</li>
+    <li>Lisää bodyyn main-tagi, jonka sisälle muut tagit tulevat</li>
+    <li>Tee <a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_radio" target="_blank">radiobutton</a>-ryhmä, jossa on 4 kohtaa</li>
+    <li>Kullakin radiobuttonilla on input- ja siihen liitetty label-kenttä</li>
+    <li>Lisää kaikkiin radionappeihin sama name="tabs" -kenttä, jolloin ne liitetään samaan ryhmään</li>
+    <li>Sen sijaan id="tab1" kentän arvo on kullakin yksilöivä (tab1, tab2, tab3, tab4)</li>
+    <li>koska label-tagin for="tab1" kenttä liittää tekstin tiettyyn nappiin</li>
+  </ul>
+<ul>
+    <li>Lisää radionappien jälkeen div kullekin välilehdelle, joilla on yksilöivä luokka
+        <br> class="tab content1" (content1, content2, content3, content4)
+    <li>Voit siis antaa useita classeja samale elementille</li>
+</ul>
+
+    <xmp>
+<input class="menubtn" type="radio" name="tabs" id="tab1"/>
+<label for="tab1">Gameplay</label>
+
+<input class="menubtn" type="radio" name="tabs" id="tab2"/>
+<label for="tab2">Gameplay</label>
+
+<div class="tab content1">
+    {div content 1}
+</div>   
+<div class="tab content2">
+    {div content 2}
+</div>  
+</xmp>
+<ul>
+<li>input-kentillä on geneerinen luokka menubtn ja yksilöivä id tab{x}</li>
+<li>Kaikilla sisältödiveillä on geneerinen luokka tab ja yksilöivä luokka content{x}</li>
+<li>Ensin CSS:llä piilotetaan kaikki .tab luokan kentät<br>
+.tab { display: none; }</li>
+<li>Sitten palautetaan valittuun välilehteen liittyvä sisältö:<br>
+#tab1:checked ~ .tab.content1{display: block;}</li>
+
+</ul>
+<xmp>
+.tab {
+    display: none;
+}   
+#tab1:checked ~ .tab.content1,
+#tab2:checked ~ .tab.content2{
+    display: block;
+}
+</xmp>
+<hr>
+<h2>Sisältö</h2>
+<h3>Gameplay</h3>
+    <ul>
+    <li> kohdan sisältö on toteutettu radionapeilla</li>
+    <li>Vaikeustasoa kuvaava kuva on tyhjä div jolla on luokka 'avatar'</li>
+</ul>
+<ul>
+    <li>CSS:llä voidaan tehdä muutoksia sisaruselementteihin, sen perusteella onko valintanappi/laatikko valittu</li>
+    <li>Yhdistetään siis checked  ja siblin -selektorit:</li>
+    <li>#easy:checked  ~ .avatar{...</li>
+    <li>CSS sisarus-selektori = <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_tilde" target="_blank">General Sibling Selector</a></li>
+    <li><a href="https://www.w3schools.com/CSSref/sel_checked.php" target="_blank">CSS :checked Selector</a></li>
+        
+</ul>
+
+<xmp>
+#easy:checked ~ .avatar{
+    background-image: url(img/lvl1.jpg);
+}
+#medium:checked ~ .avatar{
+    background-image: url(img/lvl2.jpg);
+}
+#hard:checked ~ .avatar{
+    background-image: url(img/lvl3.jpg);
+}
+</xmp>
+<img src="img/gameplay.png" alt="gameplay">
+<br>
+<img src="img/lvl1.jpg" alt="">
+<img src="img/lvl2.jpg" alt="">
+<img src="img/lvl3.jpg" alt="">
+
+<h3>Controls</h3>
+<ul>
+<li>Välilehden sisältö on taulukossa</li>
+<li>Näppäimet ovat input kenttiä, joilla on type="text"</li>
+<li>Siten käyttäjä voi kirjoittaa kirjaimen tilalle toisen</li>
+</ul>
+<img src="img/controls.png" alt="controls">
+
+<h3>Graphics / Display</h3>
+<ul>
+<li>Graphics välilehden sisältö on tehty <a href="https://www.w3schools.com/tags/tag_select.asp" target="_blank">select</a>-tagilla</li>
+
+<li>Select-tagin sisälle tulee useita option-kenttiä, joissa on resoluutiovaihtoehtoja</li>
+<li>Lisää listan alle myös yksittäinen checkbox</li>
+</ul>
+<img src="img/display.png" alt="display">
+<h3>Audio</h3>
+<ul><li>Slider on tehty kentällä input type="range"</li>
+<li>Lisää kaiuttimen kuva esim. font awesomesta</li></ul>
+<img src="img/audio.png" alt="audio">
+
+
+
+</main>
+
+</body>
+</html>
