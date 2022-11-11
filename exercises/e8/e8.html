@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harjoitus 8</title>
+      <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+    html {
+      font-family: 'Open Sans', sans-serif;
+    }
+    img {
+      max-width: 600px;
+    }
+    xmp {
+      line-height: 1.5em;
+      background-color: rgb(116, 0, 58);
+      color: white;
+      padding: 1em;
+    }
+    .sides{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1em;
+      flex-basis: 50%;
+
+    }
+    .sides img{
+      object-fit: contain;
+      max-width: 100%;
+
+    }
+
+  </style>
+</head>
+<body>
+    <div class="sides">
+        <div>
+        <h1>FAQ-Sivu</h1>
+    <xmp>html_css_basics
+|
+├── demos
+│   └── ...
+|
+├── exercises
+│   ├── ...
+│   └── e8
+│       ├── style.css
+│       └── index.html
+|
+</xmp>
+<pre>
+FAQ - Joulutori
+
+Milloin joulutori on auki?
+1.12.–23.12. klo 08.00 – 20.00 ja netissä 24h
+
+Miten voin varata pöydän Joulutorille?
+Ota yhteyttä sähköpostilla myynti@joulutori.com tai soita 050 123 1234
+
+Mitä kauppiaita ja palveluita joulutorilla on?
+Joulutorilla on myynnissä paljon käsitöitä ja erinäisiä leivoksia.
+Torilta löytyy myös kaksi kahvilaa. Kaikki palvelut löydät Joulutorin kartalta.
+
+</pre>
+</div>
+        <div>
+            <img src="faq.png" alt="malli"></div>
+        
+    </div>
+<hr>
+<h2>Tehtävä</h2>
+<p>Toteuta usein kysytyt kysymykset sivu Joulutorille</p>
+<h3>HTML</h3>
+<ul>
+    <li>Käytä HTML <a href="https://www.w3schools.com/tags/tag_details.asp" target="_blank">details- ja summary</a> -tageja</li>
+    <li>Voit keksiä kysymykset (ja vastaukset) itse</li>
+    <li>Lisää vastaustekstiin linkkejä kuten sähköpostit, puhelinnumerot tai lisätiedot</li>
+    <li>Tyylittele sivusto CSS:llä</li>
+    <li>Valitse otsikon Joulutori -sanalle tyylikäs fontti Google Fontsista</li>
+    <li>Gradientteja on helppo luoda <a href="https://cssgradient.io/" target="_blank">CSS Gradient Generatorilla</a></li>
+</ul>
+
+<xmp><details>
+    <summary>Tiivistelmä</summary>
+    <p>Sisältö</p>
+</details>   
+</xmp>
+<h3>CSS</h3>
+<ul>
+<li>Tuo valitsemasi fontti Google Fontsista (@import…)</li>
+<b>body</b>
+<li>aseta taustaväri / gradientti</li>
+<li>aseta bodyn korkeus ja leveys täyttämään ruutu (100vh / 100vw)</li>
+<li>aseta perus-fontiksi Arial</li>
+<li>piilota ylivuotavat elementit (overflow: hidden;)</li>
+<b>h1</b>
+<li>vaihda fontin väri</li>
+<b>h1 span</b>
+<li>sääri Joulutori-sana spanin sisälle HTML_ssä jolloin saat vaihdettua sille valitsemasi Google fontin</li>
+<b>main</b>
+<li>keskitä main vaakasuunnassa</li>
+<li>rajoita maksimileveys</li>
+<li>aseta taustaväriksi valkoinen</li>
+<li>lisää padding</li>
+<li>aseta overflow: auto; jolloin scrolli tulee main-elementille,<br>jos kysymyksiä on paljon eivätkä ne mahdu kerralla ruutuun</li>
+<b>summary</b>
+<li>vaida sykymyksen taustaväri ja tekstin väri</li>
+<li>lisää padding</li>
+<li>lisää summarylle myös hover, joka vaihtaa taustavärin ja muuttaa kursorin sormeksi</li>
+<b>details</b>
+<li>lisää marginaalia ylös ja alas</li>
+<li>aseta reunaviiva</li>
+<b>details p</b>
+<li>aseta vastauksille joka puolelle padding ja ylämarginaali</li>
+<b>a…</b>
+<li>aseta väri linkkiteksteille (myös vieraillut ja hoverit)</li>
+<li><a href="https://www.w3schools.com/css/css_link.asp" target="_blank">W3 Styling links</a></li>
+<li>tallenna harjoitus GitHubiin</li>
+
+</ul>
+
+</body>
+</html>
