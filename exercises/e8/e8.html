@@ -11,6 +11,9 @@
     html {
       font-family: 'Open Sans', sans-serif;
     }
+    body{
+      overflow-x: hidden;
+    }
     img {
       max-width: 600px;
     }
@@ -19,6 +22,7 @@
       background-color: rgb(116, 0, 58);
       color: white;
       padding: 1em;
+      
     }
     .sides{
       display: flex;
@@ -33,7 +37,11 @@
       max-width: 100%;
 
     }
-
+@media only screen and (max-width: 1200px) {
+  .sides {
+    flex-direction: column;
+  }
+}
   </style>
 </head>
 <body>
@@ -52,16 +60,18 @@
 │       └── index.html
 |
 </xmp>
+
+
 <pre>
 FAQ - Joulutori
 
-Milloin joulutori on auki?
+Milloin Joulutori on auki?
 1.12.–23.12. klo 08.00 – 20.00 ja netissä 24h
 
 Miten voin varata pöydän Joulutorille?
 Ota yhteyttä sähköpostilla myynti@joulutori.com tai soita 050 123 1234
 
-Mitä kauppiaita ja palveluita joulutorilla on?
+Mitä kauppiaita ja palveluita Joulutorilla on?
 Joulutorilla on myynnissä paljon käsitöitä ja erinäisiä leivoksia.
 Torilta löytyy myös kaksi kahvilaa. Kaikki palvelut löydät Joulutorin kartalta.
 

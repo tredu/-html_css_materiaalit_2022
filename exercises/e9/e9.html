@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harjoitus 9</title>
+      <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+    html {
+      font-family: 'Open Sans', sans-serif;
+    }
+    img {
+      max-width: 600px;
+    }
+    xmp {
+      line-height: 1.5em;
+      background-color: #111;
+      color: white;
+      padding: 1em;
+    }
+    .sides{
+      display: flex;
+      align-items: flex-start;
+      justify-content: left;
+      gap: 1em;
+      flex-basis:30%;
+      flex-wrap: wrap;
+
+    }
+    .sides img{
+      object-fit: contain;
+      max-width: 100%;
+      border: solid thin black;
+
+    }
+    .split{
+        display: flex;
+    
+    }
+    .split div{
+         flex-basis: 50%;
+    }
+    .fav_media_icon{
+        height: 1.4em;
+    }
+
+  </style>
+</head>
+<body>
+<h1>Web-Sovelluksen Käyttöliittymä</h1>
+    <xmp>html_css_basics
+|
+├── demos
+│   └── ...
+|
+├── exercises
+│   ├── ...
+│   └── e9
+│       ├── style.css
+│       ├── index.html
+│       └── img
+│           ├── {fav_icon.png}
+│           ├── bird1.jpg
+│           ├── bird2.jpg
+│           └── bird3.jpg
+|
+</xmp>
+<h2>Toteuta puhelinsovellusta muistuttava nettisivu</h2>
+<ul>
+    <li>Sivuston aiheen ja linkit voit valita itse</li>
+    <li>Kaikki html koodi on yhdessä index.html tiedostossa ja tyylit style.css</li>
+    <li>Vain yksi pääsisältöelementti on kerrallaan näkyvissä (photos, videos tai stories)</li>
+    <li>Alavalikosta vaihdetaan näkyvissä olevaa elementtiä, mutta käyttäjä pysyy silti sivulla index.html</li>
+    <li>Toteutus on siis single-page-application (SPA)</li>
+
+    <li>Käynnistä Live Server ja tarkastele sivua responsiivisessa kehittäjätilassa</li>
+    <li>
+        Firefox: Hiiren oik. > Inspect > Resposive Design Mode (puhelinkuvake)
+    </li>
+    <li>
+        Chrome: Hiiren oik. > Tarkista > Toggle device toolbar (puhelinkuvake)
+    </li>
+
+</ul>
+<div class="sides">
+    <img src="img/photos.png" alt="photos">
+    <img src="img/videos.png" alt="videos">
+    <img src="img/stories.png" alt="stories">
+</div>
+<hr>
+<h2>HTML</h2>
+<ul>
+<li>Lisää fav-icon <img src="img/media-icon.png" alt="media" class="fav_media_icon"> headiin ja muut elementit bodyyn </li>
+<li>Lisää navigaatio (nav) jossa on lista (ul) jossa on listakohtia (li)</li>
+<li>Listakohtia on 3 ja niiden sisällä on linkki (a) jonka sisällä on svg-kuva ja linkkiteksti </li>
+<li>Käytä esim. <a href="https://heroicons.com/" target="_blank">Heroicons</a> sivua:<br>Etsi sopiva kuvake. Vie hiiri kuvakkeen päälle ja klikkaa Copy SVG<br>
+    Liitä leikepöydälle saamasi koodi li-tagin sisälle linkkitekstin kanssa</li>
+</ul>
+<img src="img/mobile_nav.jpg" alt="mobile_nav">
+
+<ul>
+    <li>Tee main-elementti ja lisää sen sisälle 3 section-elementtiä</li>
+    <li>Laita sectioneille yksilöivät id:t joihin viittaat navigaation a-tageissa (href)</li>
+    <li>Kunkin sectionin sisällä on h2 jossa lukee osion nimi (photos, videos, stories)</li>
+    <li>Muu osion sisältö on kääritty ylimääräiseen  diviin</li>
+</ul>
+
+<div class="split">
+    <div><h3>Section #photos</h3>
+        <ul>
+            <li>Lisää otsikko h2 Photos</li>
+<li>Lisää kuvia ja kuvatekstejä käyttäen figure-figcaption yhdistelmää</li>
+
+        </ul>
+    </div>
+    <div><img src="img/photos_sec.jpg" alt="photos_sec">
+
+</div>
+</div>
+
+<div class="split">
+    <div><h3>Section #videos</h3>
+        <ul>
+        <li>Käytä edellisen tapaan figure-figcaption yhdistelmää,<br>mutta vaihda img tagin tilalle YouTube iframe upotuskoodi.</li>
+<li>Poista iframen width ja height parametrit</li>
+
+    </ul>
+    </div>
+    <div><img src="img/videos_sec.jpg" alt="videos_sec"></div>
+</div>
+<div class="split">
+    <div><h3>Section #stories</h3>
+<ul>
+    <li>Lisää article tageja joissa on h3 otsikko artikkelille</li>
+    <li>Tekstisisältö on yhdessä tai useammassa p-tagissa</li>
+    <li>Lisää kirjoittajan tiedot i-tagilla</li>
+</ul>
+</div>
+    <div><img src="img/stories_sec.jpg" alt="stories_sec"></div>
+</div>
+
+
+<hr>
+<h2>CSS</h2>
+
+
+<ul>
+    <li>Valitse mieleisesti Google Fontti ja importtaa siitä italic, regular ja bold -leikkaukset</li>
+    <li>Määrittele valmiiksi linkkien ja tekstien värejä :root muuttujiksi</li>
+    <li>Lisää myös navigaation korkeus (50px) ja otsikon korkeus (50px) -muuttujat</li>
+    <li>laita * selektorille  box-sizing: border-box;</li>
+</ul>
+<ul>
+    <li><b>body</b></li>
+    <li>Nollaa bodyn marginaalit</li>
+    <li>Aseta valitsemasi Google Fontti</li>
+    <li>aseta taustaväri ja tekstin väri</li>
+</ul>
+<ul>
+    <li><b>h2</b></li>
+    <li>h2 toimii sivun otsikkona</li>
+    <li>aseta sille position: fixed;</li>
+    <li>ja leveys 100%</li>
+    <li>asemoi otsikko ylös ja vasemmalle top: 0; left: 0;</li>
+    <li>aseta korkeudeksi otsikon korkeus -muuttuja</li>
+    <li>keskitä teksti ja aseta otsikon väri</li>
+</ul>
+
+<ul>
+    <li><b>nav</b></li>
+    <li>aseta alanavigaation taustaväri ja tekstin väri</li>
+    <li>aseta korkeudeksi navigaation korkeus -muuttuja</li>
+    <li>aseta position: fixed; ja bottom: 0;</li>
+    <li>nyt navigaatio pysyy sivun alalaidassa ja on helpompi käyttää kännykällä</li>
+    <li>aseta leveydeksi 100%</li>
+</ul>
+
+<ul>
+    <li><b>nav ul</b></li>
+    <li>nollaa marginaalit ja paddingit</li>
+    <li>Lisää display:flex; justify-content: space-around;</li>
+    <li>keskitä flex elementit myös pystysuunnassa</li>
+    <li>piennnä fonttia tarvittaessa</li>
+    <li>aseta korkeudeksi 100%</li>
+    <li>nyt navigaation linkit ovat tasaisin välimatkoin alapalkissa</li>
+</ul>
+
+<ul>
+    <li><b>nav a, nav a:visited</b></li>
+    <li>aseta linkkien väri</li>
+    <li>poista alleviivaus</li>
+    <li>aseta display: flex; flex-direction: column;</li>
+    <li>jolloin linkin kuvake ja teksti menevät päällekkäin</li>
+</ul>
+
+<ul>
+    <li><b>nav svg</b></li>
+    <li>aseta kuvakkeen korkeus esim. 20px</li>
+    <li>vaihda kuvakkeen väriä stroke: rgb(0, 255, 200); tai käytä määrittelemääsi muuttujaa</li>
+    <li>Jos kuvake ei muodostu ääriviivoista, kuten Heroiconsin kuvakkeet niin kokeile fill: rgb(0, 255, 200);</li>
+    <li>Tee hover-pseudo ja vaihda linkkitekstin ja kuvakkeen väriä hover-tilassa</li>
+</ul>
+
+<ul>
+    <li><b>main h2 + div</b></li>
+    <li>Aseta main elementin korkeus siten, että se täyttää koko ruudun miinus ylä ja alapalkkien korkeus</li>
+    <li>height: calc(100vh - var( --nav_height) - var(--heading_height));</li>
+    <li>lisää ylämarginaalia otsikon korkeuden verran</li>
+    <li>keskitä teksti vasemmalle</li>
+    <li>aseta overflow-y: auto; jotta main elementtiä voi scrollata jos sisältö ei mahdu ruutuun</li>
+    <li>lisää padding: 1em;</li>
+</ul>
+<ul>
+<li><b>p</b></li>
+<li>pienennä paragraph pagin ylämarginaalia</li>
+</ul>
+<ul>
+<li><b>section</b></li>
+<li>aseta display: none;</li>
+<li>koska vain yhden sectionin on tarkoitus olla kerrallaan näkyvissä</li>
+</ul>
+<ul>
+<li><b>#photos</b></li>
+<li>Jos ensimmäisen sectionisi id on photos, niin laita se oletuksena näkyville display: block;</li>
+<li>section:target</li>
+<li>aseta display: block; koska klikattaessa sectionin tulee ilmestyä näkyville</li>
+<li>section:target ~ #photos</li>
+<li>aseta display: none; koska muiden kuin klikatun sectionin pitää samalla piiloutua</li>
+</ul>
+<ul>
+<li><b>figure</b></li>
+<li>poista figuren marginaalit, paitsi alamarginaali</li>
+<li><b>figure img</b></li>
+<li>aseta maksimileveys 100%</li>
+<li><b>figcaption</b></li>
+<li>boldaa teksti</li>
+</ul>
+<ul>
+<li><b>h3</b></li>
+<li>säädä väliotsikon marginaaleja pienemmäksi</li>
+</ul>
+<ul>
+<li><b>i</b></li>
+<li>tasaa teksti oikealle</li>
+<li>lisää display: block; jolloin i tagi täyttää koko parentin leveyden ja tasaus toimii</li>
+<li>vaihda tekstin väri harmaaksi</li>
+</ul>
+<ul>
+<li><b>iframe</b></li>
+<li>lisää leveys 100%</li>
+<li>lisää aspect-ratio: 16/9; jolloin korkeus määräytyy leveyden perusteella mittasuhteet säilyttäen</li>
+</ul>
+<p>PS. Tallenna GitHubiin</p>
+
+</body>
+</html>
