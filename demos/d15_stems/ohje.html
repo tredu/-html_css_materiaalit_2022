@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D15 Kokoussovelluksen UI</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }*{
+            box-sizing: border-box;
+        }
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<h1>Videokokoussovelluksen käyttöliittymä</h1>
+<xmp>
+    html_css_basics
+    |
+    ├── demos
+    │   ├── ...
+    │   └── d15
+    │       ├── index.html
+    │       ├── style.css
+    │       ├── video.mp4
+    │       └── img
+    │           ├── person1.jpg
+    │           ├── person2.jpg
+    │           ├── person3.jpg
+    │           └── person4.jpg
+    |
+    
+    </xmp>
+<img src="img/stems_ui.png" alt="stems_ui">
+<ul>
+<li>Toteuta käyttöliittymä videopalaverisovellukselle</li>
+<li>Tee style.css ja index.html, lisää sivupohja ja linkitä tyylitiedosto headiin</li>
+<li>Lataa mp4 muotoinen video samaan kansioon esim. <a href="https://pixabay.com/fi/videos/" target="_blank">Pixabaystä</a></li>
+<li>Mallin video <a href="gorilla_128698.mp4" target="_blank">gorilla_128698.mp4</a></li>
+<li>Tee img kansio, johon lataat kokoukseen osallistujien naamakuvia<br>
+    esim. osoitteesta <a href="https://thispersondoesnotexist.com/" target="_blank">thispersondoesnotexist.com</a></li>
+</ul>
+<hr>
+<h2>HTML</h2>
+    <b>body</b>
+    <ul>
+    <li>Lisää bodyn sisälle navigaatio nav ja sen alle pääsisältöalue main</li>
+    </ul>  <b>nav</b><ul>
+  
+    <li>Tee lista linkkejä käyttäen elementtejä (ul li a)</li>
+    <li>Logon/sovelluksen nimen voi lisätä naviin ennen ul-listaa span tagissa</li>
+    <li>Viimeinen listaelementti li sisältää napin (button)</li>
+</ul>
+<b>main > screen</b>
+<ul>
+    <li>Lisää elementti videolle (div jolla on id screen)</li>
+    <li>Lisää sen sisälle 'video'-tagi</li>
+    <li>Video tagiin voi antaa lisäparametrejä kuten autoplay ja muted</li>
+    <li>Videotagin sisällä on 'source'-tagi eli varsinainen video-objekti<br></li>
+    <li>src-parametriksi annetaan videotiedoston nimi tai polku jos video ei ole samassa kansiossa html-tiedoston kanssa</li>
+</ul>
+<b>main > people</b>
+<ul>
+<li>Lisää divi jolla on id people. Diviin tulee ihmisten kuvat ja nimet.</li>
+<li>Lisää sen sisälle useita figure-tageja joissa on kuva (img) ja sen alla kuvateksti (figcaption)</li>
+</ul>
+<b>main > chat </b>
+<ul><li>Tee chatti-ruutu eli div jolla on id chat</li></ul>
+<b>main > chat > messages</b>
+<ul>
+<li>Lisää chatin sisälle div class messages, jossa viestit näkyvät</li>
+<li>Lisää sen sisälle divejä joissa on viesti (keksi keskustelu tai käytä Lorem ipsum)</li>
+<li>Lisää ennen viestiä lähettäjän nimi span-tagin sisällä</li>
+<li>Lisää viestin jälkeen lähetysajankohta span-tagin sisällä</li>
+<li>Siten viestin kirjoittaja ja ajankohta voidaan tyylitellä erikseen CSS:llä</li>
+</ul>
+<b>main > chat > addmessage</b>
+<ul>
+<li>Viestiketjun jälkeen tulee viestinkirjoitusruutu div class addmessage</li>
+<li>Lisää sen sisälle syötekenttä (messagebox) ja anna sille id messagebox</li>
+<li>Lisää myös Lähetä-nappi (input type button) ja sille id send</li>
+</ul>
+
+<hr>
+<h2>CSS</h2>
+<b>body</b>
+<ul>
+    <li>nolla marginaalit ja aseta tumma taustaväri</li>
+    <li>aseta valitsemasi fontti ja tekstin väri</li>
+</ul>
+
+<b>*</b>
+<ul>
+    <li>Muuta kaikkien elementtien koon laskentatapa järkeväksi</li>
+    <li>*{ box-sizing: border-box;}</li>
+</ul>
+
+<b>nav</b>
+<ul>
+    <li>aseta tumma taustaväri</li>
+    <li>tee navista flex elementti</li>
+    <li>keskitä flex sisältö pystysuunnassa</li>
+    <li>lisää justify-content: space-between; jolloin logo (span) ja lista (ul) asettuvat vastakkaisiin päätyihin</li>
+    <li>aseta navin korkeus esim 50px</li>
+</ul>
+
+<b>nav span</b>
+<ul><li>muuta logotekstin väri ja lisää padding</li></ul>
+
+<b>nav ul</b>
+<ul><li>tee listasta flex elementti ja poista listapallukat</li></ul>
+
+<b>nav ul li, nav span</b>
+<ul>
+    <li>lisää padding ja tee listaelementeistä flex elementtejä</li>
+    <li>keskitä flex elementit pystysuunnassa</li>
+</ul>
+
+<b>nav ul li a…</b>
+<ul>
+    <li>vaihda linkkien ja myös vierailtujen linkkien väri</li>
+    <li>muotoile myös ylävalikon Poistu-nappi</li>
+</ul>
+
+<b>main</b>
+<ul>
+    <li>tee mainista flex elementti</li>
+    <li>aseta mainin korkeus siten että se täyttää koko ruudun</li>
+    <li>käytä calc laskutoimitusta vähentääksesi korkeudesta navigaation korkeuden</li>
+</ul>
+
+<b>#screen</b>
+<ul>
+    <li>piilota ylivuoto</li>
+    <li>aseta flex:3; jolloin video saa 3/5 osaa ruudun leveydestä</li>
+    <li>aseta maksimikorkeus 100%</li>
+</ul>
+
+<b>#screen video</b>
+<ul>
+    <li>aseta leveys ja korkeus 100%</li>
+    <li>aseta myös object-fit: cover; jolloin ylimenevä video rajautuu pois</li>
+</ul>
+
+<b>#people</b>
+<ul>
+    <li>tee ihmisten kuvakkeista flex elementtejä</li>
+    <li>tasaa pystysuunnassa flex elementit dvin alkuun (align-content)</li>
+    <li>keskitä elementit vaakasuunnassa</li>
+    <li>aseta flex: 1; jolloin elementti vie 1/5 osaa ruudun leveydestä</li>
+    <li>aseta flex-wrap: wrap; jolloin kuvat voivat mennä allekkain</li>
+</ul>
+
+<b>#people figure</b>
+<ul>
+    <li>rajoita kuvia max leveys ja korkeus</li>
+    <li>keskitä teksti</li>
+</ul>
+
+<b>#people img</b>
+<ul>
+    <li>pyöristä avatarien kulmat</li>
+    <li>tee kuvasta 100% leveä jolloin se täyttää parent elementin</li>
+</ul>
+
+<b>.active_speaker</b>
+<ul>
+    <li>tee äänessä olevan puhujan luokka, jonka lisäät jollekulle keskustelussa</li>
+    <li>aseta ääriviiva ja/tai heittovarjo</li>
+</ul>
+
+<b>#chat</b>
+<ul>
+    <li>aseta flex: 1; jolloin elementti vie 1/5 osan ruudun leveydestä</li>
+    <li>tee keskusteluruudusta flex elementti</li>
+    <li>vaihda flex suunta colum</li>
+    <li>keskitä flex elementit (align-items)</li>
+    <li>laita flex elementit tasaisin välimatkoin justify-content: space-between;</li>
+</ul>
+
+<b>.messages</b>
+<ul>
+    <li>overflow-y: auto; sallii scrollauksen pystysuunnassa</li>
+    <li>aseta leveys 100%</li>
+    <li>aseta korkeus (käytä calc) 100vh - navin korkeus - viestin kirjoitusruudun korkeus</li>
+</ul>
+
+<b>.messages div</b>
+<ul>
+    <li>muotoile viestiruutujen tyylejä</li>
+    <li>aseta marginaalit</li>
+    <li>aseta taustaväri</li>
+    <li>lisää kulmanpyöristystä</li>
+    <li>lisää padding</li>
+</ul>
+<b>.messages span:nth-child(1)</b>
+<ul>
+    <li>muokkaa viestin kirjoittajan nimilaatikon tyylejä</li>
+    <li>tee elementistä block (jolloin se vie koko rivin tilaa vaikka normaalisti span on inline-elementti)</li>
+    <li>vaihda tekstin väri</li>
+    <li>lisää ala-padding</li>
+</ul>
+
+<b>.messages span:nth-child(1)</b>
+<ul>
+    <li>tee elementistä block</li>
+    <li>vaihda tekstin väri</li>
+    <li>lisää ylä-paddingia</li>
+    <li>tasaa testin oikealle</li>
+</ul>
+
+<b>.addmessage</b>
+<ul>
+    <li>muotoile viestinkirjoituslaatikkoa</li>
+    <li>tee elementistä flex</li>
+    <li>vaihda flexin suunta column</li>
+    <li>keskitä flex elementit pystysuunnassa</li>
+    <li>lisää yläreunaviiva</li>
+    <li>lisää padding</li>
+    <li>määritä elementin korkeus pikseleinä esim. 160px</li>
+</ul>
+
+<b>#messagebox</b>
+<ul>
+    <li>vaihda taustaväri</li>
+    <li>aseta reunaviiva</li>
+    <li>pyöristä kulmat</li>
+    <li>aseta minimikorkeus esim. 3em</li>
+    <li>vaihda tekstin väri</li>
+    <li>aseta leveys 90%</li>
+    <li>keskitä elementti margin: 0 auto;</li>
+</ul>
+
+<b>#send</b>
+<ul>
+    <li>muotoile Lähetä-nappi</li>
+    <li>aseta napin taustaväri</li>
+    <li>poista reunaviivat</li>
+    <li>lisää padding</li>
+    <li>pyöristä kulmat</li>
+    <li>lisää marginaalia</li>
+    <li>rajoita napin leveys</li>
+    <li>lisää hover-pseudo, jossa kursori muuttuu sormeksi ja napin taustaväri vaihtuu</li>
+</ul>
+<p>Tallenna demo GitHubiin</p>
+<hr>
+<h3>Muuta jos ehtii</h3>
+<ul>
+<li>Laita botit keskustelemaan keskenään</li>
+<li>Tallenna <a href="chat.js" target="_blank">chat.js</a> samaan kansioon index.html:n kanssa</li>
+<li>Linkitä skripti html tiedostoon script src tagilla ennen body-tagin sulkeutumista</li>
+<li><xmp><script src="chat.js"></script></xmp></li>
+<li>Tarkista, että skriptin id:t ja classit vastaavat html dokumentissa annettuja</li>
+</ul>
+
+</body>
+
+</html>
