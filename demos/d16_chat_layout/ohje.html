@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D16 Chat App UI</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+        main ul{
+            line-height: 1.3em;
+        }
+        .cols{
+            display: flex;
+        }
+        ul b{margin-left: -1em;}
+        figure, img{
+            max-width: 400px;
+        }
+        figure img{
+            max-width: 100%;
+        }
+        figcaption{text-align: center;}
+    </style>
+</head>
+<body>
+<main>
+
+
+    <h1>Viestisovelluksen käyttöliitymä mobiiliin</h1>
+    <xmp>
+    html_css_basics
+    |
+    ├── demos
+    │   ├── ...
+    │   └── d16
+    │       ├── index.html
+    │       ├── style.css
+    │       └── img
+    │            ├── {pattern}.png
+    │            ├── {avatar}.png
+    │            └── {image}.jpg
+    |
+    </xmp>
+
+
+
+    <div class="cols">
+        <div><h2>Rakenne</h2>
+        
+<ul>
+    <li>Aloita tekemällä d16 kansion index.html ja style.css</li>
+    <li>Alusta index.html-tiedosto VS-Coden tarjoamalla HTML-pohjalla ja linkitä style.css headiin</li>
+    <li>Lisää bodyyn divi, jonka tarkoitus on rajoittaa sisällön maksimileveys</li>
+    <li>Anna elementille esim. id container</li>
+    <li>Lisää seuraavat elementit sen sisälle:</li>
+    <li>Header jossa on käyttäjän kuva, span jossa nimi ja teksti jossa lukee otsikko Keskustelu</li>
+    <br>
+    <li>Headerin jälkeen main elementti jolla on class chat</li>
+    <li>Chat elementin sisälle tulee divit joissa on viestit</li>
+    <li>Diveilllä voi olla esim. classit you / me, jolloin muiden ja käyttäjän itse lähettämä viestit voidaan muotoilla CSS:llä</li>
+    <li>Yksittäisen viestin sisällä on p-tagi jossa varsinainen viesti lukee ja span, jossa on lähetysajankohta</li>
+    <br>
+    <li>Mainin jälkeen tulee nav jolla on class mobile_nav selkeyden vuoksi</li>
+    <li>Uusi viesti -pallukka (button) on myös navigaatiossa</li>
+    <li>Lisää napille id write ja kuvake</li>
+    <li>Sen jälkeen on lista ul, jossa on li listakohtia</li>
+    <li>li listakohta sisältää i-tagin jossa on FontAwesome kuvake ja span-tagi jossa lukee linkin otsikko esim. Viestit</li>
+    <li>Yhdellä listakohdalla voi olla class active, jota muokataan CSS:llä kertomaan käyttäjälle, millä sivulla hän parhaillaan on</li>
+    <li>Lisää kuvakkeet <a href="https://cdnjs.com/libraries/font-awesome" target="_blank">FontAwesomesta</a> </li>
+    <li>Etsi patttern-tyylinen taustakuva esim. <a href="https://www.toptal.com/designers/subtlepatterns/" target="_blank">toptal.com</a></li>
+  </ul>
+</div>
+        <div>
+
+             <img src="img/malli.png" alt="malli">
+        </div>
+    </div>
+
+    <div class="cols">
+<div>
+
+<h2>Tyylit</h2>
+
+<ul>
+<li>Lisää neljä :root muuttujaa: pääväri, tummempi pääväri sekä käyttäjän<br>ja muiden henkilöiden viestiruutujen taustavärit</li>
+<br>
+<b>body</b>
+<li>poista marginaalit, vaihda fontti</li>
+<li>aseta taustaväri ja tekstin väri</li>
+<br>
+<b>#container</b>
+<li>rajoita maksimileveys esim 600px</li>
+<li>rajoita maksimikorkeus 100vh</li>
+<li>keskitä elementti sivun keskelle</li>
+<li>tee containerista flex</li>
+<li>vaihda flexin suunta column</li>
+<li>aseta vaalea taustaväri</li>
+<br>
+<b>header</b>
+<li>aseta yläpalkin taustaväri</li>
+<li>tee fontista lihavoitu</li>
+<li>keskitä teksti</li>
+<li>kasvata fontin kokoa</li>
+<li>lisää position: relative; jos käytyä spanissa position: absolute;</li>
+<li>tee headerista flex ja keskitä flex-elementit pysty ja vaakasuunnassa</li>
+<br>
+<b>header span</b>
+<li>poista fontin lihavointi</li>
+<li>käytä position: absolute; ja vie span vasemmalta 60px päähän reunaa</li>
+<li>vaihda fontin väri</li>
+<br>
+<b>header img</b>
+<li>käytä position: absolute; ja vie kuva melkein vasempaan reunaan</li>
+<li>aseta avatar-kuvan leveys ja korkeus esim. 45px</li>
+<li>tee kuvasta pyöreä</li>
+<br>
+<b>.chat</b>
+<li>aseta overflow-y: auto; jotta elementtiin ilmestyy scrolli<br>jos viestejä on paljon eivätkö ne mahdu kerralla ruu</li>tuun
+<li>lisää padding</li>
+<li>aseta pattern-taustakuva </li>
+<li>muotoile scrollbaria halutessasi</li>
+<br>
+<b>.chat p</b>
+<li>lisää ylämarginaali</li>
+<br>
+<b>.chat img</b>
+<li>rajoita keskustelussa lähetettyjen kuvien maksimileveys 100% (parentin leveydestä)</li>
+<br>
+<b>.you, .me</b>
+<li>käyttäjän ja toisten keskustelijoiden lähettämille viesteille yhteiset tyylit:</li>
+<li>rajoita viestilaatikon leveys 75% (parentin leveydestä)</li>
+<li>aseta ylä ja alamarginaalit</li>
+<li>pyöristä kulmat</li>
+<li>aseta clear: both; joka estää float-elementtejä menemästä vierekkäin</li>
+<li>aseta position: relative; jota tarvitaan seuraavaksi ::before elementtien kohdistuksessa</li>
+<br>
+<b>.you</b>
+<li>muotoile toisten käyttäjien lähettämät viestit</li>
+<li>aseta viestilaatikolle harmaa taustaväri</li>
+<li>aseta float: left; jolloin laatikko on tasattu vasempaan laitaan</li>
+<br>
+<b>.me</b>
+<li>aseta käyttäjän lähettämien viestien taustaväri laatikolle</li>
+<li>aseta float: right; jolloin laatikko on tasattu oikeaan laitaan</li>
+<li>.you::before, .me::before</li>
+<li>tee viestilaatikoista puhekuplia lisäämällä väkänen niiden ylälaitaan</li>
+<li>content: '';</li>
+<li>display: block;</li>
+<li>aseta taustaväri</li>
+<li>määritä leveys ja korkeus esim. 2em</li>
+<li>aseta position: absolute; joka otaa referenssikseen laatikolle asetetun position: relative;</li>
+<li>aseta top: 10px; jolloin väkänen on melkein viestilaatikon yläreunassa</li>
+<li>aseta elementti 45 asteen kulmaan</li>
+<li>jos elementti on tekstin päällä, niin vie se taaksepäin z-index käskyllä</li>
+<br>
+<b>.you::before</b>
+<li>asemoi muun lähettäjän viestilaatikoiden puhekuplaväkänen vasemmalle</li>
+<li>left: -8px;</li>
+<br>
+<b>.me::before</b>
+<li>asemoi käyttäjän itsensä lähettämien viestilaatikoiden puhekuplaväkänen oikealle</li>
+<li>right: -8px;</li>
+<br>
+<b>.me span</b>
+<li>tasaa lähetysajankohta oikealle käyttäjän lähettämissä viestilaatikoissa</li>
+<br>
+<b>.mobile_nav</b>
+<li>aseta alavalikon taustaväri</li>
+<li>tee navigaatiosta 100% leveä</li>
+<li>kasvata fontin kokoa hieman</li>
+<li>aseta position: relative; jolloin Kirjoita uusi viesti -pallukka<br>voidaan kohdistaa suhteessa alanavigaatioon</li>
+<br>
+<b>.mobile_nav ul</b>
+<li>tee listasta flex</li>
+<li>asettele flex-elementit tasaisin välimatkoin</li>
+<li>poista marginaalit ja paddingit</li>
+<br>
+<b>.mobile_nav ul li</b>
+<li>aseta display: inline-block;</li>
+<li>poista listapallukat</li>
+<li>aseta tekstin väri</li>
+<br>
+<b>.mobile_nav ul li a…</b>
+<li>tee linkeistä flex elementtejä</li>
+<li>aseta flex suunta column, jotta kuvake on päällä ja teksti alla</li>
+<li>keskitä teksti</li>
+<li>säädä paddingit ja tee hover pseudo, jossa vaihdat väriä ja asetat kursorin sormeksi</li>
+<br>
+<b>.mobile_nav ul li i</b>
+<li>muuta kuvakkeiden koko sopivaksi (font-size)</li>
+<br>
+<b>.mobile_nav ul li span</b>
+<li>lisää tekstille ylämarginaalia jos se on kiinni kuvakkeessa</li>
+<br>
+<b>.active a</b>
+<li>muotoile aktiivisen linkit värit erottuvaksi</li>
+<br>
+<b>#write</b>
+<li>muotoile Uusi viesti -pallukkaa</li>
+<li>aseta position: absolute; ja säädä top ja right arvot siten että pallukka on alanavigaation yllä oikeassa laidassa</li>
+<li>aseta z-index siten että pallukka on päällimmäisenä</li>
+<li>kasvata fontin kokoa</li>
+<li>aseta pallukan korkeus ja leveys</li>
+<li>tee pallukasta pallukka pyöristämällä kulmat</li>
+<li>poista reunaviiva</li>
+<li>aseta taustaväri ja tekstin väri</li>
+<li>tee hover-pseudo jossa muutat kuvakkeen ja pallukan väriä</li>
+<br>
+<li>muotoile scroll-bar jos jää aikaa</li>
+<li>tallenna GitHubiin</li>
+
+
+</ul>
+</div>
+    <div>
+        <figure>
+            <img src="img/mobile_usability.jpg" alt="mobile_usability">
+            <figcaption>Mihin kohtaan näyttöä valikot ja napit kannattaa sijoittaa?</figcaption>
+        </figure>
+    </div>
+
+</div>
+
+
+
+</main>
+
+</body>
+</html>
