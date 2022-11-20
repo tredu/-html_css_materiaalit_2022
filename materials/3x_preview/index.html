@@ -5,43 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3X Hover Thumbnail</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hover_thumb.css">
 </head>
 <body>
-    <h1>3X Hover Thumbnail</h1>
+    <h1>3X Slideshow Hover Thumbnail</h1>
     <p>Hover to preview</p>
     <p>Source: <a href="http://jsfiddle.net/5M2PD/4/" target="_blank">JSFiddle</a></p>
 <main>
-
     <div class="animated_thumb">
         <a href="#" class="thumbnail"><img src="img/sport_guy.jpg" alt="sport guy" ></a>
         <div class="fadein">
-            <img id="f3" src="img/sport1.jpg">
-            <img id="f2" src="img/sport2.jpg">
-            <img id="f1" src="img/sport3.jpg">
+            <img class="f3" src="img/sport1.jpg">
+            <img class="f2" src="img/sport2.jpg">
+            <img class="f1" src="img/sport3.jpg">
         </div>
     </div>
 
     <div class="animated_thumb">
         <a href="#" class="thumbnail"><img src="img/sport_guy.jpg" alt="sport guy" ></a>
         <div class="fadein">
-            <img id="f3" src="img/sport1.jpg">
-            <img id="f2" src="img/sport2.jpg">
-            <img id="f1" src="img/sport3.jpg">
+            <img class="f3" src="img/sport1.jpg">
+            <img class="f2" src="img/sport2.jpg">
+            <img class="f1" src="img/sport3.jpg">
     </div>
 
     </div>
         <div class="animated_thumb">
         <a href="#" class="thumbnail"><img src="img/sport_guy.jpg" alt="sport guy" ></a>
         <div class="fadein">
-            <img id="f3" src="img/sport1.jpg">
-            <img id="f2" src="img/sport2.jpg">
-            <img id="f1" src="img/sport3.jpg">
+            <img class="f3" src="img/sport1.jpg">
+            <img class="f2" src="img/sport2.jpg">
+            <img class="f1" src="img/sport3.jpg">
         </div>
     </div>
 
 </main>
-
-
+<h2>HTML</h2>
+<xmp>
+<div class="animated_thumb">
+    <a href="#" class="thumbnail"><img src="img/sport_guy.jpg" alt="sport guy"></a>
+    <div class="fadein">
+        <img class="f3" src="img/sport1.jpg">
+        <img class="f2" src="img/sport2.jpg">
+        <img class="f1" src="img/sport3.jpg">
+    </div>
+</div>
+</xmp>
+<br>
+<h2>CSS</h2>
+<a href="hover_thumb.css" target="_blank">hover_thumb.css</a>
 </body>
 </html>

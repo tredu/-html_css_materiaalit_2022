@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D17 Kakku Express</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+            max-height: 90vh;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+        main ul{
+            line-height: 1.3em;
+        }
+        .cols{
+            display: flex;
+        }
+        ul b{margin-left: -1em;}
+        .gallery{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em
+        }
+        .gallery img{
+            border: none;
+            max-width: 200px;
+        }
+        .split{
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 1em;
+        }
+        .icon{
+            border: none;
+            width: 25px;
+            margin: 0;
+        }
+        main b{
+          padding-top: 1em;
+          display: block;
+        }
+    </style>
+</head>
+<body>
+<main>
+  <div class="split">
+    <div>
+    <h1>Kakku Express -verkkokaupan etusivu</h1>
+    <xmp>
+    html_css_basics
+    |
+    ├── demos
+    │   ├── ...
+    │   └── d17
+    │       ├── index.html
+    │       ├── style.css
+    │       ├── (hover_thumb.css)
+    │       └── img
+    │            ├── kerros_kakku_1.jpg
+    │            ├── kerros_kakku_2.jpg
+    │            ├── kerros_kakku_3.jpg
+    │            ├── perus_kakku_1.jpg
+    │            ├── perus_kakku_2.jpg
+    │            ├── perus_kakku_3.jpg
+    │            ├── premium_kakku_1.jpg
+    │            ├── premium_kakku_2.jpg
+    │            └── premium_kakku_3.jpg
+    |
+    </xmp>
+  
+ </div>
+<img src="img/kakku_express_mobile.png" alt="kakku_express_mobile"></div>
+    </div>
+<img src="img/kakku_express_layout.png" alt="kakku_express_layout">
+<ul>
+<li>Etsi sopivia tuotekuvia Pixabaystä tai käytä alla olevia.</li>
+<li>Vedä kuva työpöydälle, niin saat sen täysikokoisena.</li>
+</ul>
+
+<div class="gallery">
+    <img src="img/kerros_kakku_1.jpg" alt="">
+    <img src="img/kerros_kakku_2.jpg" alt="">
+    <img src="img/kerros_kakku_3.jpg" alt="">
+    <img src="img/perus_kakku_1.jpg" alt="">
+    <img src="img/perus_kakku_2.jpg" alt="">
+    <img src="img/perus_kakku_3.jpg" alt="">
+    <img src="img/premium_kakku_1.jpg" alt="">
+    <img src="img/premium_kakku_2.jpg" alt="">
+    <img src="img/premium_kakku_3.jpg" alt="">
+</div>
+<hr>
+<h2>HTML</h2>
+<ul>
+    <li>Tee kansioon d17, index.html ja linkitä style.css</li>
+    <li>Teee sivuphja ja lisää favicon <img src="img/cake_logo.png" alt="cake_logo" class="icon"></li>
+    <li>Kirjoita myös title Kakku Express</li>
+</ul>
+<ul>
+    <li>Tee bodyn sisälle header-tagi</li>
+    <li>Headerin sisälle tulle ensimmäisenä a tagi jossa on Heroiconsista otettu svg logo ja b tagi jossa lukee sivuston nimi Kakku Express</li>
+    <li>a tagin jälkeen tulee div joka käärii sisälleen hakukentän (input) ja suurennuslasin a-tagi jossa on Heroiconsista otettu svg logo</li>
+    <li>a-tagin jälkeen details id="menu", jonka sisällä tyhjä summary-tagi</li>
+    <li>summaryn jälkeen nav jossa on a tageja, joissa lukee linkkitekstit esim.</li>
+    <li>Tuotteet, Vastuullisuus, Rekrytointi ja Yhteystiedot</li>
+    <li>header-tagi päättyy tähän</li>
+</ul>
+<img src="img/kakku_express_nav.jpg" alt="kakku_express_nav">
+
+
+<ul>
+    <li>lisää headerin jälkeen div id="container" jonka tarkoitus on rajoittaa sisältöalueen leveys</li>
+    <li>containerin sisälle tulee pääotsikko 'Kakut arkeen ja juhlaan'</li>
+    <li>Otsikon jälkeen class="cake-galley" joka sisältää 3 tai useamman kakkukategorian</li>
+    <ul>
+        <li>A: Käytä useaa kuvaa ja <a href="../../materials/3x_preview/">Slideshow Hover Thumbnail</a></li>
+        <li>B: Käytä yhtä kuvaa ja figure/figcaption paria tuotekategorioissa</li>
+    </ul>
+
+</ul>
+
+<hr>
+<h2>CSS</h2>
+<ul>
+<li>Valitse GoogleFontsista otsikolle sopiva fontti ja tuo se CSS:n 1. rivillä</li>
+<li>määrittele teemavärit :root muuttujiin</li>
+
+<b>body</b>
+<li>aseta taustaväri ja tekstin väri</li>
+<li>nollaa marginaalit</li>
+
+<b>header</b>
+<li>aseta yläbannerin taustaväri ja korkeus 50px</li>
+<li>aseta position: fixed; ja top: 0; jolloin banneri pysyy aina näkyvillä ylälaidassa</li>
+<li>aseta leveydeksi 100%</li>
+<li>aseta z-index arvo jos muut elementit tulvat bannerin päälle scrollatessa</li>
+
+<b>#logo</b>
+<li>määritä logotekstin väri</li>
+<li>poista alleviivaus</li>
+<li>lisää marginaalia vasemmalle</li>
+<li>lisää myös hover joka vaihtaa logon värin</li>
+
+<b>#search</b>
+<li>aseta kuvakkeen väri</li>
+<li>tee myös hover jossa vaihdat värin </li>
+
+<b>#search_field</b>
+<li>aseta hakukentän reunuksen väri ja tasutaväri</li>
+<li>pyöristä hieman kulmia</li>
+<li>aseta padding 0.5em</li>
+<li>muuta tekstin väri</li>
+
+<b>header svg</b>
+<li>pienennä kuvaketta</li>
+
+
+<b>header, header a, header div</b>
+<li>tee headeristä ja sen siällä olevista elementeistä flex-elementtejä</li>
+<li>keskitä flex elementit pystysuunnassa</li>
+<li>laita flex-elementit vastakkaisiin päätyihin </li>
+<li>lisää tyhjää tilaa 1em flex-elementtien väliin</li>
+
+<b>summary::before</b>
+<li>lisää hampurilaiskuvake (content)</li>
+<li>kasvata fontin kokoa </li>
+
+<b>summary</b>
+<li>tee kursorista sormi</li>
+<li>määritä leveys ja korkeus 50px</li>
+<li>tee summarystä flex-elementti</li>
+<li>keskitä flex-elementit pysty- ja vaakasuunnassa</li>
+<li>lisää myös hover, jossa vaihdat kuvakkeen värin</li>
+
+<b>#menu nav</b>
+<li>aseta position: fixed; ja right: 0; jolloin aukeava valikko pysyy oikeassa laidassa</li>
+<li>aseta top: 50px; jos aukeava valikko menee yläbannerin päälle </li>
+<li>aseta taustaväri ja tarvittaessa z-index arvo</li>
+
+<b>#menu nav a, #menu nav a:visited</b>
+<li>poista linkkien alleviivaus</li>
+<li>aseta linkkitekstin väri</li>
+<li>kasvata fonttikokoa</li>
+<li>lisää padding</li>
+<li>tee hover, joka muuttaa linkin taustaväriä</li>
+<li>vaihda hampurilainen  raksiin kun valikko on auki</li>
+<xmp>
+    #menu[open] > summary::before {
+         content: '\00D7';
+    }
+</xmp>
+
+
+<b>h1</b>
+<li>muotoile pääotsikko siistiksi</li>
+<li>käytä valitsemaasi google fonttia</li>
+
+<b>main</b>
+<li>aseta ylämarginaalia vähintään yläbannerin korkeuden verran</li>
+
+<b>.cake-galley</b>
+
+<li>asemoi kategoriakuvat vierekkäin flexillä</li>
+<li>lisää tilaa flex-elementtien väliin</li>
+<li>salli elementtien uudelleenrivitys</li>
+
+<b>#container</b>
+<li>keskitä elementti vaakasuunnassa</li>
+<li>rajoita sisältöalueen maksimileveys esim. 1200px</li>
+
+<b>.cake-galley figure</b>
+<li>aseta maksimileveys ja -korkeus esim. 300 x 235 px</li>
+<li>nollaa marginaalit</li>
+<li>aseta position: relative;</li>
+
+<b>.cake-galley figcaption</b>
+<li>laita leveydeksi 100%</li>
+<li>aseta position: absolute; jotta kuvateksti menee kuvan päälle</li>
+<li>lisää bottom:0; jotta kuvateksti on alalaidassa</li>
+<li>lisää padding ylös ja alas</li>
+<li>aseta taustaväri ja tekstin väri</li>
+<li>keskitä teksti halutessasi</li>
+<br>
+<li>jos teit animoidun kuvakkeen niin korjaa kuvasuhteet ja ylivuotavat elementit</li>
+<xmp>.animated_thumb{
+    overflow: hidden;
+}
+.cake-galley img, .animated_thumb{
+    width: 100%;
+    height: calc(100% - 34px);
+    object-fit: cover;
+    transition: 0.1s all ease-in-out;
+}
+</xmp>
+
+
+<li>lisää media query 600px joka piilottaa logon tekstiosuuden, jolloin hakukentälle jää enemmän tilaa</li>
+
+<li>Tallenna GitHubiin</li>
+</ul>
+
+<hr>
+<h2>Muuta valinnaista</h2>
+<ul>
+    <li>Lisää JavaScript (alla), joka sulkee valikon, kun jotain linkkiä painetaan</li>
+    <xmp><script>
+    const closeMenu = () => {
+        document.getElementById("menu").open = false;
+    }
+    const navItems = document.querySelectorAll('header a')
+    navItems.forEach((i) => {
+        i.setAttribute('onclick', 'closeMenu()')
+    })
+</script>
+</xmp>
+<li>Tallenna ja lisää hakutoiminnon toteuttava JavaScript <a href="search.js">search.js</a></li>
+    <br>
+<li>tee css-class hidden, jonka tarkoitus on piilottaa muut kuin hakukriteeriä vastaavat tuotteet</li>
+<xmp>.hidden{
+    display: none;
+}
+</xmp>
+
+<li>Tallenna GitHubiin</li>
+</ul>
+
+</main>
+
+</body>
+</html>
