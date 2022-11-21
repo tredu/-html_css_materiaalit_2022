@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D18 Matkailusivu</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+        main ul{
+            line-height: 1.3em;
+        }
+        .cols{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .cols img{
+            object-fit: contain;
+            max-width: 300px;
+        }
+        ul b{margin-left: -1em;}
+
+        figure img{
+            max-width: 100%;
+        }
+        figcaption{text-align: center;}
+    </style>
+</head>
+<body>
+<main>
+
+
+    <h1>Matkatoimiston sivu</h1>
+    <xmp>
+    html_css_basics
+    |
+    ├── demos
+    │   ├── ...
+    │   └── d18
+    │       ├── index.html
+    │       ├── style.css
+    │       ├── kreikka.html (muokattu index kopio)
+    │       ├── lightbox-plus-jquery.min.js
+    │       ├── lightbox.min.css
+    │       ├── images (lightbox)
+    │       |    ├── close.png
+    │       |    ├── loading.gif
+    │       |    ├── next.png
+    │       |    └── prev.png
+    │       └── img
+    │            ├── large
+    │            |    └── 1920x1080 kuvia
+    │            ├── small
+    |            |    └── 400x255 kuvia
+    │            ├── kuu_matkat_logo.png
+    │            ├── pointer.svg
+    │            ├── sand.jpg
+    │            └── snow.jpg 
+    │               
+    |
+    </xmp>
+<hr>
+<h2>Screenshots (index.html)</h2>
+<img src="valmis/ui1.png" alt="">
+<img src="valmis/ui2.png" alt="">
+<h2>Screenshot (kreikka.html)</h2>
+<img src="valmis/ui3.png" alt="">
+<img src="valmis/ui4.png" alt="">
+<hr>
+<h3>images</h3>
+<div class="cols">
+    <img src="images/close.png" alt="">
+    <img src="images/loading.gif" alt="">
+    <img src="images/next.png" alt="">
+    <img src="images/prev.png" alt="">
+</div>
+<hr>
+<h3>img</h3>
+<div class="cols">
+    <img src="img/kuu_matkat_logo.png" alt="">
+    <img src="img/pointer.svg" alt="">
+    <img src="img/sand.jpg" alt="">
+    <img src="img/snow.jpg" alt="">
+</div>
+<hr>
+<h3>img/small</h3>
+<div class="cols">
+    <img src="img/small/blueroof_small.jpg" alt="">
+    <img src="img/small/greece_small.jpg" alt="">
+    <img src="img/small/santorini_small.jpg" alt="">
+    <img src="img/small/spain_small.jpg" alt="">
+    <img src="img/small/terrace_small.jpg" alt="">
+    <img src="img/small/hervanta_small.jpg" alt="">
+</div>
+<hr>
+<h3>img/large</h3>
+<div class="cols">
+<img src="img/large/blueroof.jpg" alt="">
+<img src="img/large/greece.jpg" alt="">
+<img src="img/large/santorini.jpg" alt="">
+<img src="img/large/terrace.jpg" alt="">
+</div>
+<hr>
+
+<h2>Lightbox</h2>
+<b>Lähde: <a href="https://lokeshdhakar.com/projects/lightbox2/" target="_blank">lightbox2 by lokeshdhakar</a> </b>
+<ul>
+
+<li><a href="lightbox-plus-jquery.min.js" target="_blank">lightbox-plus-jquery.min.js</a></li>
+<li><a href="lightbox.min.css" target="_blank">lightbox.min.css</a></li>
+</ul>
+<i>Ennen body-tagin sulkeutumista:</i>
+<xmp><script src="lightbox-plus-jquery.min.js"></script>
+</xmp>
+</main>
+
+</body></html>
