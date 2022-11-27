@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D20 Joulukalenteri</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        h1{
+            display: inline-block;
+        }
+        img{
+            max-width: 100%;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: rgb(26, 0, 10);
+            color: antiquewhite;
+            padding: 0.5em;
+            padding-right: 1em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+        main ul{
+            line-height: 1.3em;
+        }
+        .cols{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+        }
+        .cols img{
+            object-fit: contain;
+            max-width: 45%;
+        }
+        ul b{
+            margin-left: -1em;
+        }
+
+        figure img{
+            max-width: 100%;
+        }
+        figcaption{text-align: center;}
+        #otherimages img{
+            max-width: 300px;
+        }
+        .epiclist{
+            position: relative;
+            margin-left: 4em;
+        }
+        .epiclist::before{
+            content: '';
+            background-image: url(img/kuusi.png);
+            background-repeat: no-repeat;
+            display: block;
+            position: absolute;
+            height: 250px;
+            width: 200px;
+            background-size: contain;
+            left:-70px;
+            top:50px;
+        }
+        ul b{
+            display: block;
+            margin-top: 1em;
+        }
+        hr{
+            margin: 0;
+        }
+        .xmasdiv{
+            position: relative;
+        }
+        .xmasball{
+            position: absolute;
+            right: 4em;
+            top: -50px;
+            transform: scale(0.8);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<main>
+
+<div class="cols">
+    <div>
+        <h1>Joulukalenteri</h1>
+    <xmp>
+    html_css_basics
+    |
+    ├── demos
+    │   ├── ...
+    │   └── d20
+    │       ├── index.html
+    │       ├── style.css
+    │       ├── advent_calendar.js
+    │       └── img
+    │            ├── {favicon} 50 x 50
+    │            ├── {background} 2000 x 2000
+    │            ├── day1.jpg
+    │            ├── day2.jpg
+    │            ├── day3.jpg
+    │            └── ...
+    │               
+    |
+    </xmp></div>
+    <img src="joulukalenteri_ui.png" alt="joulukalenteri_ui">
+</div>
+<hr><div class="xmasdiv">
+<img src="img/joulupallo.png" alt="ball" class="xmasball">
+<h2>Luova tehtävä</h2>
+<ul class="epiclist">
+    <li>Suunnittele virtuaalinen joulukalenteri</li>
+    <li>Piirrä tai etsi netistä sopiva taustakuva kalenterille</li>
+    <li>Piirrä tai etsi sopivia kuvia luukuiksi</li>
+    <ul>
+        <li>A: Luukuista voi avautua jpg kuva, joka peittää taustan</li>
+        <li>B: Luukusta avautuva kuva voi olla png jolloin taustapahvin väri voi olla </li>
+        <ul>
+            <li>B1 Mikä tahansa väri</li>
+            <li>B2 Mikä tahansa kuvio tai pattern</li>
+            <li>B3 Läpinäkyvä, jolloin kuva tulee taustakuvan päälle ja</li>
+            <ul>
+                <li>B3<sup>1</sup> Liittyy kalenterin maisemaan lisäten siihen elementin</li>
+                <li>B3<sup>2</sup> Peittää osan taustasta ja muuttaa siten skenaariota </li>
+            </ul>
+        </ul>
+    </ul>
+
+</ul><br></div>
+<hr>
+<h2>Työkaluja</h2>
+<ul>
+    <b>Fontit</b>
+        <li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a></li>
+    <b>Ilmaisia kuvia</b>
+        <li><a href="https://pixabay.com/" target="_blank">pixabay</a></li>
+        <li><a href="https://unsplash.com/" target="_blank">unsplash</a></li>
+        <li><a href="https://svgsilh.com/" target="_blank">svgsilh - Vektorigrafiikkaa (muokkaa ja väritä Adobe Illustratorissa)</a></li>
+    <b>CSS Gradientit, heittovarjot ja piparkakkumuotit</b>
+        <li><a href="https://cssgradient.io/" target="_blank">CSS Gradient</a></li>
+        <li><a href="https://cssgenerator.org/box-shadow-css-generator.html" target="_blank">box-shadow-css-generator</a></li>
+        <li><a href="https://bennettfeely.com/clippy/" target="_blank">CSS clip-path maker</a></li>
+
+        <b>Kuvakkeet</b>
+        <li><a href="https://heroicons.com/" target="_blank">Heroicons</a></li>
+        <li><a href="https://fontawesome.com/v4/icons/" target="_blank">Font Awesome v4 icons</a> / <a href="https://cdnjs.com/libraries/font-awesome/4.7.0" target="_blank">cdnjs</a></li>
+
+</ul><hr>
+<h2>HTML</h2>
+<ul>
+    <li>Tee ja alusta index.html dokumentti boilerplatella</li>
+    <li>Tee ja linkitä style.css headiin</li>
+    <li>Lisää favicon headiin</li>
+    <li>Lataa advent_calendar.js ja linkitä se headiin</li>
+    <li><a href="advent_calendar.js" target="_blank">advent_calendar.js</a></li>
+    <li>Lisää bodyyn pääotsikko h1 Joulukalenteri</li>
+    <li>Lisää sen jälkeen main-tagi</li>
+    <li>Tee main-tagin sisälle tyhjä 5x5 taulukko</li>
+    <li>Tee mainin jälkeen, ennen bodyn sulkeutumista script-tagi jonka sisältö on tässä alla</li>
+</ul>
+
+
+<xmp><script>
+    // generate days in random order? [true / false]
+    const isRandom = false
+
+    // if not random, please reorder doors
+    const doors = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+    
+    // fake days for testing [number / null]
+    const day = null
+    const month = null
+
+    const imgFileExtension = 'jpg'
+
+    initAdventCalendar(isRandom, doors, day, month, imgFileExtension)
+
+</script>
+</xmp>
+<ul>
+    <li>Muuta scriptin asetuksia:</li>
+    <li>isRandom = true (luukkujen järjestys muuttuu joka kerta kun sivu ladataan uudelleen)</li>
+    <li>isRandom = false (luukkujen järjestys pysyy samana)  </li>
+    <li>doors = [1,2,3… (jos luukkujen järjestys pysyy samana, niin käytetään tässä taulukossa määrättyä järjestystä)</li>
+    <li>day = null, month = null (käytetään tämänhetkistä päivämäärää)</li>
+    <li>day = 25, month = 12 (testaa luukkujen avausta asettamalla päivämäärä)</li>
+    <li>imgFileExtension = 'jpg' (vaihda tiedostopääte vastamaan luukkujen kuvatiedostoja: jpg, jpeg, JPG, png, PNG…)</li>
+</ul>
+
+<hr>
+
+<h2>CSS</h2>
+<ul>
+<li>importtaa Google Fontsista valitsemasi fontti CSS:n 1. rivillä</li>
+</ul><ul>
+<b>body</b>
+<li>nollaa marginaalit</li>
+<li>aseta fontti</li>
+<li>aseta bodyn taustaväri tai käytä css gradienttia</li>
+<li>jos et käytä pattern-kuviota, aseta background-repeat: no-repeat;</li>
+<li>skaalaa austa täyttämään bodyn koko background-size: cover;</li>
+<li>aseta body täyttämään pystysuuntainen tila min-height: 100vh;</li>
+</ul><ul>
+<b>h1</b>
+<li>kasvata pääotsikon kokoa</li>
+<li>käytä Google fonttia</li>
+<li>muuta otsikon väri</li>
+</ul><ul>
+<b>h1:hover</b>
+<li>otsikkoa klikattaessa JavaScript toteuttaa funktion joka avaa kaikki luukut ennen nykyistä päivää</li>
+<li>funktio toimii vain joulukuussa</li>
+<li>tee kursorista sormi ja aseta tekstin väri</li>
+</ul>
+<ul>
+<b>table</b>
+<li>keskitä taulukko vaakasuunnassa</li>
+<li>aseta taustakuva (kalenterin kansikuva)</li>
+<li>poista tyhjä tila solujen välistä</li>
+<li>aseta korkeus ja leveys 85vh</li>
+</ul><ul>
+<b>main</b>
+</ul><ul>
+<li>tee mainista 100% leveä ja korkea</li>
+<li>tee mainista flex elementti</li>
+<li>keskitä flex elementit pysty ja vaakasuunnassa</li>
+<li>lisää alamarginaalia</li>
+<li>lisää 1em padding kaikille puolille </li>
+
+<li>tee <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio">kuvasuhteeseen</a> liittyvä taikatemppu</li>
+<xmp>
+@media (max-aspect-ratio: 1/1) {
+    table {
+        width: 100vw;
+        height: 100vw;
+    }
+}</xmp>
+</ul><ul>
+<b>table td</b>
+<li>tee taulukon solusta referenssipiste position: relative;</li>
+<li>määritä tekstin väri</li>
+<li>tee taulukon soluista 20% korkeita ja leveitä (koska 100% / 5 = 20%)</li>
+</ul><ul>
+<b>.locked</b>
+<li>CSS-luokka locked annetaan automaattisesti JavaScriptissä lukituille luukuille</li>
+<li>tyylittele lukitut luukut haluamasi laisiksi</li>
+<li>aseta pointer-events: none; jolloin luukku ei ole klikattavissa</li>
+</ul><ul>
+<b>.date_num</b>
+<li>CSS-luokka date_num annetaan automaattisesti JavaScriptissä numeroteksteille</li>
+<li>tyylittele tekstit</li>
+<li>poista marginaali</li>
+<li>tee elementistä 100% leveä</li>
+<li>keskitä teksti</li>
+<li>kasvata fonttia</li>
+<li>aseta heittovarjo</li>
+<li>muuta tekstin väriä</li>
+</ul><ul>
+<b>lock_icon</b>
+<li>aseta JavaScriptin FontAwsomesta hakema lukkokuvake vasempaan yläkulmaan</li>
+<li>tarkista että FontAwsome on linkitetty headiin html:n puolella</li>
+<li>aseta position: absolute; ja säädä kuvakkeen paikka top / left arvoilla</li>
+</ul><ul>
+<b>table td:not(.locked):not(.open):hover</b>
+<li><i>eli siis</i> luukut jotka eivät ole lukossa tai auki mutta hiiri on niiden päällä</li>
+<li>voit vaihtaa hover pseudolla luukun taustaväriä</li>
+<li>kokeile myös läpinäkyvyyttä</li>
+<li>tai käytä backdrop-filter ja lisää kirkkautta tai muu efekti</li>
+<li>animoi siirtymä transition: backdrop-filter 0.2s;  </li>
+<li>vaihda myös tekstin väri ja tee hiirestä sormi</li>
+</ul><ul>
+<b>.open</b>
+<li>JavaScriptin asettama open kuvastaa auki olevaa luukkua</li>
+<li>aseta tausta(pahvin) väri tai taustakuvio tai jätä se läpinäkyväksi</li>
+<li>lisää halutessasi heittovarjo (inset-lisäparametri asettaa varjon sisäreunaan, kuin avattu luukku olisi syvempi)</li>
+</ul><ul>
+<b>.open img</b>
+<li>säädä avatun luukun kuvan kokoa</li>
+<li>max-width ja max-height esim. 95%</li>
+</ul><ul>
+<b>.date_num::selection, .date_num::-moz-selection</b>
+<li>aseta tekstivalinnan taustaväriksi läpinäkyvä</li>
+<li>(jos joku sattuu maalaamaan kaikki luukut)</li>
+</ul><ul>
+<li>Tallenna GitHubiin ja tee halutessasi kopio uuteen GitHub pages-repoon ja toivota hyvää joulunodotusta jollekulle…</li>
+</ul>
+
+
+<hr>
+
+<h2>Taustakuva ja Favicon</h2>
+    <div id="otherimages">
+        <img src="img/xmas_plaza.jpg" alt="xmas_plaza">
+        <img src="img/calendar_icon.png" alt="calendar_icon">
+    </div>
+<hr>
+
+<h2>Luukut</h2>
+<div id="doors"></div>
+<script>
+    let elem = document.getElementById('doors')
+    for (let x = 1; x<25; x++){
+        elem.innerHTML += `<img src="img/day${x}.jpg" alt="day${x}">`
+    }
+</script>
+</main>
+</body></html>
