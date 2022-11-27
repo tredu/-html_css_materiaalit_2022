@@ -1,5 +1,4 @@
-
-// Advent Calendar by @AkiKurvinen - GitHub 
+// Advent Calendar
 
 const getDoorContent = (day, imgFileExtension) => {
     return `<img src="img/day${day}.${imgFileExtension}" alt="door-${day}">`
