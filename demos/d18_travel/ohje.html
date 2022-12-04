@@ -37,7 +37,6 @@
             object-fit: contain;
             max-width: 300px;
         }
-        ul b{margin-left: -1em;}
 
         figure img{
             max-width: 100%;
@@ -120,8 +119,30 @@
 <img src="img/large/terrace.jpg" alt="">
 </div>
 <hr>
+<h2>Galleriasivu (kreikka.html)</h2>
+<ul>
+    <li>Galleriasivulla on sama navigaatio kuin etusivulla</li>
+    <li>mainin sisällä on div class="split" elementti, jonka tarkoitus on asemoida otsikko (h1) ”Kreikassa on lämmintä”<br>ja nappi (a class="buy_link") ”Varaa nyt” vastakkaisiin päätyihin flexillä</li>
+    <li>split divin jälkeen voit lisätä kuvaustekstin div class="desc" jossa on p tagissa tekstiä esim.<br>
+        <i>Välimeren kestosuosikki lumoaa lomailijat safiirin sinisillä merinäkymillä ja historiallisilla kohteillaan.
+            <br>Tule läkähtymään helteeseen ja saa auringonpistos minuuteissa!</i></li>
+    <li>divin jälkeen on varsinainen lightboxia hyödyntävä galleria div id="images_gallery"</li>
+    <li>sen sisällä on ryhmä elementtejä:</li>
+</ul>
+<xmp><a href="img/large/greece.jpg" data-lightbox="set1" data-title="Greece">
+    <img src="img/small/greece_small.jpg" alt=""/>
+</a>
+</xmp>
+<ul>
+    <li><b>href</b> linkki osoittaa isompaan kuvaan kansiossa img/large, jonka halutaan avautuvan lightboxiin</li>
+    <li><b>data-lightbox</b> määrittää mihin galleriaan/settiin valokuva kuuluu
+    <br>aseta kaikille kuville data-lightbox="set1" jolloin kaikki kuuluvat samaan kokonaisuuteen
+    <br>siten käyttäjä voi selata kaikki 4 kuvaa läpi avaamalla lightboxin kerrran
+    <li><b>data-title</b> asettaa kuvatekstin joka näkyy kun kuva on avattu isompana</li>
+    <li><b>img</b> tagi toimiii esikatselukuvana (thumbnail), aseta siihen img/small kansiosta vastaava kuva</li>
+</ul>
 
-<h2>Lightbox</h2>
+<h3>Lightbox</h3>
 <b>Lähde: <a href="https://lokeshdhakar.com/projects/lightbox2/" target="_blank">lightbox2 by lokeshdhakar</a> </b>
 <ul>
 

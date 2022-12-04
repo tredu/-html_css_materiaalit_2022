@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joulukuusi</title>
+      <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+
+    html {
+      font-family: 'Open Sans', sans-serif;
+    }
+    hr{
+         display:block;
+    border:0px;
+    height:46px;
+    background-image:url('img/coniferous.png');
+    }
+    img {
+      max-width: 600px;
+    }
+    xmp {
+      line-height: 1.5em;
+      background-color: rgb(83, 0, 35);
+      color: white;
+      padding: 1em;
+    }
+    p{
+        max-width: 600px;
+    }
+    .fleximages{
+      display: flex;
+      gap: 2px;
+    }
+    .fleximages img{
+      max-width: 50%;
+    }
+    .split{
+      display: flex;
+      gap: 1em;
+    }
+    .split img{
+      width: 100%;
+      max-width: 50vw;
+    }
+    .split div+div{
+      margin-top: auto;
+    }
+    .small_pieces img{
+      max-width: 200px;
+    }
+    ul {
+      list-style-type: circle;
+      margin: 0;
+      padding: 1em;
+      line-height: 1.6em;
+      color: black;
+    }
+    .tyylit b{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<h1>Harjoitus 10 - Joulukuusi</h1>
+<xmp>html_css_basics
+|
+├── demos
+│   └── ...
+|
+├── exercises
+│   ├── ...
+│   └── e10
+│       ├── style.css
+│       ├── index.html
+│       └── img
+│           ├── havu.png
+│           ├── jalka.png
+│           ├── ketju.png
+│           ├── kynttila.png
+│           ├── latvatahti.png
+│           └── pallo.png
+|
+</xmp>
+<hr>
+<h2>Tehtävä</h2>
+<p>Kokoa joulukuusi annetuista osista tai piirrä itse osia ja koristeita</p>
+<h3>HTML</h3>
+<div class="split">
+  <div>
+    <ul>
+<li>Kokoaminen kannattaa aloittaa jalasta ja havuista</li>
+<li>Lisää kuvat main elementin sisälle</li>
+<li>Anna kullekin kuvalle yksilöllinen class esim:<br>
+  tree_leg, tree_bot, tree_mid, tree_top<br>
+  (jalka, alaoksat, keskihavu, latvahavu)</li>
+<li>Sama havukuva tulee siis 3 kertaa</li>
+<li>Lisää latvatähtikuva ja anna sille class star</li>
+<li>Lisää myös 3 koristeköynnöstä ja anna niille esim. luokat</li>
+<li>tinsel_top, tinsel_mid, tinsel_bot</li>
+<li>Pallot ja kynttilät on aseteltu 5x3 taulukkoon, jolla on luokka decorations</li>
+<li>Lisää taulukon soluihin pallojen ja kynttilöiden kuvia</li>
+<li>Anna koristepalloille luokka ball ja kynttilöille luokka candle</li>
+
+    </ul>
+  </div>
+  <div><img src="img/kokokuusi.png" alt=""></div>
+</div>
+<hr>
+<h2>Kuvat</h2>
+<i>Raahaa kuvat työpöydälle, jolloin saat ne täysikokoisina ja säilytät läpinäkyvyyden.</i>
+<div class="small_pieces">
+  <img src="img/havu.png" alt="">
+  <img src="img/jalka.png" alt="">
+  <img src="img/ketju.png" alt="">
+  <img src="img/kynttila.png" alt="">
+  <img src="img/latvatahti.png" alt="">
+  <img src="img/pallo.png" alt="">
+</div>
+
+<hr>
+<div class="split">
+
+<div>
+  <h2>CSS</h2>
+<div class="tyylit">
+<b>body</b>
+<p>nolla marginaalit ja piilota ylivuoto</p>
+<b>main</b>
+<ul>
+  <li>aseta leveys ja korkeus täyttämään koko ruutu (100vw / 100vh)</li>
+  <li>aseta tumma taustaväri</li>
+  <li>lisää display:flex; ja keskitä flex elementit pysty ja vaakasuunnassa</li>
+  <li>aseta position: relative; jotta jäljempänä tulevat elementit ottavat tämän elementin referenssiksi</li>
+  <li>lisää seuraava koodi, joka asemoi kaikki kuvat paitsi taulukon sisällä olevat absoluuttisesti</li>
+</ul>
+<xmp>img:not(table img){
+    position: absolute;
+}
+</xmp>
+<li>nyt position: absolute; ei tarvitse kirjoittaa kaikkiin kuviin erikseen</li>
+
+<b>kuusen jalka (.tree_leg)</b>
+<ul>
+  <li>elementin pitäisi nyt olla aboluuttisesti asemoitava eli sille voidaan antaa </li>
+  <li>bottom: 1em; joka asettaa kuusen jalan ruudun alalaitaan</li>
+</ul>
+
+<b>Alaoksat (.tree_bot)</b>
+<li>bottom: 8em; nostaa alaoksia hieman ylemmäs kuin kuusen jalkaa</li>
+
+<b>Keskioksat (.tree_mid)</b>
+<ul>
+  <li>käytä samaa bottom käskyä mutta nosta keskioksia ylemmäs kuin alaoksia</li>
+  <li>lisää scale ja pienennä keskioskia hieman</li>
+</ul>
+<b>Latva (.tree_top)</b>
+<ul>
+  <li>käytä bottom käskyä ja nosta latvaa ylemmäs</li>
+  <li>lisää scale ja muuta latvaa peinemmäksi</li>
+</ul>
+<b>Latvatähti (.star)</b>
+<p>nosta latvatähti joulukuusen latvaan</p>
+
+<b>Koristenauhat (tinsel_bot, tinsel_mid, tinsel_top)</b>
+<ul>
+  <li>Käytä samaa logiikkaa kuin oksien asemoinnissa</li>
+  <li>nosta kukin koristenauha paikalleen ja skaala sitä pienemmäksi</li>
+</ul>
+
+<b>Koriste-taulukko (.decorations) </b>
+<ul>
+  <li>lisää position: absolute; ja nosta taulukko sopivalle korkeudelle </li>
+  <li>jos lisäät taulukon soluille reunaviivan, pystyt havainnoimaan paremmin, miten suuri taulukko on</li>
+  <li><xmp>table tr td{border: solid thin white;}</xmp></li>
+</ul>
+
+<b>Koriste-taulukon rivit (.decorations tr)</b>
+<ul>
+  <li>tee taulukon rivistä flex-elementti display: flex; </li>
+  <li>aseta rivin korkeus (height) sopivaksi </li>
+  <li>keskitä flex-elementit vaakasuunnassa keskelle</li>
+  <li>keskitä flex-elementit pystysuunnassa pohjalle (align-items:flex-end;)</li>
+  <li>kynttilät ja pallot (.candle / .ball) </li>
+  <li>Säädä kynttilöiden ja pallojen koko sopivaksi (max-width)</li>
+</ul>
+</div></div>
+<div>
+  <img src="img/table_before.png" alt="table_before">
+  <p>Taulukko alkutilanteessa</p><br>
+  <img src="img/table_after.png" alt="table_after"><p>Taulukko flexauksen jälkeen</p>
+</div>
+
+
+
+
+</div>
+
+</body>
+</html>
