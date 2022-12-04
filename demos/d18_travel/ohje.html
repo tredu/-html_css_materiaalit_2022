@@ -84,6 +84,7 @@
 <h2>Screenshot (kreikka.html)</h2>
 <img src="valmis/ui3.png" alt="">
 <img src="valmis/ui4.png" alt="">
+<img src="valmis/ui5.png" alt="">
 <hr>
 <h3>images</h3>
 <div class="cols">
@@ -152,6 +153,35 @@
 <i>Ennen body-tagin sulkeutumista:</i>
 <xmp><script src="lightbox-plus-jquery.min.js"></script>
 </xmp>
+<h3>Lomake</h3>
+<ul>
+    <li>Toteuta matkanvarauslomake, jossa on kentät:</li>
+    <ul><li>meno ja paluupäiville</li>
+    <li>matkalle lähtevien ihmisten ja lemmikkien määrät</li></ul>
+    
+    <li>Käytä input type=”date” päivämäärien asettamiseen</li>
+    <li>Seuraava skripti asettaa nykyisen päivän date-tyyppiselle syötekentälle, jos sillä on id ”startdate”</li>
+    <li>Lisäksi se asettaa paluupäivän 21 päivän päähän, jos loppumispäivä-kentän id on ”enddate”</li>
+
+</ul>
+
+<xmp><script>
+    const total_days = 21
+
+    const set_enddate = () => {
+        const startdate = new Date(document.getElementById('startdate').value)
+        document.getElementById('enddate').valueAsDate = new Date(startdate.setDate(startdate.getDate() + total_days));
+    }
+    set_enddate(total_days)
+
+    const startdate_elem = document.getElementById('startdate')
+    const enddate_elem = document.getElementById('enddate')
+
+    startdate_elem.addEventListener('change', set_enddate.bind(null, event, total_days));
+
+    const today = new Date();
+    startdate_elem.valueAsDate = today
+</script></xmp>
 </main>
 
 </body></html>
