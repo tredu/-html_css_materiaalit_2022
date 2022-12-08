@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakki</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul{line-height: 1.5em;}
+        img{
+            max-width: 100%;
+        }
+        section img{
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <h1>Shakki</h1>
+<xmp>
+html_css_basics
+|
+├── demos
+|   |
+│   └── d21
+|       |
+│       ├── index.html
+│       ├── style.css
+│       ├── chess.js
+|       |
+│       ├─── svg (optional)
+│       │     ├── pawn.svg
+│       │     ├── king.svg
+│       │     └── ...
+|
+</xmp>
+<hr>
+<img src="chess_game.png" alt="chess_game">
+<hr>
+<h2>Tehthävä</h2>
+
+<section>
+<ul>
+    
+    <img src="horse_icon.png" alt="">
+    <p>favicon (png)</p>
+
+        <li>Tee kansio d21, mihin lisäät index.html ja style.css</li>
+        <li>Alusta html dokumentti ja linkitä style.css</li>
+        <li>Lataa ja linkitä favicon</li>
+
+        <li>tee body tagin sisälle div class square</li>
+        <li>tee sen sisälle 8x8 taulukko</li>
+        <li>lisää kuhunkin taulukon soluun (joihin tulee nappi) span tagi, jolla on class white/black riippuen laudan puolesta</li>
+        <li>lisää span tagin sisälle nappia vastaava kuvake</li>
+        <li>voit käyttää</li>
+        <ul>
+            <li>A: emojia <a href="https://emojipedia.org/search/?q=chess" target="_blank">https://emojipedia.org/search/?q=chess<a ></li>
+            <li>B: piirtää png tai jpg kuvan esim. Adobe Photoshopissa</li>
+            <li>C: piirtää svg kuvan Adobe Illustratorissa</li>
+            <ul>
+                <li>Tee uusi 100 x 100 px dokumentti</li>
+                <li>Tallenna nimellä… muodossa svg</li>
+                <li>Siirrä svg-tiedosto VS Codessa avattuun kansioon esim. alikansioon svg/</li>
+                <li>Avaa svg-tiedosto VS Codessa ja kopio kaikki svg-tagien välissä oleva koodi spanin sisälle</li>
+                <li>svg:n voi linkittää myös kuvana, mutta tuolloin CSS:n fill/stroke ei muuta sen väriä</li>
+                <img src="svg/pawn.svg" alt="">
+                <img src="svg/king.svg" alt="">
+            </ul>
+        </ul>
+    </ul><hr>
+    <ul>
+        <li>Lataa ja linkitä <a href="chess.js" target="_blank">chess.js<a > dokumentin headiin</li>
+        <li><xmp><script src="chess.js"></script></xmp></li>
+
+        <li>Kutsu aloitusfunktiota ennen body-tagin sulkeutumista</li>
+        <li><xmp><script>init()</script></xmp></li>
+
+        <li>Skripti toteuttaa, sen että nappia voi siirtää, mutta ei ymmärrä muuten shakin sääntöjä</li>
+        <li>Jos olet mestari JavaScriptissä, niin toteuta siirron laillisuuden tarkistus ;)</li>
+    </ul>
+    </section>
+
+
+    <hr>
+    <h2>CSS</h2>
+    <ul>
+    <li><b>:root</b></li>
+    <li>valitse teemaväri, jona tallennat muuttujana</li>
+    <br>
+    <li><b>body</b></li>
+    <li>aseta tumma taustaväri</li>
+    <li>nollaa marginaalit</li>
+    <li>tee bodystä flex elementti</li>
+    <li>keskitä elementit pysty- ja vaakasuunnassa</li>
+    <li>aseta korkeudeksi 100vh</li>
+    <li>kasvata fontin koko, jos teit nappulat fontti-ikoneina</li>
+    <li>aseta tekstin väriksi vaalea ja fontiksi Arial</li>
+    <br>
+    <li><b>Muuta padding ja reunaviivan paksuus sisältymään divin ulkomittoihin</b></li>
+    <xmp>*{box-sizing: border-box;}</xmp>
+    <br>
+    <li><b>.square</b></li>
+    <li>säädetään pelilaudan kokoa</li>
+    <li>aseta  position: relative; koska tablessa käytetään position: absolute; 
+    <li>lisää reunaviivat</li>
+    <li>tee .square:sta flex-elementti ja keskitä sisältö vaaja ja pystysuunnassa</li>
+    <li>aseta korkeus ja leveys 90vh</li>
+    <br>
+    <li><b>table</b></li>
+    <li>aseta position: absolute; 
+    <li>leveys ja korkeus 90%</li>
+    <li>voit muuttaa ruutujen välistystä border-spacing: 5px; </li>
+    <br>
+    <li><b>table tr td</b></li>
+    <li>pyöristä ruutujen kulmat halutessasi</li>
+    <li>taulukon solu on referenssinä spanille </li>
+    <li>position: relative; 
+    <li>ylimenevät napin osat saavat näkyä</li>
+    <li>overflow: visible; </li>
+    <br>
+    <li><b>table tr td span</b></li>
+    <li>nappi on span tagin sisällä</li>
+    <br>
+    <li>keskitä nappi ruudun keskelle</li>
+    <xmp>
+        position: absolute; 
+        left: 0; 
+        right: 0; 
+        top: 0; 
+        bottom: 0; 
+    </xmp>
+    </li>
+    <li>ja tee siitä vielä flex elementti</li>
+    <li>keskitä flex sisältö pysty ja vaakasuunnassa</li>
+    <li>nyt ruutujen pitäisi pysyä neliönä riippumattaa onko ruudussa nappi vai ei</li>
+    <br>
+    <li><b>käytä table tr / table td ja :nth-child(even) / :nth-child(odd)</b></li>
+    <li>käskyjä värittääksesi ruudukon solut shakkimaisesti vuorovärein</li>
+    <br>
+    <li><b>.black</b></li>
+    <li>jos käytit fontti-ikonia niin muuta napin väri color-parametrillä</li>
+    <li>.white</li>
+    <li>jos käytit fontti-ikonia niin muuta napin väri color-parametrillä</li>
+    <br>
+    <li><b>svg</b></li>
+    <li>jos käytit svg kuvia niin aseta max-korkeus 70%</li>
+    <br>
+    <li><b>.black svg path / .white svg path</b></li>
+    <li>svg-kuvakkeen väriä voi muuttaa fill-parametrilla</li>
+    <li>fill: rgb(0, 225, 255); 
+    <li>jotkut svg kuvakkeet muodostuvat ääriviivoista</li>
+    <li>stroke: rgb(0, 225, 255)</li>
+    <br>
+    <li><b>table tr td:hover</b></li>
+    <li>lisää <b>hitaasti</b> välkkyvä animaatio kun hiiri on jonkun ruudun päällä</li>
+    <li><b>määritele animaatio @keyframes kohdassa</b></li>
+
+</ul>
+<p>Tallenna GitHubiin</p>
+<hr>
+<section>
+<h2>SVG kuvien lataus JavaScriptillä</h2>
+<i>Toimii VS Coden live-serverillä ja palvelimelle ladattaessa</i>
+
+    <xmp><td><span class="white"><chesspiece piece="pawn"></chesspiece></td></xmp>
+        <xmp>
+<script>
+    const pieces = document.querySelectorAll("chesspiece");
+    pieces.forEach(element => {
+        const piece = element.getAttribute('piece')
+            fetch(`svg/${piece}.svg`)
+            .then(response => response.text())
+            .then(svg => element.parentNode.innerHTML = svg)
+        });
+</script>
+    </xmp>
+</section>
+</main></body></html>
