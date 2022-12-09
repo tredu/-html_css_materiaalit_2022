@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D19 Holy Grail</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+
+        }
+        *{
+            scroll-margin-top: 50px;
+            scroll-behavior: smooth;
+        }
+        img{
+            max-width: 100%;
+            border: solid thin black;
+            margin: 1em;
+        }
+        xmp{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #111;
+            color: antiquewhite;
+            padding: 0.5em;
+        }
+        main{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            background-color: white;
+        }
+        main img{
+            max-width: 100%;
+        }
+        main ul{
+            line-height: 1.3em;
+        }
+        .cols{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .cols img{
+            object-fit: contain;
+            max-width: 300px;
+        }
+
+        figure img{
+            max-width: 100%;
+        }
+        figcaption{text-align: center;}
+        .gallery img{
+            max-height: 250px;
+        }
+        .split{
+            display: flex;
+            
+        }
+        .split img{
+            max-width: 50%;
+        }
+        .split xmp{
+            padding-right: 4em;
+        }
+        nav{
+            position: fixed;
+            top: 0;
+            background-color: white;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <h1>CSS Grid: Holy Grail</h1>
+    <xmp>
+    html_css_basics
+    |
+    ├── demos
+    │   ├── ...
+    │   └── d19
+    │       ├── index.html
+    │       ├── style.css
+    │       ├── menu.css
+    │       |
+    │       ├── svg
+    │       |    ├── garage.svg
+    │       |    ├── house.svg
+    │       |    └── tree.jpg 
+    |       |
+    │       └── img
+    │            ├── asunto1.png
+    │            ├── asunto2.png
+    │            ├── asunto3.png
+    │            ├── asunto4.png
+    │            ├── pohja1.jpg
+    │            ├── pohja2.jpg
+    │            ├── pohja3.jpg
+    │            ├── pohja4.jpg
+    │            ├── talli1.jpg
+    │            ├── talli2.jpg
+    │            ├── tila1.jpg
+    │            ├── tila2.jpg
+    │            ├── mainos_mob_1.jpg
+    │            ├── mainos_mob_2.jpg
+    │            ├── mainos_pc_1.jpg
+    │            ├── mainos_pc_2.jpg
+    │            ├── mainos_tab_1.jpg
+    │            └── mainos_tab_2.jpg           
+    |
+    </xmp>
+<hr>
+
+<h2>Layout</h2>
+<img src="ohjeimg/semantic_layout-01.jpg" alt="">
+<hr>
+<h2>Screenshots</h2>
+<nav>
+<a href="#tehtava">Siirry HTML kohtaan -></a>&emsp;
+<a href="#css_info">Siirry CSS kohtaan -></a></nav>
+<img src="ohjeimg/layout_pc.jpg" alt="layout_pc">
+<img src="ohjeimg/layout_tab.jpg" alt="layout_tab">
+<img src="ohjeimg/layout_mob.jpg" alt="layout_mob">
+<hr>
+<div class="split">
+
+
+<xmp>
+    body(
+        nav
+        header
+        .advert_tab
+        .advert_mob
+        #container(
+            .advert_pc
+            main(
+                article
+                article
+                article
+                aside
+            )
+            .advert_pc
+        )
+        .advert_tab
+        .advert_mob
+        footer
+    )
+
+</xmp>
+<img src="ohjeimg/small_grid-01.jpg" alt="small_grid">
+</div>
+<h2>Tehtävä</h2>
+<h3 id="tehtava">HTML (1/2) Holy Grail Layout</h3>
+<ul>
+    <li>Tutustu Holy Grail layoutin ja css gridin periaatteisiin</li>
+    <li><a href="https://en.wikipedia.org/wiki/Holy_grail_(web_design)" target="_blank">Holy grail wikipedia</a></li>
+    <li><a href="https://www.w3schools.com/css/css_grid.asp" target="_blank">css grid w3schools</a></li>
+    <li><input type="checkbox" name="accept" id="accept"><label for="accept">Tutustuin</label></li>
+</ul>
+<p>Saat ladattua projektin kuvat helpoiten, kun kloonaat ensin malli-repon työpöydälle<br>ja sitten siirrät img ja svg kansiot omaan harjoituskansioosi</p>
+<xmp>git clone https://github.com/tredu/kiinteisto_lkv_html_harjoitus.git
+</xmp>
+<ul>
+    <li>Luo index.html ja style.css</li>
+    <li>Alusta index.html</li>
+    <li>Linkitä style.css headiin</li>
+    <li>Vaihda dokumentin title esim. Kiinteistö LKV</li>
+
+    <li>lisää favicon img/house_fav_icon.png</li>
+
+
+    <li>Anna bodylle id top</li>
+    <li>Lisää navigaatio:</li>
+    <ul>  
+        <li>Käytetään samaa navigaatiota, kuin Kalatorissa <a href="https://tredu.github.io/html_css_materiaalit_2022.github.io/materials/kalatori_nav/nav.html" target="_blank">Responsiivinen navigaatio</a></li>
+        <li>Tee menu.css ja linkitä se headiin</li>
+        <li>Kopioi Kalatorin navigaation css koodi menu.css tiedostoon</li>
+        <li>Kopioi navigaation html-koodi bodyyn</li>
+        <li>vaihda navigaation logo svg/house_logo.svg</li>  
+    </ul>
+    <li>Lisää muut layoutissa käytetyt elementit bodyyn:</li>
+    <ul>
+        <li>header</li>
+        <li>div class="advert_tab"</li>
+        <li>div class="advert_mob"</li>
+        <li>div id="container"</li>
+        <ul>
+            <li>class="advert_pc"</li>
+            <li>main</li>
+            <ul>
+                <li>article id="aparts"</li>
+                <li>article id="garages"</li>
+                <li>article id="forests"</li>
+                <li>aside</li>
+            </ul>
+            <li>class="advert_pc"</li>
+            
+        </ul>
+        <li>div class="advert_tab"</li>
+        <li>div class="advert_mob"</li>
+        <li>footer</li>
+            </ul>
+        </ul>
+
+<hr>
+<h3 id="css_info">CSS (1/2) style.css</h3>
+
+<b>:root</b>
+
+tee muuttujat:
+<ul>
+    <li>navigaation korkeus 50px (--nav-height)</li>
+    <li>headerin korkeus 150px (--header-height)</li>
+    <li>footerin korkeus 50px (--footer-height)</li>
+    <li>teemaväri esim. sininen (--sky_blue)</li>
+</ul>
+<xmp>
+*{
+    box-sizing: border-box;
+    scroll-margin-top: var(--nav-height);
+    scroll-behavior: smooth;
+}
+</xmp>
+<p>Eli siis: Määritettiin elementtien laskentatapa siten , että padding ja reunaviiva siältyvät ulkomittoihin
+Ankkurilinkit rullaavat sivun tiettyyn, kohtaan, mutta koska  nav on position fixed se peittää osan sisällöstä alleen. Jotta otsikko jonka kohdalle scrollataan jää näkyviin, tarvitaan scroll-marginaali.
+Hyvällä tuurilla myös scroll-behavior: smooth toimii ja lisää scrollaukseen kiihtyvyyden, suoran hypähdyksen sijaan.</p>
+
+
+<ul>
+<b>body</b>
+<li>nollaa marginaalit</li>
+<li>aseta taustaväri esim. valkoinen</li>
+<li>valitse Google-fonts fontti tai käytä Arial</li>
+
+<b>nav</b>
+<li>lisätään navigaatiolle vielä heittovarjo alareunaan</li>
+<li>aseta z-index: 999; jotta navigaatio on kaikkien elementtien päällä myös scrollatessa</li>
+
+<b>#container</b>
+<li>keskitä sisältö vaakasuunnassa margin: 0 auto;</li>
+<li>tee containersita flex elementti</li>
+<li>jeskitä flex sisältö vaakasuunnassa</li>
+
+
+<b>.advert_pc</b>
+<li>lisää ylämarginaalia</li>
+<li>aseta minimileveys 150px</li>
+
+<b>.advert_tab</b>
+<li>aseta leveys 100%</li>
+<li>aseta maksimileveys 800px</li>
+<li>aseta minimikorkeus 150px</li>
+<li>lisää ylös 1em marginaali</li>
+<li>laita vasen ja oikea marginaali auto, jolloin keskität elementin</li>
+<li>nollaa alamarginaali</li>
+<li>aseta display: none; koska tablettimainos ei kuulu olla näkyvissä työpöytänäkymässä</li>
+
+<b>.advert_mob</b>
+<li>lisää padding 1em (joka puolelle)</li>
+<li>aseta display: none; koska mobiilimainos ei kuulu olla näkyvissä työpöytänäkymässä</li>
+
+<b>header</b>
+<li>aseta valitsemasi teemaväri ja käytä muuttujaa</li>
+<li>aseta elementin korkeus ja käytä muuttujaa</li>
+<li>aseta ylämarginaali ja käytä muuttujaa</li>
+<li>tee headerista flex elementti</li>
+<li>keskitä sisältö vaaka- ja pystysuunnassa</li>
+
+<b>main</b>
+<li>lisää padding 1em (joka puolelle)</li>
+<li>aseta taustaväriksi esim. valkoinen</li>
+<li>aseta tumma tekstin väri</li>
+<li>tee mainista 100% leveä</li>
+<li>aseta maksimileveys 1000px</li>
+<xmp>min-height: calc(100vh
+    - var(--nav-height) 
+    - var(--header-height) 
+    - var(--footer-height));
+</xmp>
+<li>eli siis, asetettiin main täyttämään navigaatiolta, headerilta ja footerilta jäljelle jäävä tila ruudun korkeudesta</li>
+<li>tee mainista grid elmentti display: grid;</li>
+<li>aseta 1em tilaa grid elementien väliin gap: 1em;</li>
+<xmp>grid-template-areas: 
+    'aparts aparts aside'
+    'garages garages aside'
+    'forests forests aside'
+    ;
+</xmp>
+<p>eli siis ruudukossa on 3 riviä ja 3 saraketta<br>
+ylimmällä rivillä on 2/3 osaa #aparts elementtiä ja 1/3 osaa aside-elementtiä<br>
+keskirivillä on 2/3 osaa #garages elementtiä ja 1/3 osaa aside-elementtiä<br>
+keskirivillä on 2/3 osaa #forests elementtiä ja 1/3 osaa aside-elementtiä</p>
+
+
+<b>#aparts</b>
+<li>aseta paddin 1em</li>
+<li>aseta näkyvä taustaväri (väliaikaisesti)</li>
+<li>grid-area: aparts;</li>
+<li>eli siis div jolla on id aparts, käyttää nyt gridin soluja aparts</li>
+
+<b>#garages</b>
+<li>aseta näkyvä taustaväri (väliaikaisesti)</li>
+<li>grid-area: garages;</li>
+
+
+<b>#forests</b>
+<li>aseta näkyvä taustaväri (väliaikaisesti)</li>
+<li>grid-area: forests;</li>
+
+
+
+<b>aside</b>
+<li>grid-area: aside;</li>
+<li>aseta näkyvä taustaväri (väliaikaisesti)</li>
+<li>aseta padding 1em</li>
+<li>aseta vasemmalle ohut reunaviiva</li>
+
+<b>footer</b>
+
+<li>aseta footerille sama taustaväri kuin headerille</li>
+<li>aseta footerin korkeus käyttäen muuttujaa</li>
+<li>tee footerista flex elementti</li>
+<li>keskitä flex sisältö vaaka- ja pystysuunnassa</li>
+</ul>
+<br>
+<b>@media only screen and (max-width: 1050px){</b>
+<br>
+<b>.advert_pc</b>
+<p>piilota pc mainos</p>
+
+<b>.advert_tab</b>
+
+<p>näytä tablettimainos display: block;</p>
+<p>keskitä teksti</p>
+<b>.advert_tab img</b>
+<p>rajoita kuvan max leveys 100%</p>
+
+<b>main</b>
+
+<p>muokkaa gridiä:</p>
+<xmp>grid-template-areas:
+    'aside'
+    'article'
+    'garages'
+    'forests';
+</xmp>
+<p>nyt gridissä on vain yksi sarake ja kaikki elementit ovat päällekkäin</p>
+
+<b>aside</b>
+<p>poista vasen reunaviiva</p>
+
+<b>form</b>
+<ul>
+<li>vaihda flexin suunta pystyyn flex-direction: row;</li>
+<li>tasaa flex elementit justify-content: space-around;</li>
+<li>lisää tyhjää tillaa flex elementtien väliin  gap: 2em;</li>
+</ul>
+}
+<b>@media only screen and (max-width: 600px) {</b>
+<br>
+<b>.advert_tab</b>
+
+<p>piilota tablettimainos</p>
+
+<b>.advert_mob</b>
+<p>näytä mobiilimainos display: block;</p>
+<p>keskitä teksti </p>
+
+<b>article div, section div</b>
+
+<p>käännä artikkelin flexin suunta pystyyn flex-direction: column;</p>
+
+<b>form</b>
+<p>käännää lomakkeen flexin suunta pystyyn flex-direction: column;</p>
+
+}
+<hr>
+<h2 id="images_info">Kuvat</h2>
+<div class="gallery">
+    <img src="img/asunto1.jpg" alt="">
+    <img src="img/asunto2.jpg" alt="">
+    <img src="img/asunto3.jpg" alt="">
+    <img src="img/asunto4.jpg" alt="">
+
+    <img src="img/pohja1.jpg" alt="">
+    <img src="img/pohja2.jpg" alt="">
+    <img src="img/pohja3.jpg" alt="">
+    <img src="img/pohja4.jpg" alt="">
+
+    <img src="img/talli1.jpg" alt="">
+    <img src="img/talli2.jpg" alt="">
+
+    <img src="img/tila1.jpg" alt="">
+    <img src="img/tila2.jpg" alt="">
+  
+    <img src="img/mainos_tab_1.jpg" alt="">
+    <img src="img/mainos_tab_2.jpg" alt="">
+    <img src="img/mainos_mob_1.jpg" alt="">
+    <img src="img/mainos_mob_2.jpg" alt="">
+    <img src="img/mainos_pc_1.jpg" alt="">
+    <img src="img/mainos_pc_2.jpg" alt="">
+</div>
+</main>
+
+</body>
+</html>
