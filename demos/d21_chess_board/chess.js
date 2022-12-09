@@ -1,5 +1,4 @@
 // w3schools: HTML Drag and Drop API
-// Edit: Aki Kurvinen
 
 function allowDrop(ev) {
    ev.preventDefault();
@@ -33,11 +32,11 @@ function drop(ev) {
       // cancel move if landed on own
       return
    }
-   else{
-      // landed on opponent
-      ev.target.innerHTML = ''
-      ev.target.appendChild(document.getElementById(data));
-   }
+   // landed on opponent
+   console.log(ev.target)
+   ev.target.innerHTML = ''
+   ev.target.parentNode.innerHTML = ''
+   ev.currentTarget.appendChild(document.getElementById(data));
 
 }
 

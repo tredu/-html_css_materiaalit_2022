@@ -30,12 +30,7 @@ html_css_basics
 |       |
 │       ├── index.html
 │       ├── style.css
-│       ├── chess.js
-|       |
-│       ├─── svg (optional)
-│       │     ├── pawn.svg
-│       │     ├── king.svg
-│       │     └── ...
+│       └── chess.js
 |
 </xmp>
 <hr>
@@ -57,21 +52,8 @@ html_css_basics
         <li>tee sen sisälle 8x8 taulukko</li>
         <li>lisää kuhunkin taulukon soluun (joihin tulee nappi) span tagi, jolla on class white/black riippuen laudan puolesta</li>
         <li>lisää span tagin sisälle nappia vastaava kuvake</li>
-        <li>voit käyttää</li>
-        <ul>
-            <li>A: emojia <a href="https://emojipedia.org/search/?q=chess" target="_blank">https://emojipedia.org/search/?q=chess<a ></li>
-            <li>B: piirtää png tai jpg kuvan esim. Adobe Photoshopissa</li>
-            <li>C: piirtää svg kuvan Adobe Illustratorissa</li>
-            <ul>
-                <li>Tee uusi 100 x 100 px dokumentti</li>
-                <li>Tallenna nimellä… muodossa svg</li>
-                <li>Siirrä svg-tiedosto VS Codessa avattuun kansioon esim. alikansioon svg/</li>
-                <li>Avaa svg-tiedosto VS Codessa ja kopio kaikki svg-tagien välissä oleva koodi spanin sisälle</li>
-                <li>svg:n voi linkittää myös kuvana, mutta tuolloin CSS:n fill/stroke ei muuta sen väriä</li>
-                <img src="svg/pawn.svg" alt="">
-                <img src="svg/king.svg" alt="">
-            </ul>
-        </ul>
+        <li>voit käyttää emojia <a href="https://emojipedia.org/search/?q=chess" target="_blank">https://emojipedia.org/search/?q=chess<a ></a></li>
+
     </ul><hr>
     <ul>
         <li>Lataa ja linkitä <a href="chess.js" target="_blank">chess.js<a > dokumentin headiin</li>
@@ -98,7 +80,7 @@ html_css_basics
     <li>tee bodystä flex elementti</li>
     <li>keskitä elementit pysty- ja vaakasuunnassa</li>
     <li>aseta korkeudeksi 100vh</li>
-    <li>kasvata fontin koko, jos teit nappulat fontti-ikoneina</li>
+    <li>kasvata fontin koko, (nappulat fontti-ikoneita)</li>
     <li>aseta tekstin väriksi vaalea ja fontiksi Arial</li>
     <br>
     <li><b>Muuta padding ja reunaviivan paksuus sisältymään divin ulkomittoihin</b></li>
@@ -143,18 +125,9 @@ html_css_basics
     <li>käskyjä värittääksesi ruudukon solut shakkimaisesti vuorovärein</li>
     <br>
     <li><b>.black</b></li>
-    <li>jos käytit fontti-ikonia niin muuta napin väri color-parametrillä</li>
-    <li>.white</li>
-    <li>jos käytit fontti-ikonia niin muuta napin väri color-parametrillä</li>
-    <br>
-    <li><b>svg</b></li>
-    <li>jos käytit svg kuvia niin aseta max-korkeus 70%</li>
-    <br>
-    <li><b>.black svg path / .white svg path</b></li>
-    <li>svg-kuvakkeen väriä voi muuttaa fill-parametrilla</li>
-    <li>fill: rgb(0, 225, 255); 
-    <li>jotkut svg kuvakkeet muodostuvat ääriviivoista</li>
-    <li>stroke: rgb(0, 225, 255)</li>
+    <li>muuta napin väri color-parametrillä</li>
+    <li><b>.white</b></li>
+    <li>muuta napin väri color-parametrillä</li>
     <br>
     <li><b>table tr td:hover</b></li>
     <li>lisää <b>hitaasti</b> välkkyvä animaatio kun hiiri on jonkun ruudun päällä</li>
@@ -163,21 +136,5 @@ html_css_basics
 </ul>
 <p>Tallenna GitHubiin</p>
 <hr>
-<section>
-<h2>SVG kuvien lataus JavaScriptillä</h2>
-<i>Toimii VS Coden live-serverillä ja palvelimelle ladattaessa</i>
 
-    <xmp><td><span class="white"><chesspiece piece="pawn"></chesspiece></td></xmp>
-        <xmp>
-<script>
-    const pieces = document.querySelectorAll("chesspiece");
-    pieces.forEach(element => {
-        const piece = element.getAttribute('piece')
-            fetch(`svg/${piece}.svg`)
-            .then(response => response.text())
-            .then(svg => element.parentNode.innerHTML = svg)
-        });
-</script>
-    </xmp>
-</section>
 </main></body></html>
