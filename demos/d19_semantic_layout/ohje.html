@@ -87,8 +87,9 @@
     │       |
     │       ├── svg
     │       |    ├── garage.svg
+    │       |    ├── house_logo.svg
     │       |    ├── house.svg
-    │       |    └── tree.jpg 
+    │       |    └── tree.svg 
     |       |
     │       └── img
     │            ├── asunto1.png
@@ -152,7 +153,269 @@
 <img src="ohjeimg/small_grid-01.jpg" alt="small_grid">
 </div>
 <h2>Tehtävä</h2>
-<h3 id="tehtava">HTML (1/2) Holy Grail Layout</h3>
+<h3 id="tehtava">HTML (2/2) Sisältö</h3>
+<p><b>header</b></p>
+
+<ul>
+    <li>lisää headeriin figure-tagia</li>
+    <li>lisää figuren sisälle a tagi href #aparts</li>
+    <li>lisää a tagin sisälle kuva svg/house.svg</li>
+    <li>ja kuvan alle figcaption ”Asunnot”</li>
+
+    <li>Kopio tätä rakennetta 3 kpl:</li>
+    <li>vaihda linkitykset (#garages, #forests)</li>
+    <li>vaihda kuvakkeet (garage.svg, tree.svg)</li>
+    <li>vaihda tekstit (Autotallit, Metsätilat)</li>
+</ul>
+
+<p><b>article id="aparts"</b></p>
+<ul>
+    <li>lisää h2 väliotsikko ”Asunnot</li>
+    <li>lisää sen alle tyhjä div, jonka sisälle:</li>
+
+    <li>figure, jonka sisällä on 2 kuvaa allekkain ja figcaption</li>
+    <li>toinen kuva on asunnon valokuva ja toinen sen pohjapiirros</li>
+
+    <li>figcaption tagin sisällä on allekkain 2 p tagia, joista ylemmässä asunnon hinta, neliömetrit ja huoneet</li>
+    <li>kääri huoneet (oh + tk + jne) span tagiin</li>
+    <li>alemmassa p tagissa lukee paikkakunta</li>
+    <li>kopioi figure tagilla luotua rakennetta 4 kpl ja vaihda kuvat ja tesktit</li>
+</ul>
+<img src="ohjeimg/figure-fig_1.jpg" alt="figure" width="500">
+<p><b>article id="garages"</b></p>
+<ul>
+    <li>lisää väliotsikko ”Autotallit”</li>
+    <li>lisää sen alle tyhjä div, jonka sisälle kopioit Asunnot-kohdan figure-rakenteita</li>
+    <li>Kuvia (img) tulee tosin vain yksi</li>
+    
+    <img src="ohjeimg/figure-fig_2.jpg" alt="figure" width="500">
+</ul>
+<p><b>article id="forests"</b></p>
+<ul>
+    <li>Metsätilat on samanlainen kuin ylempi garages, mutta</li>
+    <li>vaihda otsikko h2 ”Metsätilat”</li>
+    <li>vaihda figure tagien siällä olevat kuvat ja tekstit</li>
+</ul>
+
+<p><b>aside</b></p>
+<li>lisää asiden sisälle details tagi</li>
+
+<li>voit antaa sille lisäparametriksi open</li>
+<li>detailsin sisälle tulee <a href="https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_details" target="_blank">details</a>-tagi, jossa lukee ”Asuntohaku”</li>
+<li>summaryn alle form tagi</li>
+<li>form tagin sisällä on 3 diviä joiden tarkoitus on ryhmitellä lomakkeen kentät</li>
+<br>1. diviin tulee:
+<ul>
+    <li>label for area, jossa lukee ”Paikkakunta”</li>
+    <li>input (text) id area</li>
+
+    <li>h4 hinta</li>
+    <li>label for minprice jossa lukee ”min.”</li>
+    <li>input (range) class slider, id minprice</li>
+    <li>span id minprice_disply</li>
+    
+    <li>label for maxprice jossa lukee ”max.”</li>
+    <li>input (range) class slider, id maxprice</li>
+    <li>span id maxprice_disply</li>
+</ul>
+<br>2. diviin tulee:
+<ul>
+    <li>h4 ”Asunnon tyyppi”</li>
+    <li>checkbox id kerros</li>
+    <li>label for kerros ”Kerrostalo”</li>
+    <br>
+    <li>checkbox id pari</li>
+    <li>label for pari ”Paritalo”</li>
+    <br>
+    <li>checkbox id rivi</li>
+    <li>label for rivi ”Rivitalo”</li>
+    <br>
+    <li>checkbox id omakoti</li>
+    <li>label for omakoti ”Omakotitalo”</li>
+
+</ul>
+<br>3. diviin tulee:
+<ul>
+    <li>h4 "Asumismuoto"</li>
+    <li>checkbox id vuokra</li>
+    <li>label for vuokra ”vuokra”</li>
+    <br>
+    <li>checkbox id omistus</li>
+    <li>label for omistus ”omistus”</li>
+    <br>
+    <li>checkbox id asumisoikeus</li>
+    <li>label for asumisoikeus ”asumisoikeus”</li>
+    <br>
+    <li>input (submit) jossa lukee "Hae"</li>
+</ul>
+<i>Tallenna GitHubiin</i>
+<hr>
+<h3 id="css_info">CSS (2/2) style.css</h3>
+<ul>
+<li><b>h1, h2, h3</b></li>
+<li>vaihda otsikoiden väri ja käytä muuttujaa</li>
+<li>nollaa ylämarginaalit</li>
+<br>
+<li><b>.active a</b></li>
+<li>aseta alleviivaus aktiiviselle linkille</li>
+<br>
+<li><b>header figure</b></li>
+<li>keskitä teksti</li>
+<br>
+<li><b>header a, header:visited</b></li>
+<li>poista alleviivaus</li>
+<li>aseta tekstin väri valkoinen</li>
+<br>
+<li><b>header a:hover</b></li>
+<li>aseta läpinäkyvyys 20%, eli näkyvyys 80%</li>
+<br>
+<li><b>article</b></li>
+<li>aseta padding 1em</li>
+<br>
+<li><b>article:nth-child(-n+2)</b></li>
+<li>laita artikkeleille alas reunaviiva</li>
+<br>
+<li><b>article div, section div</b></li>
+<li>tee asuntokuvista flex elementtejä</li>
+<li>aseta elementtien väriin 1em tyhjää tilaa</li>
+<li>salli flexin uudelleenrivitys wrap</li>
+<br>
+<li><b>article figure, section figure</b></li>
+
+<li>position: relative; jotta kuva voidaan asemoida suhteessa tähän elementtiin</li>
+<li>rajoita elementin maksimileveys esim 300px</li>
+<li>nollaa marginaalit</li>
+<br>
+<li><b>article figure img, section figure img</b></li>
+
+<li>aseta maksimileveys 100%</li>
+
+<br>
+<li><b>article figure img:nth-child(2)</b></li>
+<li>asuntokuvissa on 2 kuvaa (img) joten asetetaan jälkimmäinen ensimmäisen päälle</li>
+<li>position: absolute;</li>
+<li>left: 0; jotta kuvat ovat samassa kohdassa</li>
+<li>opacity: 0; jotta pohjapiirroskuva ei näy oletuksena</li>
+<br>
+<li><b>figure img:nth-child(2):hover</b></li>
+<li>opacity: 1; jotta pohjapiirroskuva näkyy kun hiiri on asuntokuvan päällä</li>
+<li>tee kursorista sormi</li>
+<li>aseta 0,5 sekuntia pitkä siirtymä, kun kuva tulee näkyviin</li>
+<br>
+<li><b>article figcaption p, section figcaption p</b></li>
+<li>nolla marginaaalit, jotta kohdetiedot mahtuvat pienempään tilaan</li>
+<br>
+<li><b>article figcaption span</b></li>
+<li>float: right; jotta kohteen huoneet on listattu oikeaan laitaan</li>
+<br>
+<li><b>summary</b></li>
+<li>säädä fontin kokoa isommaksi ja vaihda sen väri</li>
+<li>tee fontista lihavoitu</li>
+<li>aseta hiire sormeksi</li>
+<li>aseta minimileveys 220px</li>
+<br>
+<li><b>form</b></li>
+<li>tee lomakkeesta flex elementti</li>
+<li>vaihda flexin suunta sarakkeeksi</li>
+<br>
+<li><b>form input[type=submit]</b></li>
+<li>muotoile napin, tekstin ja reunaviivan väri</li>
+<li>aseta padding ylös ja alas 0.5em</li>
+<li>aseta padding oikealle ja vasemmalle 1em</li>
+<li>pyöristä napin kulmat</li>
+<li>aseta leveys 90%</li>
+<li>tee napille myös :hover, joka vaihtaa taustavärin ja tekstin värin</li>
+<li>tee kursorista sormi kun se on napin päällä</li>
+</ul>
+<i>Tallenna GitHubiin</i>
+<hr>
+<h4>JavaScriptiä kokeiltavaksi</h4>
+<p>Sulkee hampurilaisvalikon, kun käyttäjä painaa jotain linkkiä</p>
+<xmp>
+<script>
+    const closeMenu = () => {
+        document.getElementById("menu_box").checked = false;
+    }
+    const elems = document.querySelectorAll("nav ul li a");
+    elems.forEach(item =>{
+        console.log(item)
+        item.setAttribute('onClick', 'closeMenu()')
+    })
+</script>
+</xmp>
+<hr>
+<p>Asettaa ”active” CSS-luokan navigaatiolinkille, jota on klikattu<br>
+Poistaa ”active” CSS-luokan jos sivua vieritetään hiirellä tai scrollbarista tai puhelimella
+</p>
+<b>Headiin:</b>
+<xmp><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script></xmp>
+<b>Ennen body tagin sulkeutumista:</b>
+<xmp>
+    <script>
+        const navElements = document.querySelectorAll("nav ul li");
+
+        // active navbar item 
+        const activeLink = (e) => {
+            navElements.forEach((item) => {
+                item.classList.remove("active");
+                e.classList.add("active");
+            });
+        };
+
+        // attaching the event listener for each element
+        navElements.forEach((item) => {
+            item.addEventListener("click", () => { 
+            activeLink(item)
+            });
+        });
+        
+        // remove link active class
+        const clear_nav_actives = () => {
+            navElements.forEach((item) => {
+                item.classList.remove("active");
+            });
+        }
+
+        // mouse scroll
+        $(window).bind('mousewheel DOMMouseScroll', function(event){
+            clear_nav_actives()
+        });
+
+        // scrollbar click
+        $(document).mousedown(function(e){
+            if($(window).outerWidth() <= e.clientX+20 ){
+                clear_nav_actives()
+            }
+        });
+
+        // mobile swipe
+        const div = document.getElementById('container')
+        div.addEventListener('touchstart', event => {
+            clear_nav_actives()
+        })
+    </script>
+</xmp>
+<hr>
+<p>Seuraa ”range” tyyppisen inputin muuttumista ja näyttää sen arvot asuntohaussa kohdassa max ja min hinnat</p>
+<xmp>
+    <script>
+        const minslider = document.getElementById("minprice");
+        const minoutput = document.getElementById("minprice_disply");
+        minoutput.innerHTML = minslider.value;
+        minslider.oninput = function() {
+            minoutput.innerHTML = this.value;
+        } 
+        const maxslider = document.getElementById("maxprice");
+        const maxoutput = document.getElementById("maxprice_disply");
+        maxoutput.innerHTML = maxslider.value;
+        maxslider.oninput = function() {
+            maxoutput.innerHTML = this.value;
+        }
+    </script>
+</xmp>
+<i>Tallensithan GitHubiin</i>
+<hr>
+<h3>HTML (1/2) Holy Grail Layout</h3>
 <ul>
     <li>Tutustu Holy Grail layoutin ja css gridin periaatteisiin</li>
     <li><a href="https://en.wikipedia.org/wiki/Holy_grail_(web_design)" target="_blank">Holy grail wikipedia</a></li>
