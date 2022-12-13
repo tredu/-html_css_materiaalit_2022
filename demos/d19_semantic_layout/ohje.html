@@ -400,13 +400,13 @@ Poistaa ”active” CSS-luokan jos sivua vieritetään hiirellä tai scrollbari
 <xmp>
     <script>
         const minslider = document.getElementById("minprice");
-        const minoutput = document.getElementById("minprice_disply");
+        const minoutput = document.getElementById("minprice_display");
         minoutput.innerHTML = minslider.value;
         minslider.oninput = function() {
             minoutput.innerHTML = this.value;
         } 
         const maxslider = document.getElementById("maxprice");
-        const maxoutput = document.getElementById("maxprice_disply");
+        const maxoutput = document.getElementById("maxprice_display");
         maxoutput.innerHTML = maxslider.value;
         maxslider.oninput = function() {
             maxoutput.innerHTML = this.value;
