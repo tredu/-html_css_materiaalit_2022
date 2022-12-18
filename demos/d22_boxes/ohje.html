@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xmas NFT Loot Box Market</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul{line-height: 1.5em;}
+        img{
+            max-width: 100%;
+        }
+        section img{
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <h1>Xmas NFT Loot Box Market</h1>
+<xmp>
+html_css_basics
+|
+├── demos
+|   |
+│   └── d22
+|       |
+│       ├── index.html
+│       ├── style.css
+│       ├── lootbox.js
+│       |
+│       └── img
+│            ├──  snowbg.jpg
+│            |
+│            ├──  boxes
+|            |    ├── box_1_open.png
+|            |    ├── box_1.png
+|            |    ├── box_2_open.png
+│            |    └── ...
+│            |
+│            └──  items
+|                 ├── blank.png
+|                 ├── ball.png
+|                 ├── candy.png
+|                 ├── ginger.png
+│                 └── ...
+|
+</xmp>
+<hr>
+<img src="final.png" alt="valmis sivu">
+<hr>
+<img src="lootbox_layout.jpg" alt="lootbox_layout">
+<h2>Tehtävä</h2>
+
+<ul>
+    <li>Tee kansioon demos/d22 tiedostot index.html ja style.css</li>
+    <li>Lataa <a href="lootbox.js" target="_blank">lootbox.js<a > samaan kansioon</li>
+    <li>Alusta html dokumentti ja linkitä headiin style.css ja lootbox.js</li>
+    <li>Käynnistä lootbox.js kutsumalla sen init-funktiota<br>script-tagissa ennen bodyn sulkeutumista:
+    <xmp><script>init()</script></xmp></li>
+    <li>Kuvat <a href="#allimages">ohjeen lopussa<a ></li>
+    <li>Tee img kansio, minkä sisälle boxes ja items kansiot</li>
+    <li>Valitse ja lataa sopiva taustakuva img kansion juureen<br>(voit myös käyttää Unsplash, Pixabay yms.)</li>
+    <li>Lataa avatut ja suljetut laatikot img/boxes kansioon</li>
+    <li>Lataa esineet (tai NFT:t) img/items kansioon</li>
+</ul>
+<b>Toteuta kuvan mukainen layout</b>
+<ul>
+    <li>Bodyn sisällä on 2 elementtiä:</li>
+    <ul>
+        <li>header, jossa on pääotsikko</li>
+        <li>main, jossa on 3 figure tagia eri id:llä (golden, silver, bronze)</li>
+    </ul>
+    <li>kunkin figure tagin sisällä on 2 img tagia, joista</li>
+    <ul>
+        <li>ensimmäinen on ?-kuva (blank)</li>
+        <li>toinen on itse laatikon kuva suljettuna</li>
+    </ul>
+    <li>figcaptionissa lukee laatikon väri/taso golden/silver/bronze loot box</li>
+    <li>viimeisenä elementtinä figuren sisällä on avausnappi (button)</li>
+    <li>napin <i>onclick</i> eventin tulee kutsua funktiota <i>openLootBox</i><br>parametrillä <i>golden, silver</i> tai <i>bronze</i> <br>
+    <xmp> onclick="openLootBox('golden')"</xmp></li>
+    <li>Lisää nappeihin myös teksti Open/Avaa</li>
+</ul>
+<hr>
+<h3>CSS</h3>
+<p>valitse otsikolle sopiva Google fontti ja tuo se CSS:n 1. rivillä</p>
+<p>määritä root muuttujiksi värit kulta, hopea ja pronssi</p>
+<b>body</b>
+<ul>
+<li>nollaa marginaalit</li>
+<li>aseta leveys 100vw</li>
+<li>ja korkeus 100vh</li>
+<li>piilota ylivuoto jotta bodyä ei voi scrollata</li>
+<li>aseta tasutakuva</li>
+<li>aseta taustakuva peittämään koko tausta</li>
+<li>tee bodystä flex ja keskitä flex elementit pystysuunnassa</li>
+<li>aseta flex suunta column</li>
+<li>käytä justify-content: space-around; jolloin ylös ja alas jää tilaa</li>
+<li>aseta tekstin väri valkoinen tai taustasta muuten erottuva</li>
+<li>aseta fontti perustekstille esim. Arial</li>
+</ul>
+<b>h1</b>
+<ul>
+<li>käytä otsikossa Google fonttia</li>
+<li>kasvata otsikon kokoa</li>
+<li>valitse tekstin väri</li>
+<li>aseta tekstin varjo, jos otsikko ei erotu vieläkään taustasta</li>
+<li>keskitä teksti</li>
+</ul>
+<b>main</b>
+<ul>
+<li>tee mainista flex elementti</li>
+<li>keskitä sisältö</li>
+
+</ul>
+
+<b>main figure</b>
+<ul>
+<li>aseta position: relative; jotta kuva saadaan asemoitua suhteessa tähän tägiin</li>
+<li>kasvata fonttia</li>
+<li>tee fontista lihavoitu</li>
+<li>keskitä teksti</li>
+</ul>
+<b>main figure img</b>
+<ul>
+<li>aseta leveys 100%</li>
+<li>aseta maksimileveys 200px</li>
+</ul>
+<b>main figure .lootitem</b>
+<ul>
+<li>aseta leveys 100%</li>
+<li>käytä position: absolute; top: -200px; left: 0;</li>
+<li>jotta esine leijuu laatikon yläpuolella</li>
+</ul>
+<b>button</b>
+<ul>
+<li>muotoile avausnappia</li>
+<li>aseta padding</li>
+<li>kasvata fontin kokoa</li>
+<li>lihavoi teksti</li>
+<li>pyöristä kulmat</li>
+<li>tee hiirestä sormi</li>
+<li>aseta tekstin väriksi musta tai muu tumma</li>
+</ul>
+<b>figure:nth-of-type(1) button</b>
+<ul>
+<li>eli siis ensimmäinen sivulla oleva nappi</li>
+<li>aseta taustaväriksi kulta/gold jonka tallensit root-muuttujaan</li>
+<li>käytä samaa logiikkaa ja aseta hopea ja pronssi seuraaviin nappeihin</li>
+</ul>
+<b>figure:nth-of-type(1) button:hover</b>
+<ul>
+<li>aseta napille, napin värinen hehku kun hiiri on sen päällä</li>
+<li>käytä box-shadow ja root-muuttujan väriä</li>
+<li>tee hover efekti kaikille kolmelle napille</li>
+
+</ul><b>button:disabled, button:disabled:hover</b><ul>
+<li>kun laatikko on avattu, nappi menee epäaktiiviseen tilaan</li>
+<li>vaihda napin taustaväri harmaa</li>
+<li>vaihda tekstin väri tummempi harmaa</li>
+<li>estä kursorin muuttuminen sormeksi</li>
+</ul>
+<b>.slide_in</b>
+<ul>
+<li>lootbox.js asettaa laatikosta ponnahtavalle esineelle luokan .slide_in</li>
+<li>luokassa on määrätty animaatio slideInFromBottom</li>
+<li>keyframes kohdassa animaatio</li>
+<li>siirtää esinettä ylöspäin</li>
+<li>häivyttää esineen näkyville</li>
+<li>voit muokata animaatiota</li>
+</ul>
+<xmp>.slide_in{
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(75px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}</xmp>
+<p>Tallenna GitHubiin</p>
+
+
+
+<hr>
+<h3>Muokkaa esineitä</h3>
+<ul>
+    <li>Esineet ovat tavallisia 200 x 200px .png kuvia</li>
+    <li>Voit piirtää, ladata lisää tai muokata niitä</li>
+</ul>
+<h3>Muokkaa lootbox.js</h3>
+<ul>
+    <li><i>boxTypes</i> (array) on lista erilaisista laatikkotyypeistä, joita on määritetty 3</li>
+    <li><i>lootItems[boxTypes[0]]</i> ensimmäinen laatikko (golden) on paras, joten siitä voi löytää kaikkia esineitä, jota on määritetty arrayssä.</li>
+    <li>Ensimmäinen esine (kuva) arrayssä on harvinaisin.</li>
+    <li>silver ja bronze laatikoissa ei ole kaikkia esineitä</li>
+    <li><i>lootItemsBiased</i> toteutetaan automaattisesti array,<br>jossa ensimmäisenä mainittua esinettä on 1, toista 2, kolmatta 3 jne.</li>
+</ul>
+<hr id="allimages">
+<img src="img/boxes/box_1.png" alt="">
+<img src="img/boxes/box_1_open.png" alt="">
+<img src="img/boxes/box_2.png" alt="">
+<img src="img/boxes/box_2_open.png" alt="">
+<img src="img/boxes/box_3.png" alt="">
+<img src="img/boxes/box_3_open.png" alt="">
+<hr>
+<img src="img/items/blank.png" alt="" style="border: solid thin #222;">
+<img src="img/items/ball.png" alt="">
+<img src="img/items/candy.png" alt="">
+<img src="img/items/ginger.png" alt="">
+<img src="img/items/reindeer.png" alt="">
+<img src="img/items/snowflake.png" alt="">
+<img src="img/items/spruce.png" alt="">
+<img src="img/items/star.png" alt="">
+<hr>
+<img src="img/snowbg.jpg" alt="">
+</main>
+</body>
+</html>
