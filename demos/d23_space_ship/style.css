@@ -1,0 +1,49 @@
+:root{
+    --bg_size: 600px;
+    --tile_size: 150px;
+    --tile_scale: 1;
+    --tile: calc(var(--tile_scale)*var(--tile_size));
+}
+body{
+    margin: 0;
+    background-image: url('img/stars.jpg');
+    background-size: var(--bg_size);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    overflow: hidden;
+}
+@keyframes move_w {
+    100% {background-position-y: 599px;}
+}
+@keyframes move_a {
+    100% {background-position-x: 599px;}
+}
+@keyframes move_s {
+    100% {background-position-y: -599px;}
+}
+@keyframes move_d {
+    100% {background-position-x: -599px;}
+}
+#ship{
+    transition: all 1s;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main img{
+    width: var(--tile);
+}
+table{
+    border-collapse: collapse;
+}
+td, tr, img{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    line-height:0;
+}

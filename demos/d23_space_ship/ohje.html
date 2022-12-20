@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaruusalus</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        ul{line-height: 1.5em;}
+        img{
+            max-width: 100%;
+        }
+        section img{
+            max-width: 100px;
+        }
+        xmp{
+            background-color: #222;
+            color: aquamarine;
+            padding: 0.5em;
+            padding-bottom: 1.5em;
+        }
+        .gallery{
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #111;
+            gap: 1em;
+            padding: 1em;
+            justify-content: center;
+        }
+        .gallery img{
+            max-width: 100px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <main>
+    <h1>Avaruusalus</h1>
+<xmp>
+html_css_basics
+|
+├── demos
+|   |
+│   └── d23
+|       |
+│       ├── index.html
+│       ├── style.css
+│       ├── ship.js
+│       |
+│       └── img
+│            ├──  stars.jpg
+│            ├──  astronaut.png
+│            ├──  cockpit.png
+│            └──  ...
+|
+</xmp>
+<hr>
+<img src="ship_fly.png" alt="ship_fly">
+<hr>
+<h2>Kuvat</h2>
+<i>Raahaa osat ja taustakuva kansioon. Voit myös suunnitella ja muokata osia.</i>
+<div class="gallery">
+    <img src="img/astronaut.png" alt="">
+    <img src="img/cockpit.png" alt="">
+    <img src="img/corner.png" alt="">
+    <img src="img/cube.png" alt="">
+    <img src="img/junction.png" alt="">
+    <img src="img/pool.png" alt="">
+    <img src="img/radar.png" alt="">
+    <img src="img/rocket.png" alt="">
+    <img src="img/rtx_t.png" alt="">
+    <img src="img/rtx_b.png" alt="">
+    <img src="img/solar.png" alt="">
+    <img src="img/tail.png" alt="">
+    <img src="img/tube.png" alt="">
+    <img src="img/window.png" alt="">
+    <img src="img/wing.png" alt="">
+    <img src="img/spike.png" alt="">
+</div>
+<img src="img/stars.jpg" alt="" style="max-width: 200px;">
+<hr>
+<h2>Tehtävä: Suunnittele ja kokoa avaruusalus</h2>
+<h3>HTML</h3>
+<ul>
+    <li>tee index.html ja style.css</li>
+    <li>alusta index.html peruspohjalla</li>
+    <li>linkitä style.css headiin</li>
+    <li>lataa <a href="ship.js" target="_blank">ship.js</a> ja linkitä se headiin</li>
+    <li>lisää title ja favicon</li>
+    <li>lisää bodyyn main</li>
+    <li>lisää mainin sisälle div jolla on seuraava id ja inline-tyyli:</li>
+    <li>id=”ship” style="transform: rotate(0deg);"</li>
+    <li>koska osat ovat neliöitä ja samankokoisia, aluksen kokoamiseen voi käyttää taulukkoa</li>
+    <li>tee ship-divin sisälle esim. 5x5 taulukko ja laita osat kuvina (img) taulukon soluihin</li>
+</ul>
+<h3>CSS</h3>
+<xmp>:root{
+    --bg_size: 600px;
+    --tile_size: 200px;
+    --tile_scale: 1;
+    --tile: calc(var(--tile_scale)*var(--tile_size));
+}
+body{
+    margin: 0;
+    background-image: url('img/stars.jpg');
+    background-size: var(--bg_size);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 10s;
+    overflow: hidden;
+}
+@keyframes move_w {
+    100% {background-position-y: 599px;}
+}
+@keyframes move_a {
+    100% {background-position-x: 599px;}
+}
+@keyframes move_s {
+    100% {background-position-y: -599px;}
+}
+@keyframes move_d {
+    100% {background-position-x: -599px;}
+}</xmp>
+<i>CSS:n ensimmäiset kohdat selitettynä</i>
+<ul>
+    <b>:root</b>
+    <li>määritä root muuttujiin:</li>
+    <li>taustan eli tähtitaivaslaatan koko <b>bg_size</b></li>
+    <li>aluksen osan koko <b>tile_size</b></li>
+    <li>aluksen suhteellinen koko <b>tile_scale</b></li>
+    <li>tiilen oikea koko <b>--tile: calc(var(--tile_scale)*var(--tile_size));</b></li>
+<br>
+    <b>body</b>
+    <li>nollaa marginaalit</li>
+    <li>aseta tähtitaivas taustakuvaksi</li>
+    <li>aseta taustakuvatiilen koko muuttujasta</li>
+    <li>toista animaatiota loputtomasti</li>
+    <li>poista kiihtyvyys animaation alusta ja lopusta<br>
+    (toisin sanoen toista lineaarisella nopeudella)</li>
+    <li>määritä animaation kesto sekunteina (aluksen nopeus)</li>
+    <br>
+    <b>@keyframes move_w {…}</b>
+    <li>kun tausta liikkuu alaspäin, niin näyttää kun alus liikkuisi ylöspäin</li>
+</ul>
+<br>
+<h2>CSS</h2>
+
+<ul>
+    <b>#ship</b>
+    <li>transition: all 1s;</li>
+    <li>transition asettaa siirtymäanimaation ja hidastaa kääntymistä</li>
+    <br>
+    <b>main</b>
+    <li>aseta leveys 100vw</li>
+    <li>aseta korkeus 100vh</li>
+    <li>tee mainista flex elementti</li>
+    <li>keskitä sisältö vaaka- ja pystysuunnassa</li>
+
+    <br>
+    <b>main img</b>
+    <li>Säädä tiilen koko muuttujalla <b>main img{ width: var(--tile); }</b></li>
+    <br>
+    <b>table</b>
+    <li>Poista CSS:llä tyhjä tila taulukon solujen välistä</li>
+    <br>
+    <li>Poista tyhä tila kuvien välistä:</li>
+    <xmp>td, tr, img{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    line-height:0;
+}</xmp>
+    <li>Kierrä tai peilaa osia inline-CSS:llä tai niille antamiesi id:n perusteella</li>
+    <li>Tallenna GitHubiin</li>
+</ul>
+<hr>
+<h2>Ohjaa avaruusalusta</h2>
+<ul>
+    <li>lisää bodylle inline-style:<br>
+    <xmp><body style="animation-name: move_w;"></xmp></li>
+    <li>kutsu starttaus-funktiota ennen bodyn sulkeutumista<br>
+    <xmp><script>init()</script></xmp></li>
+    <li>Tarkista, että selainikkuna on fokuksessa klikkaamalla kerran alusta</li>
+    <li>WASD, 123</li>
+</ul>
+<h3>Tallenna GitHubiin</h3>
+</main>
+</body>
+</html>
